@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+
+.App-link {
+  color: #f6f8f9;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.democ{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; 
+}
+@media (min-width:500px) {
+  .democ{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; 
+    flex-basis: 100px;
+	flex-grow: 1;
+	flex-shrink: 1;
+  }
+  .childc{
+    height: 280px;
+    width: 300px;
+  
+  }
+  .pbtn{
+    font-size:20px;
+  }
+}
+.totalp{
+  height: 150px;
+  margin-top: 20px;
+  display: flex;
+}
+@media (max-width:500px) {
+  .pbtn{
+    font-size:12px;
+  }
+}
+.finfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li{
+  list-style: none;
+  padding: 10px;
+}
+.testygoicon{
+  color: darkorange;
+  font-size: 30px;
+  padding-top: 10px;
+}
+.testygonav{
+  position: sticky;
+}
+.logop{
+  margin-top: 10px;
+}
+@media (max-width:500px) {
+  .cartsitems{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    margin-right: -10px;
+  }
+}
+
+
