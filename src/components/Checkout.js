@@ -77,9 +77,9 @@ const Checkout=({subtotal})=> {
           arrQuantity2[i]=cartItems[i].quantity+" "
           totalprice2=totalprice2+cartItems[i].price;
         }
-        if (cartItems[i].country==='amir')
+        if (cartItems[i].country==='ameer')
         {
-          checkdealer3='amir';
+          checkdealer3='ameer';
           arrName3[i]=cartItems[i].name+" ";
           arrQuantity3[i]=cartItems[i].quantity+" ";
           totalprice3=totalprice3+cartItems[i].price;
@@ -117,7 +117,7 @@ const Checkout=({subtotal})=> {
           console.log(error)
         }
       }
-      if (checkdealer2=='ameer')
+      if (checkdealer3=='ameer')
       {
         try{
           const datauser={
