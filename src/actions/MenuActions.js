@@ -79,7 +79,7 @@ export const filterI=(category)=>async dispatch=>{
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
            if (category==='all')
            {
-            window.location.href="/home";
+            window.location.href="/";
            }
            else if (category==='')
            {
