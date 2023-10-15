@@ -102,7 +102,7 @@ const Checkout=({subtotal})=> {
           console.log(error)
         }
       }
-      if (checkdealer2=='nilesh'){
+      if (checkdealer2==='nilesh'){
         try{
           const datauser={
             content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${Fullname} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}`,
@@ -117,7 +117,7 @@ const Checkout=({subtotal})=> {
           console.log(error)
         }
       }
-      if (checkdealer3=='ameer')
+      if (checkdealer3==='ameer')
       {
         try{
           const datauser={
