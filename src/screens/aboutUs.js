@@ -10,11 +10,11 @@ const aboutUs = () => {
     <div className="row h-100 align-items-center py-5">
       <div className="col-lg-6">
         <h1 className="display-4">About us page</h1>
-        <p className="lead text-muted mb-0">Welcome to TestyGo.com, your gateway to a world of culinary delight! Founded by balaji kagne and co-founded by Prasad Wandekar, TestyGo.com is your go-to online food delivery platform for a delicious and convenient dining experience.
+        <p className="lead text-muted mb-0">Welcome to TestyGo.com, your gateway to a world of culinary delight! Founded by balaji kagne and  Prasad Wandhekar, TestyGo.com is your go-to online food delivery platform for a delicious and convenient dining experience.
 
 Our Story
 
-TestyGo.com was born from a shared love for good food and a desire to make it accessible to everyone, anytime, and anywhere. balaji kagne, with his background in technology and a passion for culinary adventures, envisioned a platform that would bridge the gap between hungry hearts and delectable dishes. Balaji Kagne, a fellow food enthusiast and a seasoned entrepreneur, joined hands with Prasad to bring this vision to life.
+TestyGo.com was born from a shared love for good food and a desire to make it accessible to everyone, anytime, and anywhere. balaji kagne and prasad wandhekar with his background in technology and a passion for culinary adventures, envisioned a platform that would bridge the gap between hungry hearts and delectable dishes. Balaji Kagne  a fellow food enthusiast and a seasoned entrepreneur, joined hands with Prasad wandhekar to bring this vision to life.
 
 Our Mission
 
@@ -34,9 +34,9 @@ Secure Transactions: Your payment information is safeguarded with the latest enc
 
 Meet the Founders
 
-balaji kagne, a tech-savvy food enthusiast, brings a blend of innovation and passion to TestyGo.com. His vision is to create a seamless and enjoyable food delivery experience for everyone.
+balaji kagne and prasad wandhekar , a tech-savvy food enthusiast, brings a blend of innovation and passion to TestyGo.com. His vision is to create a seamless and enjoyable food delivery experience for everyone.
 
-Balaji kagne, a seasoned entrepreneur, understands the intricacies of business and customer satisfaction. His dedication to excellence drives TestyGo.com's growth and commitment to customer delight.
+Balaji kagne and prasad wandhekar, a seasoned entrepreneur, understands the intricacies of business and customer satisfaction. His dedication to excellence drives TestyGo.com's growth and commitment to customer delight.
 
 Join Us for a Feast
 
@@ -48,32 +48,6 @@ Thank you for choosing TestyGo.com as your trusted food delivery partner. We're 
         </p>
       </div>
       <div className="col-lg-6 d-none d-lg-block"><img src="https://bootstrapious.com/i/snippets/sn-about/illus.png" alt="" className="img-fluid"></img></div>
-    </div>
-  </div>
-</div>
-
-<div className="bg-white py-5">
-  <div className="container py-5">
-    <div className="row align-items-center mb-5">
-      <div className="col-lg-6 order-2 order-lg-1"><i className="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-        <h2 className="font-weight-light">Founder of this Company</h2>
-        <p className="font-italic text-muted mb-4">Welcome to testygo Meal, a culinary haven where the genius of balaji kagne comes to life on your plate. Founded by Balaji, a visionary in the world of food, testygo Meal is a celebration of taste, culture, and innovation. Prepare to embark on a culinary journey that promises to redefine your dining experiences.
-
-Meet the Maestro - balaji kagne:
-
-balaji kagne, the driving force behind testygo Meal, is a culinary virtuoso with an unparalleled passion for the art of cooking. With a background steeped in culinary excellence, Balaji's journey has taken him from mastering the traditional flavors of India to pushing the boundaries of creativity in the culinary world.
-
-Balaji's mission is clear: to create a dining experience that resonates with every palate. His commitment to sourcing the finest ingredients, experimenting with flavors, and preserving culinary traditions while infusing modern techniques has made him a trailblazer in the food industry.</p>
-      </div>
-      <div className="col-lg-5 px-5 mx-auto order-1 order-lg-2"></div>
-    </div>
-    <div className="row align-items-center">
-      <div className="col-lg-5 px-5 mx-auto"><img src="none" height="200px" alt="" className="img-fluid mb-4 mb-lg-0" ></img></div>
-      <div className="col-lg-6"><i className="fa fa-leaf fa-2x mb-3 text-primary"></i>
-        <h2 className="font-weight-light">Co-founder of this Company</h2>
-        <p className="font-italic text-muted mb-4">About Me:
-I am Prasad Wandekar, one of the proud co-founders of testygo Meal, a dynamic food delivery website that brings culinary delights to doorsteps. With a deep passion for food and a vision for revolutionizing the dining experience, I embarked on this exciting journey to make delicious meals accessible to everyone.</p>
-      </div>
     </div>
   </div>
 </div>
