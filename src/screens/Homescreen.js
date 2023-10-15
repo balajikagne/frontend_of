@@ -14,11 +14,11 @@ export default function Homescreen() {
   const itemstate = useSelector((state) => state.getAllitemsReducer);
 
   const { items, error, loading } = itemstate;
-  useEffect(() => {
-    if (localStorage.getItem("currentUser") === null) {
-      window.location.href = "/";
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("currentUser") === null) {
+  //     window.location.href = "/";
+  //   }
+  // }, []);
   useEffect(() => {
     dispatch(getAllitems());
   }, []);
