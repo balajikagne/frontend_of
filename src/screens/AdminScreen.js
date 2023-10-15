@@ -10,7 +10,7 @@ const AdminScreen = () => {
   const { currentUser } = userState;
   useEffect(() => {
     if (localStorage.getItem("currentUser") === null || !currentUser.isAdmin) {
-      window.location.href = "/home";
+      window.location.href = "/";
     }
   }, []);
   return (
