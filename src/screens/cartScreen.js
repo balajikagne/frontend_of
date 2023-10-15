@@ -11,11 +11,11 @@ export default function CartScreen() {
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     const dispatch=useDispatch()
     // console.log(cartItems)
-    useEffect(() => {
-      if (localStorage.getItem("currentUser") === null) {
-        window.location.href = "/";
-      }
-    }, []);
+    // useEffect(() => {
+    //   if (localStorage.getItem("currentUser") === null) {
+    //     window.location.href = "/";
+    //   }
+    // }, []);
 return (
     <div>
       <div className='row justity-content-center'>
