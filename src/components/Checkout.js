@@ -21,6 +21,7 @@ const Checkout=({subtotal})=> {
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
   const [shippingAddress, setshippingAddress] = useState("");
   const [city, setcity] = useState("");
+  const [Fullname, setFullname] = useState("");
   const [pincode, setpincode] = useState("");
   const [mobNumber, setmobNumber] = useState("");
   const [time,settime]=useState(new Date())
@@ -34,7 +35,8 @@ const Checkout=({subtotal})=> {
         shippingAddress,
         city,
         pincode,
-        mobNumber
+        mobNumber,
+        Fullname
       };
       const webHooKURL='https://discord.com/api/webhooks/1162687599907962970/z6lUM60fJ840z3LkYrCEkeSdqPuDyHj9M01jerNCUxf9Oxx0wzrgSDAtLtH84aRTfYN1'
       const webHooKURL1='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
@@ -88,7 +90,7 @@ const Checkout=({subtotal})=> {
       {
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${Fullname} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}`,
             tts:false,
             color:'white',
           }
@@ -103,7 +105,7 @@ const Checkout=({subtotal})=> {
       if (checkdealer2=='nilesh'){
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${Fullname} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}`,
             tts:false,
             color:'white',
           }
@@ -115,11 +117,11 @@ const Checkout=({subtotal})=> {
           console.log(error)
         }
       }
-      if (checkdealer2=='amir')
+      if (checkdealer2=='ameer')
       {
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${Fullname} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3}`,
             tts:false,
             color:'white',
           }
@@ -163,6 +165,15 @@ const Checkout=({subtotal})=> {
       <h4 className="bg-dark text-light p-2">Order Now</h4>
       <Form>
         <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridnae">
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Full Name"
+              value={Fullname}
+              onChange={(e) => setFullname(e.target.value)}
+            />
+          </Form.Group>
           <Form.Group as={Col} controlId="formGridnae">
             <Form.Label>street</Form.Label>
             <Form.Control
