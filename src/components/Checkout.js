@@ -13,7 +13,8 @@ import Error from "../components/Error";
 import Success from "../components/Success";
 import { loginUserReducer } from "../Reducers/UserReducer";
 import  axios  from "axios";
-
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems
