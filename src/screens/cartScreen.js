@@ -22,6 +22,7 @@ return (
         <div>
             <h2 style={{fontSize:'40px'}}>My Cart</h2><br></br>
              <h2 style={{fontSize:'40px'}}>(Free Delivery Above 100 RS /-)</h2>
+            <h2 style={{fontSize:'40px'}}>(30 RS /- Delivery Charges Below 100 Rs /-)</h2>
             <div className='totalp' style={{display:'flex'}}>
             <h2 style={{fontSize:'40px'}}>Subtotal : {subtotal} /Rs-</h2>
             <button className="btn" style={{height:'40px',marginLeft:'50px'}}><NavLink to={"/checkout"} style={{fontSize:'20px',textDecoration:'none',cursor:"pointer"}}>Order Now</NavLink></button>
