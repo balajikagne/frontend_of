@@ -94,8 +94,28 @@ const Checkout=({subtotal})=> {
             tts:false,
             color:'white',
           }
-          
           let  res =await axios.post(webHooKURL,datauser)
+          fetch('https://sheetdb.io/api/v1/sa7ojrpi5otim',{
+        method:'POST',
+        headers:{
+          Accept:'application/json',
+          "Content-Type":'application/json',
+        },
+        body:JSON.stringify({
+          data:[
+            { 
+       Fullname: Fullname,
+       shippingAddress:shippingAddress,
+        city:city,
+        pincode:pincode,
+        mobNumber:mobNumber,
+       cartItems1:arrName1,
+        quantity1:arrQuantity1,
+        Total_Amount:totalprice1
+            }
+          ]
+        })
+      })
         }
         catch(error)
         {
@@ -111,6 +131,27 @@ const Checkout=({subtotal})=> {
           }
        
           let  res =await axios.post(webHooKURL1,datauser)
+          fetch('https://sheetdb.io/api/v1/2fykvxxbxe2a2',{
+        method:'POST',
+        headers:{
+          Accept:'application/json',
+          "Content-Type":'application/json',
+        },
+        body:JSON.stringify({
+          data:[
+            { 
+       Fullname: Fullname,
+       shippingAddress:shippingAddress,
+        city:city,
+        pincode:pincode,
+        mobNumber:mobNumber,
+        cartItems1:arrName2,
+        quantity1:arrQuantity2,
+        Total_Amount:totalprice2
+            }
+          ]
+        })
+      })
         }
         catch(error)
         {
@@ -127,6 +168,27 @@ const Checkout=({subtotal})=> {
           }
          
           let  res =await axios.post(webHooKURL2,datauser)
+      //     fetch('https://sheetdb.io/api/v1/sa7ojrpi5otim',{
+      //   method:'POST',
+      //   headers:{
+      //     Accept:'application/json',
+      //     "Content-Type":'application/json',
+      //   },
+      //   body:JSON.stringify({
+      //     data:[
+      //       { 
+      //  Fullname: Fullname,
+      //  shippingAddress:shippingAddress,
+      //   city:city,
+      //   pincode:pincode,
+      //   mobNumber:mobNumber,
+      //   cartItems1:arrName3,
+      //   quantity1:arrQuantity3,
+      //   Total_Amount:totalprice3
+      //       }
+      //     ]
+      //   })
+      // })
         }
         catch(error)
         {
@@ -135,27 +197,7 @@ const Checkout=({subtotal})=> {
       }
      
      
-      // fetch('https://sheetdb.io/api/v1/sa7ojrpi5otim',{
-      //   method:'POST',
-      //   headers:{
-      //     Accept:'application/json',
-      //     "Content-Type":'application/json',
-      //   },
-      //   body:JSON.stringify({
-      //     data:[
-      //       {
-      //  shippingAddress:shippingAddress,
-      //   city:city,
-      //   pincode:pincode,
-      //   mobNumber:mobNumber
-      //       }
-      //     ]
-      //   })
-
-      // })
-      // .then((response)=>response.json())
-      // .then((data)=>console.log(data))
-      // console.log(item,subtotal);
+      
       dispatch(placeOrder(item,subtotal));
       alert("Your Order Will Be Delivered within 35 minutes")
       window.location.href='/'
