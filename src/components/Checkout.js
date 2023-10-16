@@ -23,7 +23,7 @@ const Checkout=({subtotal})=> {
   const [city, setcity] = useState("");
   const [Fullname, setFullname] = useState("");
   const [pincode, setpincode] = useState("");
-  const [mobNumber, setmobNumber] = useState("");
+  const [mobNumber, setmobNumber] = useState();
   const [time,settime]=useState(new Date())
     const dispatch=useDispatch();
     const allordersState=useSelector(state=>state.allOrdersReducer)
@@ -211,6 +211,7 @@ const Checkout=({subtotal})=> {
      
       
       dispatch(placeOrder(item,subtotal));
+      setmobNumber('')
       alert("Your Order Will Be Delivered within 35 minutes")
       window.location.href='/'
     };
@@ -261,11 +262,11 @@ const Checkout=({subtotal})=> {
 
         <Form.Group as={Col} controlId="formGridnae">
           <Form.Label>Mob number</Form.Label>
-          <Form.Control
-            placeholder="Mob Number"
-            value={mobNumber}
-          onChange={(e) => setmobNumber(e.target.value)}
-          />
+          <PhoneInput
+          country={'india'}
+          value={mobNumber}
+            onChange={setmobNumber}
+           />
         </Form.Group>
 
         <Form.Group className="mb-3" id="formGridCheckbox">
