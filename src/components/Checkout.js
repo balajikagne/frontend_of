@@ -189,6 +189,18 @@ const Checkout=({subtotal})=> {
       //     ]
       //   })
       // })
+          let data=
+      { 
+        Fullname:Fullname,
+ shippingAddress:shippingAddress,
+  city:city,
+  pincode:pincode,
+  mobNumber:mobNumber,
+  cartItems1:arrName1,
+  quantity1:arrQuantity1,
+  Total_Amount:totalprice1
+      }
+      axios.post('https://sheet.best/api/sheets/a53d6c17-3a9a-477f-91bf-9440ceccde19',data)
         }
         catch(error)
         {
