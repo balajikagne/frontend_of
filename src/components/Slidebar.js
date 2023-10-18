@@ -1,5 +1,6 @@
 import React from 'react'
 import "react-bootstrap";
+import "react-slideshow-image";
 export default function Slidebar() {
   return (
     <div style={{marginTop:'100px'}}>
