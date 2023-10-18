@@ -221,7 +221,7 @@ const Checkout=({subtotal})=> {
       <h4 className="bg-dark text-light p-2">Order Now</h4>
       <Form>
         <Row className="mb-3">
-        <Form.Group as={Col} controlId="formBasicText">
+        <Form.Group as={Col} controlId="formGridnae">
             <Form.Label>Full Name</Form.Label>
             <Form.Control
               type="text"
