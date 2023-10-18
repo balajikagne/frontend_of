@@ -221,10 +221,10 @@ const Checkout=({subtotal})=> {
       <h4 className="bg-dark text-light p-2">Order Now</h4>
       <Form>
         <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridnae">
+        <Form.Group as={Col} controlId="formBasicText">
             <Form.Label>Full Name</Form.Label>
             <Form.Control
-              type="text"
+              type="name"
               placeholder="Full Name"
               value={Fullname}
               onChange={(e) => setFullname(e.target.value)}
