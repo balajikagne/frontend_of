@@ -29,10 +29,26 @@ const Checkout=({subtotal})=> {
     const dispatch=useDispatch();
     const allordersState=useSelector(state=>state.allOrdersReducer)
   const {loading,error,orders}=allordersState
-  
+   function handlePhoneNumber(event){
+      let new_Number = event.target.value;
+    let new_Number_length = new_Number.length;
+    let number_at_start=new_Number[0]
+    setmobNumber(new_Number);
+    console.log(number_at_start,"hellow")
+    if (new_Number_length > 10 || new_Number_length < 10 ) {
+      setShowError(true);
+    } else if (new_Number_length == 10 && number_at_start>=6) {
+      setShowError(false);
+    }
+  }
     const submitform = async (e) => {
       e.preventDefault();
-      const item = {
+      if (showError==true){
+        window.location.href='/checkout'
+      }
+      else
+      {
+        const item = {
         shippingAddress,
         city,
         pincode,
@@ -215,6 +231,7 @@ const Checkout=({subtotal})=> {
       setmobNumber('')
       alert("Your Order Will Be Delivered within 35 minutes")
       window.location.href='/'
+      }
     };
   return (
       <div>
@@ -263,11 +280,12 @@ const Checkout=({subtotal})=> {
 
         <Form.Group as={Col} controlId="formGridnae">
           <Form.Label>Mob number</Form.Label>
-          <PhoneInput
-          country={'india'}
-          value={mobNumber}
-            onChange={setmobNumber}
-           />
+          <Form.Control
+            placeholder="Mob Number"
+            type="phone"
+            value = {mobNumber}
+            onChange={handlePhoneNumber}
+          />
         </Form.Group>
          <Form.Group className="mb-3" id="formGridCheckbox">
           <Form.Check type="checkbox" label="Cash On Delivery" />
