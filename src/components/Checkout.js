@@ -280,11 +280,17 @@ const Checkout=({subtotal})=> {
 
         <Form.Group as={Col} controlId="formGridnae">
           <Form.Label>Mob number</Form.Label>
-          <Form.Control
+          {showError ? (
+        <div style = {{ color: "red" }}> Invalid Mobile Number Length </div>
+      ) : (
+        <div> Valid Mobile number. </div>
+      )}
+      <Form.Control
             placeholder="Mob Number"
             type="phone"
             value = {mobNumber}
             onChange={handlePhoneNumber}
+          // onChange={(e) => setmobNumber(e.target.value)}
           />
         </Form.Group>
          <Form.Group className="mb-3" id="formGridCheckbox">
