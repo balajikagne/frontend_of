@@ -224,9 +224,6 @@ const Checkout=({subtotal})=> {
           console.log(error)
         }
       }
-     
-     
-      
       dispatch(placeOrder(item,subtotal));
       alert("Your Order Will Be Delivered within 35 minutes")
       window.location.href='/'
