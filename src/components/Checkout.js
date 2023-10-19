@@ -43,7 +43,7 @@ const Checkout=({subtotal})=> {
   }
     const submitform = async (e) => {
       e.preventDefault();
-      if (showError==true || mobNumber===""){
+      if (showError==true || mobNumber===""||shippingAddress===""||city===""||Fullname===""||pincode===""){
         alert("please fill all details")
         window.location.href='/checkout'
       }
