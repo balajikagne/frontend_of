@@ -228,7 +228,6 @@ const Checkout=({subtotal})=> {
      
       
       dispatch(placeOrder(item,subtotal));
-      setmobNumber('')
       alert("Your Order Will Be Delivered within 35 minutes")
       window.location.href='/'
       }
