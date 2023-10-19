@@ -35,16 +35,15 @@ const Checkout=({subtotal})=> {
     let new_Number_length = new_Number.length;
     let number_at_start=new_Number[0]
     setmobNumber(new_Number);
-    console.log(number_at_start,"hellow")
     if (new_Number_length > 10 || new_Number_length < 10 ) {
       setShowError(true);
-    } else if (new_Number_length == 10 && number_at_start>=6 && mobNumber!=" ") {
+    } else if (new_Number_length == 10 && number_at_start>=6) {
       setShowError(false);
     }
   }
     const submitform = async (e) => {
       e.preventDefault();
-      if (showError==true){
+      if (showError==true || mobNumber===" "){
         window.location.href='/checkout'
       }
       else
