@@ -268,7 +268,7 @@ const Checkout=({subtotal})=> {
         <Form.Group as={Col} controlId="formGridnae">
           <Form.Label>pincode</Form.Label>
           <Form.Control
-            type="text"
+            type="number"
             placeholder="pincode"
             value={pincode}
             onChange={(e) => setpincode(e.target.value)}
