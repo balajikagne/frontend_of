@@ -24,7 +24,7 @@ const Checkout=({subtotal})=> {
   const [city, setcity] = useState("");
   const [Fullname, setFullname] = useState("");
   const [pincode, setpincode] = useState("");
-  const [mobNumber, setmobNumber] = useState(" ");
+  const [mobNumber, setmobNumber] = useState("");
   const [showError, setShowError] = useState(false);
   const [time,settime]=useState(new Date())
     const dispatch=useDispatch();
@@ -43,7 +43,7 @@ const Checkout=({subtotal})=> {
   }
     const submitform = async (e) => {
       e.preventDefault();
-      if (showError==true || mobNumber===" "){
+      if (showError==true || mobNumber===""){
         window.location.href='/checkout'
       }
       else
