@@ -24,7 +24,8 @@ const Checkout=({subtotal})=> {
   const [city, setcity] = useState("");
   const [Fullname, setFullname] = useState("");
   const [pincode, setpincode] = useState("");
-  const [mobNumber, setmobNumber] = useState();
+  const [mobNumber, setmobNumber] = useState(" ");
+  const [showError, setShowError] = useState(false);
   const [time,settime]=useState(new Date())
     const dispatch=useDispatch();
     const allordersState=useSelector(state=>state.allOrdersReducer)
@@ -37,7 +38,7 @@ const Checkout=({subtotal})=> {
     console.log(number_at_start,"hellow")
     if (new_Number_length > 10 || new_Number_length < 10 ) {
       setShowError(true);
-    } else if (new_Number_length == 10 && number_at_start>=6) {
+    } else if (new_Number_length == 10 && number_at_start>=6 && mobNumber!=" ") {
       setShowError(false);
     }
   }
