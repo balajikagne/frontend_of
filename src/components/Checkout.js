@@ -129,7 +129,8 @@ const Checkout=({subtotal})=> {
         mobNumber:mobNumber,
        cartItems1:arrName1,
         quantity1:arrQuantity1,
-        Total_Amount:totalprice1
+        Total_Amount:totalprice1,
+              Time:time
             }
           ]
         })
@@ -165,7 +166,8 @@ const Checkout=({subtotal})=> {
         mobNumber:mobNumber,
         cartItems1:arrName2,
         quantity1:arrQuantity2,
-        Total_Amount:totalprice2
+        Total_Amount:totalprice2,
+              Time:time
             }
           ]
         })
@@ -216,7 +218,8 @@ const Checkout=({subtotal})=> {
   mobNumber:mobNumber,
   cartItems1:arrName1,
   quantity1:arrQuantity1,
-  Total_Amount:totalprice1
+  Total_Amount:totalprice1,
+        Time:time
       }
       axios.post('https://sheet.best/api/sheets/a53d6c17-3a9a-477f-91bf-9440ceccde19',data)
         }
