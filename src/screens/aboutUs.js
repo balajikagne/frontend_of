@@ -46,9 +46,7 @@ Thank you for choosing TestyGo.com as your trusted food delivery partner. We're 
         <p className="lead text-muted"><a href="/" className="text-muted"> 
                     <u>Order Now</u></a>
         </p>
-        <div style={{alignItems:"center",justifyContent:'center',height:"100px",width:'100%'}}>
-  <img src='https://media.licdn.com/dms/image/D4D16AQGk8Ceq0UM3KQ/profile-displaybackgroundimage-shrink_350_1400/0/1698579210630?e=1704326400&v=beta&t=T_ILJ0flMnqJvdrDt6OYYI7n0i-7HFkcCbVkXZb3eac'></img>
- </div>
+        
       </div>
       <div className="col-lg-6 d-none d-lg-block"><img src="https://bootstrapious.com/i/snippets/sn-about/illus.png" alt="" className="img-fluid"></img></div>
     </div>
