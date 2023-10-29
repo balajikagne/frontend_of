@@ -54,7 +54,7 @@ export default function Filters() {
           </Col>
           <Col>
           <Button onClick={()=>{dispatch(filterItem(searchkey.toLowerCase()))}}>search</Button>
-          // <Button onClick={()=>{dispatch(filterI(category))}}>filter</Button>
+   
           </Col>
         </Row>
       </Form>
