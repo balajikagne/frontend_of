@@ -63,6 +63,7 @@
   }
   .pbtn{
     font-size:20px;
+    font-family:Arial, Helvetica, sans-serif;
   }
 }
 .totalp{
@@ -71,8 +72,9 @@
   display: flex;
 }
 @media (max-width:500px) {
-  .pbtn{
+   .pbtn{
     font-size:12px;
+    font-family:Arial, Helvetica, sans-serif;
   }
 }
 .finfo{
@@ -88,6 +90,7 @@ li{
   color: darkorange;
   font-size: 30px;
   padding-top: 10px;
+font-family: 'Courier New', Courier, monospace;
 }
 .testygonav{
   position: sticky;
