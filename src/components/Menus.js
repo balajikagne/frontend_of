@@ -43,7 +43,7 @@ export default function Menus({menu}) {
       </div>
       <div className='flex-container'>
             <div className='m-1 w-100'>
-                <h2 className='pbtn'>price: {menu.prices[0][varient]*quantity} Rs</h2>
+                <h2 className='pbtn'>Price: {menu.prices[0][varient]*quantity} Rs</h2>
             </div>
             <div className='m-1 w-100'>
                 <button className='btn' onClick={addtocart}>
