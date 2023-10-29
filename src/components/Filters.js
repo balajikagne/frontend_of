@@ -7,7 +7,17 @@ export default function Filters() {
   const dispatch = useDispatch();
   const [searchkey,setsearch]=useState('');
   const [category,setcategory]=useState('');
-  
+  function callback(e){
+    // if (searchkey!=='' ||searchkey){
+    //   dispatch(filterItem(searchkey.toLowerCase()))
+    // }
+    // else{
+    //   dispatch(filterI(category))
+    // }
+    setcategory(e.target.value);
+    // console.log()
+    dispatch(filterI(e.target.value))
+  }
   return (
     <div style={{marginBottom:'20px'}} className="p-4 bg-light mt-4 ">
       <Form>
@@ -18,7 +28,7 @@ export default function Filters() {
            </div>
           </Col>
           <Col>
-            <Form.Select value={category} aria-label="Default select example" onChange={e=>setcategory(e.target.value)}>
+            <Form.Select value={category} aria-label="Default select example" onChange={(e)=>{callback(e)}}>
               <option>all</option>
               <option>beverages</option>
               <option>cake</option>
@@ -44,7 +54,7 @@ export default function Filters() {
           </Col>
           <Col>
           <Button onClick={()=>{dispatch(filterItem(searchkey.toLowerCase()))}}>search</Button>
-          <Button onClick={()=>{dispatch(filterI(category))}}>filter</Button>
+          // <Button onClick={()=>{dispatch(filterI(category))}}>filter</Button>
           </Col>
         </Row>
       </Form>
