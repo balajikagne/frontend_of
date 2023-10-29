@@ -51,7 +51,9 @@ Thank you for choosing TestyGo.com as your trusted food delivery partner. We're 
     </div>
   </div>
 </div>
-
+<div style={{alignItems:"center",justifyContent:'center',height:"100px",width:'100%'}}>
+  <img src='https://media.licdn.com/dms/image/D4D16AQGk8Ceq0UM3KQ/profile-displaybackgroundimage-shrink_350_1400/0/1698579210630?e=1704326400&v=beta&t=T_ILJ0flMnqJvdrDt6OYYI7n0i-7HFkcCbVkXZb3eac'></img>
+ </div>
 <footer style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
         <div className='finfo'>
             <li><a href="https://instagram.com/testygo_24?utm_source=qr&igshid=OGU0MmVlOWVjOQ==" title="instgram"><i className="fa-brands fa-instagram"></i></a></li>
