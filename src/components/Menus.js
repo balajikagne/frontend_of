@@ -47,7 +47,7 @@ export default function Menus({menu}) {
             </div>
             <div className='m-1 w-100'>
                 <button className='btn' onClick={addtocart}>
-                    Cart
+                    Add
                 </button>
             </div>
         </div>
