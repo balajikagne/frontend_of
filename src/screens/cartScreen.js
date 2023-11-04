@@ -48,6 +48,7 @@ return (
             })}
         </div>
       </div>
+                <button className="btn" style={{height:'40px',marginLeft:'50px'}}><NavLink to={"https://forms.gle/RmJtbGjadz1yfzUQ8"} style={{fontSize:'20px',textDecoration:'none',cursor:"pointer"}}>Feedback</NavLink></button>
     </div>
   )
 }
