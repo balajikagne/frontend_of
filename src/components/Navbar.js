@@ -91,6 +91,11 @@ export default function Navbar() {
                 About us
               </a>
             </li>
+               <li className="nav-item">
+              <a className="nav-link" href="https://forms.gle/RmJtbGjadz1yfzUQ8">
+                Feedback
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
