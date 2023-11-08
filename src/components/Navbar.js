@@ -71,7 +71,7 @@ export default function Navbar() {
               </div>
             ) : (
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/login">
                   Login <span className="sr-only">(current)</span>
                 </a>
               </li>
