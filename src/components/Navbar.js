@@ -60,7 +60,7 @@ export default function Navbar() {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/"
                     onClick={() => {
                       dispatch(logoutUser());
                     }}
