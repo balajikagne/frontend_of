@@ -82,7 +82,7 @@ export default function RegisterScreen() {
             ></input>
             <button onClick={register} className="btn mt-3">Register</button>
             <br></br>
-            <a style={{color:'black',textDecoration:'none'}} href="/" className='mt-2'>Click Here To Login</a>
+            <a style={{color:'black',textDecoration:'none'}} href="/login" className='mt-2'>Click Here To Login</a>
           </div>
         </div>
       </div>
