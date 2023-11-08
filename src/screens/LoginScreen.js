@@ -15,6 +15,7 @@ export default function LoginScreen() {
   function login(){
     const user={mobNumber,password}
     dispatch(loginUser(user))
+    window.location.href='/'
   }
   
   return (
