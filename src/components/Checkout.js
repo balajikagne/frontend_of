@@ -53,8 +53,7 @@ const Checkout=({subtotal})=> {
         shippingAddress,
         city,
         pincode,
-        mobNumber,
-        Fullname
+        mobNumber
       };
       const webHooKURL='https://discord.com/api/webhooks/1162687599907962970/z6lUM60fJ840z3LkYrCEkeSdqPuDyHj9M01jerNCUxf9Oxx0wzrgSDAtLtH84aRTfYN1'
       const webHooKURL1='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
