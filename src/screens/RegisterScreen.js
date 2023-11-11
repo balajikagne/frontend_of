@@ -54,11 +54,7 @@ export default function RegisterScreen() {
           <h3 className="text-center m-2" style={{fontSize:'35px'}}>
             Register
           </h3>
-              {showError ? (
-        <div style = {{ color: "red" }}> Invalid Mobile Number Length </div>
-      ) : (
-        <div> Valid Mobile number. </div>
-      )}
+          
           <div>
             <input
               type="text"
@@ -76,7 +72,7 @@ export default function RegisterScreen() {
               className="form-control"
               value={mobNumber}
               onChange={
-                handlePhoneNumber;
+                handlePhoneNumber
               }
               required
             ></input>
