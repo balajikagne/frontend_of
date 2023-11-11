@@ -13,7 +13,20 @@ export default function LoginScreen() {
   const {loading,error}=loginstate;
   const dispatch=useDispatch()
 
-   
+    const [showError, setShowError] = useState(false);
+    function handlePhoneNumber(event){
+      let new_Number = event.target.value;
+    let new_Number_length = new_Number.length;
+    let number_at_start=new_Number[0]
+    setmobNumber(new_Number);
+    console.log(number_at_start,"hellow")
+    console.log(mobNumber)
+    if (new_Number_length > 10 || new_Number_length < 10) {
+      setShowError(true);
+    } else if (new_Number_length == 10 && number_at_start>=6 ) {
+      setShowError(false);
+    }
+  }
   
   function login(){
     const user={mobNumber,password}
@@ -26,20 +39,25 @@ export default function LoginScreen() {
         <h3 className="text-center m-2">
           Login
         </h3>
-         
+         {showError ? (
+        <div style = {{ color: "red" }}> Invalid Mobile Number Length </div>
+      ) : (
+        <div> Valid Mobile number. </div>
+      )}
         {loading && (<Loading/>)}
         {error &&(<Error error='Something went wrong'/>)}
         <div>
          
-          <input
-            type="phone"
-            placeholder="Mob Number"
-            className="form-control"
-            value={mobNumber}
-            onChange={(e)=>{
-                     setmobNumber(e.target.value)}}
-            required
-          ></input>
+           <input
+              type="phone"
+              placeholder="Mob Number"
+              className="form-control"
+              value={mobNumber}
+              onChange={
+                handlePhoneNumber
+              }
+              required
+            ></input>
           <input
             type="password"
             placeholder="password"
