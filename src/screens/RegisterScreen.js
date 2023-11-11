@@ -13,7 +13,22 @@ export default function RegisterScreen() {
   const registerstate=useSelector(state=>state.registerUserReducer)
   const {error,loading,success}=registerstate
   const dispatch=useDispatch()
+  const [showError, setShowError] = useState(false);
+    function handlePhoneNumber(event){
+      let new_Number = event.target.value;
+    let new_Number_length = new_Number.length;
+    let number_at_start=new_Number[0]
+    setmobNumber(new_Number);
+    console.log(number_at_start,"hellow")
+    console.log(mobNumber)
+    if (new_Number_length > 10 || new_Number_length < 10) {
+      setShowError(true);
+    } else if (new_Number_length == 10 && number_at_start>=6 ) {
+      setShowError(false);
+    }
+  }
   function register(){
+    
     if (password!=cpassword)
     {
         alert("passwords not matched")
@@ -56,7 +71,7 @@ export default function RegisterScreen() {
               className="form-control"
               value={mobNumber}
               onChange={(e)=>{
-                setmobNumber(e.target.value)
+                handlePhoneNumber();
               }}
               required
             ></input>
