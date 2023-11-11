@@ -12,7 +12,7 @@ export default function LoginScreen() {
   const loginstate=useSelector(state=>state.loginUserReducer)
   const {loading,error}=loginstate;
   const dispatch=useDispatch()
-  const [showError, setShowError] = useState(false);
+
    
   
   function login(){
@@ -37,7 +37,7 @@ export default function LoginScreen() {
             className="form-control"
             value={mobNumber}
             onChange={(e)=>{
-                     setmobNumber(e.target.value)}
+                     setmobNumber(e.target.value)}}
             required
           ></input>
           <input
