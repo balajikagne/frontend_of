@@ -52,7 +52,7 @@ export default function LoginScreen() {
         <div> Valid Mobile number. </div>
       )}
           <input
-            type="text"
+            type="phone"
             placeholder="Mob Number"
             className="form-control"
             value={mobNumber}
