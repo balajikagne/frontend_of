@@ -12,6 +12,7 @@ export default function LoginScreen() {
   const loginstate=useSelector(state=>state.loginUserReducer)
   const {loading,error}=loginstate;
   const dispatch=useDispatch()
+  const [showError, setShowError] = useState(false);
    function handlePhoneNumber(event){
       let new_Number = event.target.value;
     let new_Number_length = new_Number.length;
