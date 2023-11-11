@@ -45,11 +45,7 @@ export default function LoginScreen() {
         {loading && (<Loading/>)}
         {error &&(<Error error='Something went wrong'/>)}
         <div>
-          {showError ? (
-        <div style = {{ color: "red" }}> Invalid Mobile Number Length </div>
-      ) : (
-        <div> Valid Mobile number. </div>
-      )}
+          
           <input
             type="text"
             placeholder="Mob Number"
