@@ -28,8 +28,12 @@ export default function RegisterScreen() {
     }
   }
   function register(){
-    
-    if (password!=cpassword)
+    if (showError==true ||mobNumber===""){
+        window.location.href='/register'
+    }
+    else
+    {
+       if (password!=cpassword)
     {
         alert("passwords not matched")
     }
@@ -42,6 +46,7 @@ export default function RegisterScreen() {
         }
         // console.log(user)
         dispatch(registerUser(user))
+    }
     }
   }
   return (
