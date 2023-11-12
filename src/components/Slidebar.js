@@ -6,7 +6,7 @@ export default function Slidebar() {
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://www.canva.com/design/DAFz6LMaq50/A_yrohQkJu9LabAEthqrRQ/edit?utm_content=DAFz6LMaq50&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" alt="First slide"></img>
+      <img class="d-block w-100" src="20231112_061844_0000.png" alt="First slide"></img>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="pro2.png" alt="Second slide"></img>
