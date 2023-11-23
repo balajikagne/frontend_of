@@ -45,8 +45,17 @@ const Checkout=({subtotal})=> {
     const submitform = async (e) => {
       e.preventDefault();
       if (showError==true || mobNumber===""||shippingAddress===""||city===""||Fullname===""||pincode===""){
-        alert("please fill all details")
-        window.location.href='/checkout'
+        swal.fire({
+        title: "Please enter all information currectly",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location.href='/'
+        }
+      });
       }
       else
       {
