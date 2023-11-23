@@ -15,6 +15,7 @@ import { loginUserReducer } from "../Reducers/UserReducer";
 import  axios  from "axios";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import swal from "sweetalert2";
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems
@@ -229,8 +230,17 @@ const Checkout=({subtotal})=> {
       }
       dispatch(placeOrder(item,subtotal));
         console.log(item,subtotal);
-      alert("Your Order Will Be Delivered within 35 minutes")
-      window.location.href='/'
+      swal.fire({
+        title: "Your order will be delivered within 35 minutes",
+              text: "Thank You",
+              icon: "success",
+        confirmButtonText: "Save",
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location.href='/'
+        }
+      });
       }
     };
   return (
