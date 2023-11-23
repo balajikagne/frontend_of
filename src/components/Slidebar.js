@@ -6,9 +6,6 @@ export default function Slidebar() {
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <video class="d-block w-100">
-  <source src="20231112_0747231.mp4" type="video">
-</video>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="pro2.png" alt="Second slide"></img>
