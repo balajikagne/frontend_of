@@ -234,7 +234,7 @@ const Checkout=({subtotal})=> {
         title: "Your order will be delivered within 35 minutes",
               text: "Thank You",
               icon: "success",
-        confirmButtonText: "Save",
+        confirmButtonText: "OK",
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
