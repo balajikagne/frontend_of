@@ -38,6 +38,7 @@ export default function Filters() {
               <option>maggie</option>
               <option>milkshake</option>
               <option>nonveg pizza</option>
+              <option>nonveg burger</option>
               <option>nonveg rice</option>
               <option>nonveg sandwich</option>
               <option>nonveg roll</option>
