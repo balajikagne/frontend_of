@@ -48,7 +48,7 @@ export default function Navbar() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                 <i clmass="fa-solid fa-user"></i>{currentUser.name}
+                <i class="fa-solid fa-user"></i>{currentUser.name}
                 </a>
 
                 <div
