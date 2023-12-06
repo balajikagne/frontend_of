@@ -70,7 +70,7 @@ export default function LoginScreen() {
           ></input>
           <button onClick={login} className="btn mt-3">Login</button>
           <br></br>
-          <NavLink  to="/register" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Click Here To Login</button></NavLink>
+          <NavLink  to="/register" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Click Here To Create New Account</button></NavLink>
         </div>
       </div>
     </div>
