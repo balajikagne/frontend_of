@@ -258,7 +258,7 @@ export default function RegisterScreen() {
             <br></br>
             <a
               style={{ color: "black", textDecoration: "none" }}
-              href="/"
+              href="/login"
               className="mt-2"
             >
               Click Here To Login
