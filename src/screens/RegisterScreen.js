@@ -111,7 +111,17 @@ export default function RegisterScreen() {
     if (OTP_MOB_A[0] !== "" ||mobNumber!==' ') {
       if (password !== cpassword ||mobNumber!==' '||otp!==' '|| OTP_MOB_A[0] !== " " ) {
         // alert("passwords not matched");
-        window.location.href='/register'
+       swal.fire({
+        title: "Please enter all information currectly",
+              text: "Thank You",
+              icon: "wrong",
+        confirmButtonText: "OK",
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location.href='/register'
+        }
+      });
         
       } else {
         const user = {
