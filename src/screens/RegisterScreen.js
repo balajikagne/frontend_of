@@ -98,7 +98,8 @@ export default function RegisterScreen() {
             alert("Please enter currect  OTP");
           });
       } catch (error) {
-        console.log(error);
+        // console.log(error);
+        alert("please enter currect OTP");
       }
     } else {
       alert("please enter currect OTP");
