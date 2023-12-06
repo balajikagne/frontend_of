@@ -81,7 +81,7 @@ export default function RegisterScreen() {
               icon: "warning",
         confirmButtonText: "OK",
       })
-        });
+       
    }
    }catch(error){
    swal.fire({
