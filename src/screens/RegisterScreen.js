@@ -227,6 +227,7 @@ export default function RegisterScreen() {
               id="sign-in-button"
               onClick={onSignInSubmit}
               className="btn mt-3"
+                 style={{marginRight:'40px'}}
             >
               Send OTP
             </button>
