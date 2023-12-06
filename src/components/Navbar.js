@@ -48,7 +48,7 @@ export default function Navbar() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                 <i sytle={{marginRight:'10px'}}clmass="fa-solid fa-user"></i>{currentUser.name}
+                 <i clmass="fa-solid fa-user"></i>{currentUser.name}
                 </a>
 
                 <div
@@ -56,7 +56,7 @@ export default function Navbar() {
                   aria-labelledby="dropdownMenuLink"
                 >
                   <a className="dropdown-item" href="/orders">
-                    <i class="fa-solid fa-bag-shopping"></i>My Orders
+                    <i sytle={{marginRight:'10px'}} class="fa-solid fa-bag-shopping"></i>My Orders
                   </a>
                   <a
                     className="dropdown-item"
