@@ -6,6 +6,7 @@ import Success from "../components/Success";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import swal from "sweetalert2";
+import { NavLink } from 'react-router-dom';
 import { auth } from "../firebase.config";
 import { RecaptchaVerifier } from "firebase/auth";
 import { getAuth, signInWithPhoneNumber } from "firebase/auth";
@@ -256,13 +257,7 @@ export default function RegisterScreen() {
               Register
             </button>
             <br></br>
-            <a
-              style={{ color: "black", textDecoration: "none" }}
-              href="/login"
-              className="mt-2"
-            >
-              Click Here To Login
-            </a>
+           <NavLink  to="/login" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Already Registered</button></NavLink>
           </div>
         </div>
       </div>
