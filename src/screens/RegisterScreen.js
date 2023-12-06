@@ -5,7 +5,7 @@ import { registerUser } from "../actions/UserActions";
 import Success from "../components/Success";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
-
+import swal from "sweetalert2";
 import { auth } from "../firebase.config";
 import { RecaptchaVerifier } from "firebase/auth";
 import { getAuth, signInWithPhoneNumber } from "firebase/auth";
