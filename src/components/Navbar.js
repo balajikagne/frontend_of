@@ -56,7 +56,7 @@ export default function Navbar() {
                   aria-labelledby="dropdownMenuLink"
                 >
                   <a className="dropdown-item" href="/orders">
-                    My Orders
+                    <i class="fa-solid fa-bag-shopping"></i>My Orders
                   </a>
                   <a
                     className="dropdown-item"
