@@ -48,7 +48,7 @@ export default function Navbar() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                <i class="fa-solid fa-user"></i>{currentUser.name}
+                <i sytle={{marginRight:'10px'}} class="fa-solid fa-user"></i>{currentUser.name}
                 </a>
 
                 <div
