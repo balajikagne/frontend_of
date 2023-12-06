@@ -4,7 +4,7 @@ import { loginUser } from '../actions/UserActions';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
-
+import { NavLink } from 'react-router-dom';
 export default function LoginScreen() {
 
   const [mobNumber, setmobNumber] = useState("");
@@ -70,7 +70,7 @@ export default function LoginScreen() {
           ></input>
           <button onClick={login} className="btn mt-3">Login</button>
           <br></br>
-          <a style={{color:'black',textDecoration:'none'}} href="/register" className='mt-2'>Click Here To register</a>
+          <NavLink  to="/register" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Click Here To Login</button></NavLink>
         </div>
       </div>
     </div>
