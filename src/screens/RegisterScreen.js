@@ -114,7 +114,7 @@ export default function RegisterScreen() {
        swal.fire({
         title: "Please enter all information currectly",
               text: "Thank You",
-              icon: "wrong",
+              icon: "warning",
         confirmButtonText: "OK",
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
