@@ -80,6 +80,7 @@ export default function RegisterScreen() {
     alert("please enter mobile number currectly")
    }
    }catch(error){
+     console.log(error)
    alert("OTP is sent successfully")
    }
   }
