@@ -37,7 +37,7 @@ export default function LoginScreen() {
     <div className="row justify-content-center mt-5 ">
       <div className="col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded">
         <h3 className="text-center m-2">
-          Login
+          <i class="fa-solid fa-right-to-bracket"></i>Login
         </h3>
          {showError ? (
         <div style = {{ color: "red" }}> Invalid Mobile Number Length </div>
