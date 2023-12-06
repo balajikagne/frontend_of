@@ -85,9 +85,9 @@ export default function RegisterScreen() {
    }
    }catch(error){
    swal.fire({
-        title: "OTP sent successfully",
+        title: "Please enter mobile number currently !",
               text: "Thank You",
-              icon: "success",
+              icon: "warning",
         confirmButtonText: "OK",
       })
    }
