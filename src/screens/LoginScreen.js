@@ -71,7 +71,7 @@ export default function LoginScreen() {
           <button onClick={login} className="btn mt-3">Login</button>
           <br></br>
           <NavLink  to="/register" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Click Here To Create New Account</button></NavLink>
-          <a href="tel:+919309100534">Call me</a>
+          
         </div>
       </div>
     </div>
