@@ -9,7 +9,9 @@ export default function RegisterScreen() {
   const [name, setname] = useState("");
   const [mobNumber, setmobNumber] = useState("");
   const [password, setpassword] = useState("");
-  const [cpassword,setcpassword]=useState("")
+  const [cpassword,setcpassword]=useState("");
+  const [otp, setotp] = useState("");
+  let OTP_MOB_A = [];
   const registerstate=useSelector(state=>state.registerUserReducer)
   const {error,loading,success}=registerstate
   const dispatch=useDispatch()
@@ -27,26 +29,115 @@ export default function RegisterScreen() {
       setShowError(false);
     }
   }
+
+  function configure() {
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
+      size: "visible",
+      callback: (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        this.onSignInSubmit();
+      },
+      defaultCountry: "IN",
+    });
+  }
+
+
+  function onSignInSubmit() {
+   try{
+    if (mobNumber!=='')
+   {
+    configure();
+    try {
+     
+      let phoneNumber = "+91" + mobNumber;
+      console.log(phoneNumber);
+      let appVerifier = window.recaptchaVerifier;
+      const auth = getAuth();
+
+      signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+        .then((confirmationResult) => {
+          // SMS sent. Prompt user to type the code from the message, then sign the
+          // user in with confirmationResult.confirm(code).
+          window.confirmationResult = confirmationResult;
+          console.log("OTP has been sent");
+          alert("OTP sent successfully");
+          // ...
+        })
+        .catch((error) => {
+          // Error; SMS not sent
+          // ...
+          console.log("SMS has not been sent");
+          alert("please again enter mobile number1");
+        });
+    } catch (error) {
+      alert("something went wrong");
+    }
+   }
+   else{
+    alert("please enter mobile number currectly")
+   }
+   }catch(error){
+   alert("OTP is sent successfully")
+   }
+  }
+
+
+function onSubmitOTP() {
+    if (otp !== "") {
+      let code = otp;
+      try {
+        window.confirmationResult
+          .confirm(code)
+          .then((result) => {
+            // User signed in successfully.
+            let user = result.user;
+            let a = user.phoneNumber;
+
+            for (let i = 0; i <= 9; i++) {
+              OTP_MOB_A[i] = a[i + 3];
+            }
+            alert("OTP Varified successfully");
+            console.log(OTP_MOB_A);
+
+            // ...
+          })
+          .catch((error) => {
+            // User couldn't sign in (bad verification code?)
+            // ...
+            // console.log(error)
+            alert("Please enter currect  OTP");
+          });
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      alert("please enter currect OTP");
+    }
+  }
+
+  
+  
   function register(){
-    if (showError==true ||mobNumber===""){
+   
+    if (OTP_MOB_A[0] !== "" ||mobNumber!==' ') {
+      if (password !== cpassword ||mobNumber!==' '||otp!==' '|| OTP_MOB_A[0] !== " " ) {
+        
         window.location.href='/register'
-    }
-    else
-    {
-       if (password!=cpassword)
-    {
-        alert("passwords not matched")
-    }
-    else
-    {
-        const user={
-            name,
-            mobNumber,
-            password
-        }
-        // console.log(user)
-        dispatch(registerUser(user))
-    }
+        
+      } else {
+        const user = {
+          name,
+          location,
+          mobNumber,
+          password,
+        };
+        console.log(user);
+        dispatch(registerUser(user));
+        console.log(onSubmitOTP());
+      }
+    } 
+    else {
+      alert("Please enter OTP currectly");
     }
   }
   return (
@@ -85,6 +176,26 @@ export default function RegisterScreen() {
               }
               required
             ></input>
+                <input
+              type="text"
+              placeholder="OTP"
+              className="form-control"
+              value={otp}
+              onChange={(e) => {
+                setotp(e.target.value);
+              }}
+              required
+            ></input>
+                <button
+              id="sign-in-button"
+              onClick={onSignInSubmit}
+              className="btn mt-3"
+            >
+              Send OTP
+            </button>
+            <button onClick={onSubmitOTP} className="btn mt-3">
+              submit
+            </button>
             <input
               type="password"
               placeholder="password"
