@@ -167,7 +167,7 @@ export default function RegisterScreen() {
       } else {
         const user = {
           name,
-          location,
+          // location,
           mobNumber,
           password,
         };
