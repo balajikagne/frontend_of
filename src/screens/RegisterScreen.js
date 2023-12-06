@@ -85,7 +85,7 @@ export default function RegisterScreen() {
    }
    }catch(error){
    swal.fire({
-        title: "Please refresh the page!",
+        title: "Please refresh the page and Re-enter the Mobile Number!",
               text: "Thank You",
               icon: "warning",
         confirmButtonText: "OK",
