@@ -202,16 +202,6 @@ export default function RegisterScreen() {
               }}
               required
             ></input>
-            // <input
-            //   type="text"
-            //   placeholder="Collage Name"
-            //   className="form-control"
-            //   value={location}
-            //   onChange={(e) => {
-            //     setlocation(e.target.value);
-            //   }}
-            //   required
-            // ></input>
             <input
               type="text"
               placeholder="Mob Number"
