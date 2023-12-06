@@ -58,7 +58,7 @@ export default function RegisterScreen() {
           // Error; SMS not sent
           // ...
           console.log("SMS has not been sent");
-          alert("please again enter mobile number1");
+          alert("Please enter mobile number currently ");
         });
     } catch (error) {
       alert("something went wrong");
