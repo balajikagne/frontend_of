@@ -1,37 +1,26 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {useDispatch,useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../actions/UserActions";
 import Success from "../components/Success";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+
 import { auth } from "../firebase.config";
 import { RecaptchaVerifier } from "firebase/auth";
 import { getAuth, signInWithPhoneNumber } from "firebase/auth";
+let OTP_MOB_A = [];
 export default function RegisterScreen() {
   const [name, setname] = useState("");
+  const [otp, setotp] = useState("");
+  const [location, setlocation] = useState("");
   const [mobNumber, setmobNumber] = useState("");
   const [password, setpassword] = useState("");
-  const [cpassword,setcpassword]=useState("");
-  const [otp, setotp] = useState("");
-  let OTP_MOB_A = [];
-  const registerstate=useSelector(state=>state.registerUserReducer)
-  const {error,loading,success}=registerstate
-  const dispatch=useDispatch()
-  const [showError, setShowError] = useState(false);
-    function handlePhoneNumber(event){
-      let new_Number = event.target.value;
-    let new_Number_length = new_Number.length;
-    let number_at_start=new_Number[0]
-    setmobNumber(new_Number);
-    console.log(number_at_start,"hellow")
-    console.log(mobNumber)
-    if (new_Number_length > 10 || new_Number_length < 10) {
-      setShowError(true);
-    } else if (new_Number_length == 10 && number_at_start>=6 ) {
-      setShowError(false);
-    }
-  }
+  const [cpassword, setcpassword] = useState("");
+
+  const registerstate = useSelector((state) => state.registerUserReducer);
+  const { error, loading, success } = registerstate;
+  const dispatch = useDispatch();
 
   function configure() {
     window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
@@ -43,7 +32,6 @@ export default function RegisterScreen() {
       defaultCountry: "IN",
     });
   }
-
 
   function onSignInSubmit() {
    try{
@@ -80,13 +68,11 @@ export default function RegisterScreen() {
     alert("please enter mobile number currectly")
    }
    }catch(error){
-     console.log(error)
    alert("OTP is sent successfully")
    }
   }
 
-
-function onSubmitOTP() {
+  function onSubmitOTP() {
     if (otp !== "") {
       let code = otp;
       try {
@@ -119,67 +105,72 @@ function onSubmitOTP() {
     }
   }
 
-  
-  
-  function register(){
-   
+  function register() {
+    console.log(OTP_MOB_A[0]);
     if (OTP_MOB_A[0] !== "" ||mobNumber!==' ') {
       if (password !== cpassword ||mobNumber!==' '||otp!==' '|| OTP_MOB_A[0] !== " " ) {
-        
+        // alert("passwords not matched");
         window.location.href='/register'
         
       } else {
         const user = {
           name,
+          location,
           mobNumber,
           password,
         };
-       
+        console.log(user);
         dispatch(registerUser(user));
-    
+        console.log(onSubmitOTP());
       }
     } 
     else {
-      alert("Please enter OTP currectly");
+      alert("Please enter opt currectly");
     }
   }
   return (
     <div>
       <div className="row justify-content-center mt-5">
         <div className="col-md-5 mt-5 text-left">
-          {loading && (<Loading/>)}
-          {success && (<Success success='User Register Successfully'/>)}
-          {error && (<Error error="mobNumber already register"/>)}
-          <h3 className="text-center m-2" style={{fontSize:'35px'}}>
+          <div id="sign-in-button"></div>
+          {loading && <Loading />}
+          {success && <Success success="User Register Successfully" />}
+          {error && <Error error="mobNumber already register" />}
+          <h3 className="text-center m-2" style={{ fontSize: "35px" }}>
             Register
           </h3>
-          {showError ? (
-        <div style = {{ color: "red" }}> Invalid Mobile Number Length </div>
-      ) : (
-        <div> Valid Mobile number. </div>
-      )}
           <div>
             <input
               type="text"
               placeholder="Full Name"
               className="form-control"
               value={name}
-              onChange={(e)=>{
-                setname(e.target.value)
+              onChange={(e) => {
+                setname(e.target.value);
               }}
               required
             ></input>
             <input
-              type="phone"
+              type="text"
+              placeholder="Collage Name"
+              className="form-control"
+              value={location}
+              onChange={(e) => {
+                setlocation(e.target.value);
+              }}
+              required
+            ></input>
+            <input
+              type="text"
               placeholder="Mob Number"
               className="form-control"
               value={mobNumber}
-              onChange={
-                handlePhoneNumber
-              }
+              onChange={(e) => {
+                setmobNumber(e.target.value);
+              }}
               required
             ></input>
-                <input
+            <input
               type="text"
               placeholder="OTP"
               className="form-control"
@@ -189,7 +180,7 @@ function onSubmitOTP() {
               }}
               required
             ></input>
-                <button
+            <button
               id="sign-in-button"
               onClick={onSignInSubmit}
               className="btn mt-3"
@@ -204,8 +195,8 @@ function onSubmitOTP() {
               placeholder="password"
               className="form-control"
               value={password}
-              onChange={(e)=>{
-                setpassword(e.target.value)
+              onChange={(e) => {
+                setpassword(e.target.value);
               }}
               required
             ></input>
@@ -214,18 +205,25 @@ function onSubmitOTP() {
               placeholder="comfirmpassword"
               className="form-control"
               value={cpassword}
-              onChange={(e)=>{
-                setcpassword(e.target.value)
+              onChange={(e) => {
+                setcpassword(e.target.value);
               }}
               required
             ></input>
-            <button onClick={register} className="btn mt-3">Register</button>
+            <button onClick={register} className="btn mt-3">
+              Register
+            </button>
             <br></br>
-            <a style={{color:'black',textDecoration:'none'}} href="/login" className='mt-2'>Click Here To Login</a>
+            <a
+              style={{ color: "black", textDecoration: "none" }}
+              href="/"
+              className="mt-2"
+            >
+              Click Here To Login
+            </a>
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
