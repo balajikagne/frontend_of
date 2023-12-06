@@ -51,24 +51,45 @@ export default function RegisterScreen() {
           // user in with confirmationResult.confirm(code).
           window.confirmationResult = confirmationResult;
           console.log("OTP has been sent");
-          alert("OTP sent successfully");
+          swal.fire({
+        title: "OTP sent successfully",
+              text: "Thank You",
+              icon: "success",
+        confirmButtonText: "OK",
+      })
           // ...
         })
         .catch((error) => {
           // Error; SMS not sent
           // ...
           console.log("SMS has not been sent");
-          alert("Please enter mobile number currently ");
+          swal.fire({
+        title: "Please enter mobile number currently !",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      })
         });
     } catch (error) {
       alert("something went wrong");
     }
    }
    else{
-    alert("please enter mobile number currectly")
+     swal.fire({
+        title: "Please enter mobile number currently !",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      })
+        });
    }
    }catch(error){
-   alert("OTP is sent successfully")
+   swal.fire({
+        title: "OTP sent successfully",
+              text: "Thank You",
+              icon: "success",
+        confirmButtonText: "OK",
+      })
    }
   }
 
@@ -86,8 +107,13 @@ export default function RegisterScreen() {
             for (let i = 0; i <= 9; i++) {
               OTP_MOB_A[i] = a[i + 3];
             }
-            alert("OTP Varified successfully");
-            console.log(OTP_MOB_A);
+            swal.fire({
+        title: "OTP verified successfully",
+              text: "Thank You",
+              icon: "success",
+        confirmButtonText: "OK",
+      })
+            
 
             // ...
           })
@@ -95,14 +121,29 @@ export default function RegisterScreen() {
             // User couldn't sign in (bad verification code?)
             // ...
             // console.log(error)
-            alert("Please enter currect  OTP");
+            swal.fire({
+        title: "Please enter OTP currectly !",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      })
           });
       } catch (error) {
         // console.log(error);
-        alert("please enter currect OTP");
+         swal.fire({
+        title: "Please enter OTP currectly !",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      })
       }
     } else {
-      alert("please enter currect OTP");
+       swal.fire({
+        title: "Please enter OTP currectly !",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      })
     }
   }
 
