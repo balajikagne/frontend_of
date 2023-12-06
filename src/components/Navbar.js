@@ -96,6 +96,11 @@ export default function Navbar() {
                 <i class="fa-solid fa-comment" style={{fontSize:'20px',paddingRight:'10px'}}></i>Feedback
               </a>
             </li>
+               </li>
+            <li className="nav-item">
+            <a href="tel:+919309100534" style={{color:'black',textDecoration:'none'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>Helpline Number</a>
+            
+            </li>
           </ul>
         </div>
       </nav>
