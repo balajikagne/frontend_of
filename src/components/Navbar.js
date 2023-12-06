@@ -65,35 +65,35 @@ export default function Navbar() {
                       dispatch(logoutUser());
                     }}
                   >
-                    <li>Logout</li>
+                    <li><i class="fa-solid fa-right-from-bracket" style={{fontSize:'20px',paddingRight:'10px'}}></i>Logout</li>
                   </a>
                 </div>
               </div>
             ) : (
               <li className="nav-item">
                 <a className="nav-link" href="/login">
-                  Login <span className="sr-only">(current)</span>
+                  <i class="fa-solid fa-right-to-bracket" style={{fontSize:'20px',paddingRight:'10px'}}></i> Login <span className="sr-only">(current)</span>
                 </a>
               </li>
             )}
             <li className="nav-item">
               <a className="nav-link" href="/">
-                Home
+                <i class="fa-solid fa-home" style={{fontSize:'20px',paddingRight:'10px'}}></i>Home
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/admin">
-                Admin
+                <i class="fa-solid fa-lock" style={{fontSize:'20px',paddingRight:'10px'}}></i>Admin
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/aboutus">
-                About us
+                <i class="fa-solid fa-address-card" style={{fontSize:'20px',paddingRight:'10px'}}></i>About us
               </a>
             </li>
                <li className="nav-item">
               <a className="nav-link" href="https://forms.gle/RmJtbGjadz1yfzUQ8">
-                Feedback
+                <i class="fa-solid fa-comment" style={{fontSize:'20px',paddingRight:'10px'}}></i>Feedback
               </a>
             </li>
           </ul>
