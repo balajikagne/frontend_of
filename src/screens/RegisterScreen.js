@@ -127,13 +127,12 @@ function onSubmitOTP() {
       } else {
         const user = {
           name,
-          location,
           mobNumber,
           password,
         };
-        console.log(user);
+       
         dispatch(registerUser(user));
-        console.log(onSubmitOTP());
+    
       }
     } 
     else {
