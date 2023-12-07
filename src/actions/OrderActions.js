@@ -50,7 +50,7 @@ export const getALLOrders = () => async (dispatch,getState) => {
     dispatch({ type: "GET_ALL_ORDER_REQ" });
     try {
       const res = await axios.post("https://balajibackend-demo-1.onrender.com/api/orders/deliverorder",{orderid});
-      const orders=await  axios.get("https://testygo.xyz/api/orders/getallorders")
+      const orders=await  axios.get("https://balajibackend-demo-1.onrender.com/api/orders/getallorders")
       dispatch({ type: "GET_ALL_ORDER_SUCCESS" ,payload:orders.data});
       window.location.href="/admin/orderlist"
     } catch (error) {
