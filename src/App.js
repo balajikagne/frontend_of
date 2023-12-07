@@ -36,6 +36,7 @@ function App() {
     <Route path='/orders' exact Component={OrderScreen}></Route>
     <Route path='/checkout' Component={Checkout}></Route>
     <Route path='/admin' Component={AdminScreen}></Route>
+    <Route path='/oderfullinfo' Component={FullOrderInfo}></Route>
     </Routes>
     </BrowserRouter>
     </div>
