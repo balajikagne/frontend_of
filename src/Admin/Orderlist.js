@@ -52,37 +52,33 @@ export default function Orderlist() {
      {loading && <Loading />}
       {error && <Error error="Something went wrong" />}      
     </div>
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Amount</th>
-          <th>Date</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
+    
+      <div>
         {orders && orders.map((order) =>(
-          <tr key={order._id}>
-            <td>{order.name}</td>
-            <td>Rs {order.orderAmount} /-</td>
-            <td><div className='text-left w-100 m-1'>
-                    <h2 style={{fontSize:'25px'}}>Items</h2>
-                    {order.orderItems.map(item=>{
+          <div style={{display:'flex', textAlign:'start'}}>
+            <div style={{display:'inline',width:'100%'}}>
+            <hr></hr>
+            <h1>Name:{order.name}</h1>
+            <h1>ORDER Amount :Rs {order.orderAmount} /-</h1>
+            <h1>Items List :{order.orderItems.map(item=>{
                         return <div>
                             <h1>{item.name} [{item.varient}]*{item.quantity}*{item.price}</h1>
                         </div>
-                    })}
-                </div></td>
-            <td>{order.createdAt.substring(0,10)}</td>
-            <td>{order.isDelivered ? (<h6 className='text-success'>Delivered</h6>):(<>
+                    })}</h1>
+            <h1>Data :{order.createdAt.substring(0,10)}</h1>
+            <h1 style={{color:'blue'}}>Delivery Address :{order.shippingAddress.street}</h1>
+            <h1 style={{fontSize:'20px'}}>City :{order.shippingAddress.city}</h1>
+            <h1>{order.isDelivered ? (<h6 className='text-success'>Delivered</h6>):(<>
               <Button className='btn-danger' onClick={()=>{
               dispatch(deliveredOrders(order._id))
-            }}>Delivered</Button></>)}{" "}</td>
-          </tr>
-        ))}
-      </tbody>
-    </Table>
+            }}>Delivered</Button></>)}{" "}</h1>
+            <div style={{marginTop:'20px',marginBottom:'10px'}}><a href={order.mobNumber} style={{color:'black',textDecoration:'none' }}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>Customer Number</a></div>
+            
+            </div>
+          </div>
+        )).reverse()}
+      </div>
+    
     </div>
   )
 }
