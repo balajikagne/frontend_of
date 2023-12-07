@@ -18,6 +18,7 @@ import EditeItem from './Admin/EditeItem';
 import aboutUs from './screens/aboutUs';
 import OrderScreen from './screens/OrderScreen';
 import Checkout from './components/Checkout';
+import FullOrderInfo from './screens/FullOrderInfo';
 function App() {
   return (
     <div className='App'>
