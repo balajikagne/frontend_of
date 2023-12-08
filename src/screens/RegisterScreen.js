@@ -149,11 +149,6 @@ export default function RegisterScreen() {
   }
 
   function register() {
-    console.log(OTP_MOB_A[0]);
-    console.log(otp)
-    console.log(mobNumber)
-    console.log(password)
-    console.log(cpassword)
     if (OTP_MOB_A[0] !== " " ||mobNumber!==' ') {
       if (password !== cpassword ||mobNumber===' '||otp===' '|| OTP_MOB_A[0] === " " ) {
         // alert("passwords not matched");
@@ -235,7 +230,7 @@ export default function RegisterScreen() {
               Send OTP
             </button>
             <button onClick={onSubmitOTP} className="btn mt-3">
-              submit
+              Verify
             </button>
             <input
               type="password"
