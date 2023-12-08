@@ -149,9 +149,10 @@ export default function RegisterScreen() {
   }
 
   function register() {
-    if (OTP_MOB_A[0] !== " " ||mobNumber!==' ') {
+    if (OTP_MOB_A[0] !== " " ||mobNumber!=='') {
       if (password !== cpassword ||mobNumber===' '||otp===' '|| OTP_MOB_A[0] === " " ) {
         // alert("passwords not matched");
+        console.log("hellow")
        swal.fire({
         title: "Please enter all information currectly",
               text: "Thank You",
@@ -166,6 +167,7 @@ export default function RegisterScreen() {
         
       } 
       else {
+        console.log("hellow2")
         const user = {
           name,
           // location,
