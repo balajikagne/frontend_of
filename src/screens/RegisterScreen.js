@@ -155,7 +155,7 @@ export default function RegisterScreen() {
     console.log(password)
     console.log(cpassword)
     if (OTP_MOB_A[0] !== "" ||mobNumber!==' ') {
-      if (password !== cpassword ||mobNumber!==' '||otp!==' '|| OTP_MOB_A[0] !== " " ) {
+      if (password !== cpassword ||mobNumber===' '||otp===' '|| OTP_MOB_A[0] === " " ) {
         // alert("passwords not matched");
        swal.fire({
         title: "Please enter all information currectly",
