@@ -150,7 +150,7 @@ export default function RegisterScreen() {
 
   function register() {
     if (OTP_MOB_A[0] !== " " ||mobNumber!=='') {
-      if (password !== cpassword ||mobNumber===' '||otp===' '|| OTP_MOB_A[0] === " " ) {
+      if (password !== cpassword ||mobNumber===''||otp===''|| OTP_MOB_A[0] === "" ) {
         // alert("passwords not matched");
         console.log("hellow")
        swal.fire({
