@@ -154,7 +154,7 @@ export default function RegisterScreen() {
     console.log(mobNumber)
     console.log(password)
     console.log(cpassword)
-    if (OTP_MOB_A[0] !== "" ||mobNumber!==' ') {
+    if (OTP_MOB_A[0] !== " " ||mobNumber!==' ') {
       if (password !== cpassword ||mobNumber===' '||otp===' '|| OTP_MOB_A[0] === " " ) {
         // alert("passwords not matched");
        swal.fire({
@@ -169,16 +169,15 @@ export default function RegisterScreen() {
         }
       });
         
-      } else {
+      } 
+      else {
         const user = {
           name,
           // location,
           mobNumber,
           password,
-        };
-        console.log(user);
+        }
         dispatch(registerUser(user));
-        console.log(onSubmitOTP());
       }
     } 
     else {
