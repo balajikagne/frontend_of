@@ -150,6 +150,10 @@ export default function RegisterScreen() {
 
   function register() {
     console.log(OTP_MOB_A[0]);
+    console.log(otp)
+    console.log(mobNumber)
+    console.log(password)
+    console.log(cpassword)
     if (OTP_MOB_A[0] !== "" ||mobNumber!==' ') {
       if (password !== cpassword ||mobNumber!==' '||otp!==' '|| OTP_MOB_A[0] !== " " ) {
         // alert("passwords not matched");
@@ -161,7 +165,7 @@ export default function RegisterScreen() {
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          window.location.href='/register'
+          // window.location.href='/register'
         }
       });
         
