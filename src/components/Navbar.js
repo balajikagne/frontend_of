@@ -65,7 +65,7 @@ export default function Navbar() {
                       dispatch(logoutUser());
                     }}
                   >
-                    <i class="fa-solid fa-right-from-bracket"></i><li>Logout</li>
+                    <li><i class="fa-solid fa-right-from-bracket"></i>Logout</li>
                   </a>
                 </div>
               </div>
