@@ -56,7 +56,7 @@ export default function Navbar() {
                   aria-labelledby="dropdownMenuLink"
                 >
                   <a className="dropdown-item" href="/orders">
-                    My Orders
+                    <i class="fa-solid fa-bag-shopping"></i>My Orders
                   </a>
                   <a
                     className="dropdown-item"
@@ -65,14 +65,14 @@ export default function Navbar() {
                       dispatch(logoutUser());
                     }}
                   >
-                    <li>Logout</li>
+                    <i class="fa-solid fa-right-from-bracket"></i><li>Logout</li>
                   </a>
                 </div>
               </div>
             ) : (
               <li className="nav-item">
                 <a className="nav-link" href="/login">
-                  Login <span className="sr-only">(current)</span>
+                  <i class="fas fa-sign-in"></i>Login <span className="sr-only">(current)</span>
                 </a>
               </li>
             )}
