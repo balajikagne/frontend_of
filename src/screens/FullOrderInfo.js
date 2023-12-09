@@ -13,7 +13,7 @@ function FullOrderInfo({amount}) {
     let scolor=location.state.Dcolor;
   return (
     <>
-      <div className='text-left w-100 m-1'>
+      <div className='text-left w-100% m-1'>
       <div>
                    <div> <h2 style={{fontSize:'25px',backgroundColor:'orange'}}>ORDER Information</h2>
                     <h1> Name :{location.state.cname}</h1>
