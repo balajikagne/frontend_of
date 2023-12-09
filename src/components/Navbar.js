@@ -104,7 +104,7 @@ export default function Navbar() {
             </div>
           </ul>
         </div>
-          </ul>
+          </nav>
         </div>
       </nav>
      
