@@ -9,7 +9,7 @@ export default function Navbar() {
   const { currentUser } = userstate;
   const dispatch = useDispatch();
   return (
-    <div>
+     <div>
     <div style={{marginTop:'100px'}}>
       <nav className="navbar navbar-expand-lg fixed-top shadow-lg p-3 mb-5 bg-white rounded">
       <a className="navbar-brand" href="/" >
@@ -48,7 +48,7 @@ export default function Navbar() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                <i sytle={{marginRight:'10px'}} class="fa-solid fa-user"></i>{currentUser.name}
+                  {currentUser.name}
                 </a>
 
                 <div
@@ -56,7 +56,7 @@ export default function Navbar() {
                   aria-labelledby="dropdownMenuLink"
                 >
                   <a className="dropdown-item" href="/orders">
-                    <i sytle={{marginRight:'10px'}} class="fa-solid fa-bag-shopping"></i>My Orders
+                    My Orders
                   </a>
                   <a
                     className="dropdown-item"
@@ -65,14 +65,14 @@ export default function Navbar() {
                       dispatch(logoutUser());
                     }}
                   >
-                    <li><i class="fa-solid fa-right-from-bracket" style={{fontSize:'20px',paddingRight:'10px'}}></i>Logout</li>
+                    <li>Logout</li>
                   </a>
                 </div>
               </div>
             ) : (
               <li className="nav-item">
                 <a className="nav-link" href="/login">
-                  <i class="fa-solid fa-right-to-bracket" style={{fontSize:'20px',paddingRight:'10px'}}></i> Login <span className="sr-only">(current)</span>
+                  Login <span className="sr-only">(current)</span>
                 </a>
               </li>
             )}
@@ -104,10 +104,7 @@ export default function Navbar() {
             </div>
           </ul>
         </div>
-          </nav>
-        </div>
       </nav>
-              </div>
     </div>
     </div>
   );
