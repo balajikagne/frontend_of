@@ -107,7 +107,7 @@ export default function Navbar() {
           </nav>
         </div>
       </nav>
-     
+              </div>
     </div>
     </div>
   );
