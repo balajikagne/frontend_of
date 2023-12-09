@@ -106,5 +106,16 @@ font-family: 'Courier New', Courier, monospace;
     margin-right: -10px;
   }
 }
+@media (max-width:500px) {
+  .navbar1{
+    display:inline;
+    text-align: left;
+  }
+}
+@media (min-width:500px) {
+  .navbar1{
+    display:flex;
+  }
+}
 
 
