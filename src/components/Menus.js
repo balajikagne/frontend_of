@@ -18,7 +18,7 @@ export default function Menus({menu}) {
     }
   return (
     <div className='shadow p-2 mb-3 bg-white rounded childc'>
-        
+         <section id="itemloc">
     <div onClick={handleShow}>
       <h1><b>{menu.name}</b></h1>
       <img src={menu.img} className='img-fluid' style={{height:'70px',width:'120px'}}></img>
@@ -69,7 +69,7 @@ export default function Menus({menu}) {
          <button className='btn' onClick={handleClose}>Close</button>
         </Modal.Footer>
       </Modal>
-   
+   </section>
       </div>
     
   )
