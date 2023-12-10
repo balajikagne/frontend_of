@@ -65,7 +65,7 @@ export default function Filters() {
       </Form>
       
     </div>
- <div style={{width:'100%',marginBottom:'20px'}}>
+ <div style={{width:'100%',marginBottom:'40px'}}>
         <div className="scrollitems" style={{display:'flex',width:'100%',overflow:'scroll',overflowY:'hidden',marginBottom:'20px'}}>
         <div style={{height:'100px',width:'100px',cursor:'pointer',textAlign:'center'}} onClick={(e)=>{scall('all')}}><a style={{textDecoration:'none',color:'black'}} href="#itemloc"><img src='https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'id="sitem"></img><h2 className='tname'>All Menus</h2></a></div>
           <div style={{height:'100px',width:'100px',cursor:'pointer'}} onClick={(e)=>{scall('veg burger')}}><a style={{textDecoration:'none',color:'black'}} href="#itemloc"><img src='https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg' id="sitem"></img><h2 className='tname'>Veg Burger</h2></a></div>
