@@ -44,7 +44,7 @@ export default function Menus({menu}) {
       <div className='flex-container'>
             <div className='m-1 w-100'>
                 <h2 className='pbtn'>Price: {menu.prices[0][varient]*quantity} Rs</h2>
-                <h2 className='pbtn'>Discount :<span style={{textDecoration: 'line-through'}}>{menu.rate}</span></h2>
+                <h2 className='pbtn'>Discount :<span style={{textDecoration: 'line-through'}}></span></h2>
                 <div className='w-100'>
                 <button className='btn' onClick={addtocart}>
                     Add
