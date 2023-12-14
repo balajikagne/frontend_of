@@ -313,13 +313,6 @@ const Checkout=({subtotal})=> {
           // onChange={(e) => setmobNumber(e.target.value)}
           />
         </Form.Group>
-         <Form.Group className="mb-3" id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Cash On Delivery" />
-        </Form.Group>
-        <Form.Group className="mb-3" id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-
         <Button variant="primary" onClick={submitform}>
          Submit
         </Button>
