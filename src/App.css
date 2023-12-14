@@ -149,4 +149,25 @@ font-family: 'Courier New', Courier, monospace;
   text-decoration: none;
   background-color: #f6f8f9;
 }
-
+@media (min-width:500px){
+  .search-size{
+  width: 700px;
+  border: 1px solid orange;
+  }
+  .boxs{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+  }
+}
+@media (max-width:500px){
+  .search-size{
+  width: 700px;
+  border: 1px solid orange;
+  }
+  .boxs{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+  }
+}
