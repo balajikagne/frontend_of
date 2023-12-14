@@ -43,7 +43,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px; 
+  gap: 20px; 
 }
 @media (min-width:500px) {
   .democ{
