@@ -314,7 +314,7 @@ const Checkout=({subtotal})=> {
           />
         </Form.Group>
         <Button variant="primary" onClick={submitform}>
-         Submit
+         ORDER NOW
         </Button>
       </Form>
     </div>
