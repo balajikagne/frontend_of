@@ -18,7 +18,7 @@ export default function RegisterScreen() {
   const [mobNumber, setmobNumber] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
-
+  const [showpassword, setShowpassword] = useState(false);
   const registerstate = useSelector((state) => state.registerUserReducer);
   const { error, loading, success } = registerstate;
   const dispatch = useDispatch();
@@ -234,8 +234,9 @@ export default function RegisterScreen() {
             <button onClick={onSubmitOTP} className="btn mt-3">
               Verify
             </button>
+            <div style={{display:'flex',justifyContent:'left',marginTop:'10px',cursor:'pointer'}}>
             <input
-              type="password"
+              type={showpassword ? "text" : "password"}
               placeholder="password"
               className="form-control"
               value={password}
@@ -244,6 +245,10 @@ export default function RegisterScreen() {
               }}
               required
             ></input>
+            <div style={{marginTop:'17px',marginLeft:'5px'}}><i class="fa-solid fa-eye" onClick={()=>{
+              setShowpassword((prev) => !prev);
+            }}></i></div>
+            </div>
             <input
               type="password"
               placeholder="comfirmpassword"
