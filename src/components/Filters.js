@@ -24,13 +24,19 @@ export default function Filters() {
   return (
     <>
     <div style={{marginBottom:'20px'}} className="p-4 bg-light mt-4 ">
+      <div style={{display:'flex',marginBottom:'20px'}}>
+           <div className="boxs" style={{marginTop:'-5px',width:'100%'}}>
+           <input className='search-size' style={{marginTop:'10px'}} value={searchkey} onChange={e=>setsearch(e.target.value)} placeholder="search" onKeyDown={(e) => {
+        if (e.key === "Enter")
+        dispatch(filterItem(searchkey.toLowerCase()));
+        }}/>
+        <div style={{marginLeft:'10px',marginTop:'10px'}}>
+          <Button onClick={()=>{dispatch(filterItem(searchkey.toLowerCase()))}}>search</Button>
+          </div>
+           </div>
+          </div>
       <Form>
         <Row>
-          <Col>
-           <div style={{marginTop:'-11px'}}>
-           <Form.Control value={searchkey} onChange={e=>setsearch(e.target.value)} placeholder="search" />
-           </div>
-          </Col>
           <Col>
             <Form.Select value={category} aria-label="Default select example" onChange={(e)=>{callback(e)}}>
               <option>all</option>
