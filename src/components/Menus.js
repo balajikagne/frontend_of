@@ -62,7 +62,7 @@ export default function Menus({menu}) {
         </Modal.Header>
 
         <Modal.Body>
-            <img src={menu.img} style={{height:'100px', width:'130px' }}></img>
+            <img src={menu.img} style={{height:'200px', width:'300px' }}></img>
           <p>{menu.dsc}</p>
         </Modal.Body>
 
