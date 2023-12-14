@@ -21,7 +21,7 @@ export default function Menus({menu}) {
          <section id="itemloc">
     <div onClick={handleShow}>
       <h1><b>{menu.name}</b></h1>
-      <img src={menu.img} className='img-fluid' style={{height:'90px',width:'170px'}}></img>
+      <img src={menu.img} className='img-fluid' style={{height:'90px',width:'180px'}}></img>
       </div>
       <div className='flex-container'>
         <div className='w-100 m-1'>
