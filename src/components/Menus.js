@@ -17,11 +17,11 @@ export default function Menus({menu}) {
       // console.log()
     }
   return (
-    <div className='shadow p-2 mb-3 bg-white rounded childc'>
+    <div className='shadow p-2 mb-3 bg-white rounded childc' style={{width:'180px'}}>
          <section id="itemloc">
     <div onClick={handleShow}>
       <h1><b>{menu.name}</b></h1>
-      <img src={menu.img} className='img-fluid' style={{height:'70px',width:'120px'}}></img>
+      <img src={menu.img} className='img-fluid' style={{height:'90px',width:'170px'}}></img>
       </div>
       <div className='flex-container'>
         <div className='w-100 m-1'>
@@ -44,11 +44,12 @@ export default function Menus({menu}) {
       <div className='flex-container'>
             <div className='m-1 w-100'>
                 <h2 className='pbtn'>Price: {menu.prices[0][varient]*quantity} Rs</h2>
-            </div>
-            <div className='m-1 w-100'>
+                <h2 className='pbtn'>Discount :<span style={{textDecoration: 'line-through'}}>{menu.rate}</span></h2>
+                <div className='w-100'>
                 <button className='btn' onClick={addtocart}>
                     Add
                 </button>
+            </div>
             </div>
         </div>
 
