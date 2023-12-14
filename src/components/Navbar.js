@@ -98,10 +98,8 @@ export default function Navbar() {
                 <i class="fa-solid fa-comment" style={{fontSize:'20px',paddingRight:'10px'}}></i>Feedback
               </a>
             </li>
-               <li className="nav-item">
-              <a className="nav-link" href={application} download='testygo.apk' target="_blank" rel="noreferrer">
-                <i class="fa-solid fa-download" style={{fontSize:'20px',paddingRight:'10px'}}></i>Download App
-              </a>
+              <li className="nav-item">
+            <a href="tel:+919579394354" style={{color:'black',textDecoration:'none'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>Helpline Number</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href='/download'>
