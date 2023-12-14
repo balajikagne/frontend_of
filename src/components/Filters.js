@@ -27,7 +27,7 @@ export default function Filters() {
       <div style={{display:'flex',marginBottom:'20px'}}>
            <div className="boxs" style={{marginTop:'-5px',width:'100%'}}>
            <input className='search-size' style={{marginTop:'10px'}} value={searchkey} onChange={e=>setsearch(e.target.value)} placeholder="search" onKeyDown={(e) => {
-        if (e.key === "Enter" ||e.key ==='Search'||e.key==='Forword' || e.key==='Next')
+        if (e.key === "Enter" ||e.key ==='Search'||e.key==='Forward' || e.key==='Next')
         dispatch(filterItem(searchkey.toLowerCase()));
         }}/>
         <div style={{marginLeft:'10px',marginTop:'10px'}}>
