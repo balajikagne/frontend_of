@@ -11,10 +11,10 @@ export default function Download() {
                 <i class="fa-solid fa-download" style={{fontSize:'40px',paddingRight:'10px'}}></i>Download App
               </a>
             </li>
+            <img src="logo1.png" height={'100px'}></img>
+        <h3 style={{fontSize:'40px'}}>TestyGo</h3>
         </div>
         <p>Introducing TestyGo, your ultimate food delivery companion! Savor the convenience of a seamless culinary experience at your fingertips. Our app offers a delectable array of restaurants, ensuring a diverse palette of flavors to satisfy every craving. With user-friendly navigation, swift order placement, and real-time tracking, TestyGo ensures your favorite meals arrive fresh and fast. Elevate your dining journey with our intuitive interface, exclusive deals, and reliable delivery service. TestyGo: where culinary delight meets convenience, making every meal an experience to remember.</p>
-        <img src="logo1.png" height={'100px'}></img>
-        <h3 style={{fontSize:'40px'}}>TestyGo</h3>
      </div>
     </>
   );
