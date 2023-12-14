@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 export default function LoginScreen() {
 
   const [mobNumber, setmobNumber] = useState("");
+    const [showpassword, setShowpassword] = useState(false);
   const [password, setpassword] = useState("");
   const loginstate=useSelector(state=>state.loginUserReducer)
   const {loading,error}=loginstate;
@@ -58,18 +59,26 @@ export default function LoginScreen() {
               }
               required
             ></input>
-          <input
-            type="password"
-            placeholder="password"
-            className="form-control"
-            value={password}
-            onChange={(e)=>{
-              setpassword(e.target.value)
-            }}
-            required
-          ></input>
-          <button onClick={login} className="btn mt-3">Login</button>
-          <br></br>
+          <div style={{display:'flex',justifyContent:'left',marginTop:'10px',cursor:'pointer'}}>
+            <input
+              type={showpassword ? "text" : "password"}
+              placeholder="password"
+              className="form-control"
+              value={password}
+              onChange={(e) => {
+                setpassword(e.target.value);
+              }}
+              required
+            ></input>
+            <div style={{marginTop:'17px',marginLeft:'5px'}}><i class="fa-solid fa-eye" onClick={()=>{
+              setShowpassword((prev) => !prev);
+            }}></i></div>
+            </div>
+            <br></br>
+            <button onClick={login} className="btn mt-3">
+              Login
+            </button>
+            <br></br>
           <NavLink  to="/register" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Click Here To Create New Account</button></NavLink>
           
         </div>
