@@ -22,9 +22,9 @@ const Checkout=({subtotal})=> {
     console.log(cartItems);
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
   const [shippingAddress, setshippingAddress] = useState("");
-  const [city, setcity] = useState("");
+  const [city, setcity] = useState("pune");
   const [Fullname, setFullname] = useState("");
-  const [pincode, setpincode] = useState("");
+  const [pincode, setpincode] = useState(411041);
   const [mobNumber, setmobNumber] = useState("");
   const [showError, setShowError] = useState(false);
   const [time,settime]=useState(new Date())
@@ -133,8 +133,8 @@ const Checkout=({subtotal})=> {
             { 
        Fullname: Fullname,
        shippingAddress:shippingAddress,
-        city:city,
-        pincode:pincode,
+        city:"pune",
+        pincode:411041,
         mobNumber:mobNumber,
        cartItems1:arrName1,
         quantity1:arrQuantity1,
@@ -170,8 +170,8 @@ const Checkout=({subtotal})=> {
             { 
        Fullname: Fullname,
        shippingAddress:shippingAddress,
-        city:city,
-        pincode:pincode,
+        city:"pune",
+        pincode:411041,
         mobNumber:mobNumber,
         cartItems1:arrName2,
         quantity1:arrQuantity2,
@@ -222,8 +222,8 @@ const Checkout=({subtotal})=> {
       { 
         Fullname:Fullname,
  shippingAddress:shippingAddress,
-  city:city,
-  pincode:pincode,
+  city:"pune",
+  pincode:411041,
   mobNumber:mobNumber,
   cartItems1:arrName1,
   quantity1:arrQuantity1,
@@ -256,7 +256,7 @@ const Checkout=({subtotal})=> {
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
       <Form>
-        <Row className="mb-3">
+        <Col className="mb-3">
         <Form.Group as={Col} controlId="formBasicText">
             <Form.Label>Full Name</Form.Label>
             <Form.Control
@@ -266,6 +266,7 @@ const Checkout=({subtotal})=> {
               onChange={(e) => setFullname(e.target.value)}
             />
           </Form.Group>
+          <br></br>
           <Form.Group as={Col} controlId="formGridnae">
             <Form.Label>street</Form.Label>
             <Form.Control
@@ -276,26 +277,26 @@ const Checkout=({subtotal})=> {
             />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridnae">
-            <Form.Label>city</Form.Label>
-            <Form.Control
+          {/* <Form.Group as={Col} controlId="formGridnae"> */}
+            {/* <Form.Label>city</Form.Label> */}
+            {/* <Form.Control
               type="text"
               placeholder="city"
               value={city}
               onChange={(e) => setcity(e.target.value)}
-            />
-          </Form.Group>
-        </Row>
+            /> */}
+          {/* </Form.Group> */}
+        </Col>
 
-        <Form.Group as={Col} controlId="formGridnae">
-          <Form.Label>pincode</Form.Label>
-          <Form.Control
+        {/* <Form.Group as={Col} controlId="formGridnae"> */}
+          {/* <Form.Label>pincode</Form.Label> */}
+          {/* <Form.Control
             type="number"
             placeholder="pincode"
             value={pincode}
             onChange={(e) => setpincode(e.target.value)}
-          />
-        </Form.Group>
+          /> */}
+        {/* </Form.Group> */}
 
         <Form.Group as={Col} controlId="formGridnae">
           <Form.Label>Mob number</Form.Label>
