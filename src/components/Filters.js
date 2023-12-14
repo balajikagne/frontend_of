@@ -63,10 +63,10 @@ export default function Filters() {
               <option>starters</option>
             </Form.Select>
           </Col>
-          <Col>
-          <Button onClick={()=>{dispatch(filterItem(searchkey.toLowerCase()))}}>search</Button>
+          // <Col>
+          // <Button onClick={()=>{dispatch(filterItem(searchkey.toLowerCase()))}}>search</Button>
    
-          </Col>
+          // </Col>
         </Row>
       </Form>
       
