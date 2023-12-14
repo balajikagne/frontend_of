@@ -19,6 +19,7 @@ import aboutUs from './screens/aboutUs';
 import OrderScreen from './screens/OrderScreen';
 import Checkout from './components/Checkout';
 import FullOrderInfo from './screens/FullOrderInfo';
+import Download from './components/Download';
 function App() {
   return (
     <div className='App'>
@@ -38,6 +39,7 @@ function App() {
     <Route path='/checkout' Component={Checkout}></Route>
     <Route path='/admin' Component={AdminScreen}></Route>
     <Route path='/oderfullinfo' Component={FullOrderInfo}></Route>
+     <Route path='/download' Component={Download}></Route>
     </Routes>
     </BrowserRouter>
     </div>
