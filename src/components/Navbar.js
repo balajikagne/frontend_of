@@ -2,7 +2,7 @@ import React,{useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../actions/UserActions";
 import { NavLink } from "react-router-dom";
-import application from './testygo.apk'
+import application from './Testygo_App.apk'
 import 'react-bootstrap';
 export default function Navbar() {
   const cartstate = useSelector((state) => state.addtoCartReducer);
