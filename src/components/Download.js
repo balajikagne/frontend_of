@@ -9,7 +9,7 @@ export default function Download() {
             <img src="logo1.png" height={'100px'}></img>
         <h3 style={{fontSize:'40px'}}>TestyGo</h3>
   <li className="nav-item">
-              <a className="dbtn" href={application} target="_blank" rel="noreferrer">
+              <a className="dbtn" href={application} download='testygo.apk' target="_blank" rel="noreferrer">
                 <i class="fa-solid fa-download" style={{fontSize:'40px',paddingRight:'10px'}}></i>Download App
               </a>
             </li>
