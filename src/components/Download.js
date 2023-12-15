@@ -1,5 +1,5 @@
 import React from "react";
-import application from './testygo.apk';
+import application from './Testygo_App.apk';
 export default function Download() {
   return (
     <>
