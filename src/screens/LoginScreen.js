@@ -84,6 +84,12 @@ export default function LoginScreen() {
         </div>
       </div>
     </div>
+                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+      <div style={{display:'inline',textAlign:'left'}}>
+        <h2>1.New User Please Register First</h2>
+        <h2>2.Login</h2>
+      </div>
+      </div>
   </div>
   )
 }
