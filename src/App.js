@@ -21,6 +21,7 @@ import Checkout from './components/Checkout';
 import FullOrderInfo from './screens/FullOrderInfo';
 import Download from './components/Download';
 import Profile from './screens/Profile';
+import HelpLine from './screens/HelpLine';
 function App() {
   return (
     <div className='App'>
@@ -42,6 +43,7 @@ function App() {
     <Route path='/oderfullinfo' Component={FullOrderInfo}></Route>
      <Route path='/download' Component={Download}></Route>
     <Route path='/profile' Component={Profile}></Route>
+    <Route path='/helpline' Component={HelpLine}></Route>
     </Routes>
     </BrowserRouter>
     </div>
