@@ -119,7 +119,7 @@ const Checkout=({subtotal})=> {
       {
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${Fullname} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}`,
             tts:false,
             color:'white',
           }
@@ -155,7 +155,7 @@ const Checkout=({subtotal})=> {
       if (checkdealer2==='nilesh'){
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${Fullname} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}`,
             tts:false,
             color:'white',
           }
@@ -193,7 +193,7 @@ const Checkout=({subtotal})=> {
       {
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${Fullname} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3}`,
             tts:false,
             color:'white',
           }
