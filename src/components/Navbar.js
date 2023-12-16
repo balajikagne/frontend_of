@@ -56,6 +56,9 @@ export default function Navbar() {
                   className="dropdown-menu"
                   aria-labelledby="dropdownMenuLink"
                 >
+                    <a className="dropdown-item" href="/profile">
+                  <i class="fas fa-user-circle mr-2"></i>Profile
+                  </a>
                   <a className="dropdown-item" href="/orders">
                     <i class="fa-solid fa-bag-shopping"></i>My Orders
                   </a>
