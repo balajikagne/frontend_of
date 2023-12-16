@@ -102,7 +102,9 @@ export default function Navbar() {
               </a>
             </li>
               <li className="nav-item">
-            <a href="tel:+919579394354" style={{color:'black',textDecoration:'none'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>Helpline Number</a>
+              <a className="nav-link" href="/helpline">
+              <i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>HelpLine Number
+              </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href='/download'>
