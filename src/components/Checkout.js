@@ -137,7 +137,7 @@ const Checkout=({subtotal})=> {
        shippingAddress:shippingAddress,
         city:"pune",
         pincode:411041,
-        mobNumber:mobNumber,
+        mobNumber:currentUser.mobNumber,
        cartItems1:arrName1,
         quantity1:arrQuantity1,
         Total_Amount:totalprice1,
@@ -174,7 +174,7 @@ const Checkout=({subtotal})=> {
        shippingAddress:shippingAddress,
         city:"pune",
         pincode:411041,
-        mobNumber:mobNumber,
+        mobNumber:currentUser.mobNumber,
         cartItems1:arrName2,
         quantity1:arrQuantity2,
         Total_Amount:totalprice2,
@@ -226,7 +226,7 @@ const Checkout=({subtotal})=> {
  shippingAddress:shippingAddress,
   city:"pune",
   pincode:411041,
-  mobNumber:mobNumber,
+  mobNumber:currentUser.mobNumber,
   cartItems1:arrName1,
   quantity1:arrQuantity1,
   Total_Amount:totalprice1,
@@ -309,22 +309,6 @@ const Checkout=({subtotal})=> {
             onChange={(e) => setpincode(e.target.value)}
           /> */}
         {/* </Form.Group> */}
-
-        <Form.Group as={Col} controlId="formGridnae">
-          <Form.Label>Mob number</Form.Label>
-          {showError ? (
-        <div style = {{ color: "red" }}> Invalid Mobile Number Length </div>
-      ) : (
-        <div> Valid Mobile number. </div>
-      )}
-      <Form.Control
-            placeholder="Mob Number"
-            type="phone"
-            value = {mobNumber}
-            onChange={handlePhoneNumber}
-          // onChange={(e) => setmobNumber(e.target.value)}
-          />
-        </Form.Group>
         <Button style={{marginTop:'10px'}} variant="primary" onClick={submitform}>
          ORDER NOW
         </Button>
