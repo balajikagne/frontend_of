@@ -27,7 +27,10 @@ export default function Homescreen() {
         if (result.isConfirmed) {
           window.location.href='/login'
         }
-      });
+        else{
+          window.location.href='/login'
+        }
+      })
     }
   }, []);
   useEffect(() => {
