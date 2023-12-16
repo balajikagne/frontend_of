@@ -252,6 +252,25 @@ const Checkout=({subtotal})=> {
       });
       }
     };
+  useEffect(() => {
+    if (localStorage.getItem("currentUser") === null) {
+    
+      swal.fire({
+        title: "Please Login",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location.href='/login'
+        }
+        else{
+          window.location.href='/login'
+        }
+      })
+    }
+  }, []);
   return (
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
