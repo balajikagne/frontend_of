@@ -46,7 +46,7 @@ const Checkout=({subtotal})=> {
   }
     const submitform = async (e) => {
       e.preventDefault();
-      if (showError==true || mobNumber===""||shippingAddress===""||city===""||Fullname===""||pincode===""){
+      if (showError==true ||shippingAddress===""){
         swal.fire({
         title: "Please enter all information currectly",
               text: "Thank You",
