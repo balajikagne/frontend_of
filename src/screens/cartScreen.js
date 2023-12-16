@@ -12,21 +12,24 @@ export default function CartScreen() {
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     const dispatch=useDispatch()
    useEffect(() => {
-      if (localStorage.getItem("currentUser") === null) {
-      
-        swal.fire({
-          title: "Please Login",
-                text: "Thank You",
-                icon: "warning",
-          confirmButtonText: "OK",
-        }).then((result) => {
-          /* Read more about isConfirmed, isDenied below */
-          if (result.isConfirmed) {
-            window.location.href='/login'
-          }
-        });
-      }
-    }, []);
+    if (localStorage.getItem("currentUser") === null) {
+    
+      swal.fire({
+        title: "Please Login",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location.href='/login'
+        }
+        else{
+          window.location.href='/login'
+        }
+      })
+    }
+  }, []);
 return (
     <div>
       <div className='row justity-content-center'>
