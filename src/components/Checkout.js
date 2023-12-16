@@ -18,7 +18,9 @@ import 'react-phone-input-2/lib/style.css'
 import swal from "sweetalert2";
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
-    const cartItems=cartstate.cartItems
+    const cartItems=cartstate.cartItems;
+   const userstate = useSelector((state) => state.loginUserReducer);
+  const { currentUser } = userstate;
     console.log(cartItems);
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
   const [shippingAddress, setshippingAddress] = useState("");
@@ -131,7 +133,7 @@ const Checkout=({subtotal})=> {
         body:JSON.stringify({
           data:[
             { 
-       Fullname: Fullname,
+       Fullname: currentUser.name,
        shippingAddress:shippingAddress,
         city:"pune",
         pincode:411041,
@@ -168,7 +170,7 @@ const Checkout=({subtotal})=> {
         body:JSON.stringify({
           data:[
             { 
-       Fullname: Fullname,
+       Fullname: currentUser.name,
        shippingAddress:shippingAddress,
         city:"pune",
         pincode:411041,
@@ -220,7 +222,7 @@ const Checkout=({subtotal})=> {
       // })
           let data=
       { 
-        Fullname:Fullname,
+        Fullname:currentUser.name,
  shippingAddress:shippingAddress,
   city:"pune",
   pincode:411041,
@@ -276,15 +278,6 @@ const Checkout=({subtotal})=> {
       <h4 className="bg-dark text-light p-2">Order Now</h4>
       <Form>
         <Col className="mb-3">
-        <Form.Group as={Col} controlId="formBasicText">
-            <Form.Label>Full Name</Form.Label>
-            <Form.Control
-              type="name"
-              placeholder="Full Name"
-              value={Fullname}
-              onChange={(e) => setFullname(e.target.value)}
-            />
-          </Form.Group>
           <br></br>
           <Form.Group as={Col} controlId="formGridnae">
             <Form.Label>street</Form.Label>
@@ -332,7 +325,7 @@ const Checkout=({subtotal})=> {
           // onChange={(e) => setmobNumber(e.target.value)}
           />
         </Form.Group>
-        <Button variant="primary" onClick={submitform}>
+        <Button style={{marginTop:'10px'}} variant="primary" onClick={submitform}>
          ORDER NOW
         </Button>
       </Form>
