@@ -20,7 +20,6 @@ export default function OrderScreen() {
     <>
     
       <div className='row'>
-      <hr></hr>
       {loading && (<Loading/>)}
         {error && (<Error error="something went wrong"/>)}
         {orders && orders.map((order)=>{
