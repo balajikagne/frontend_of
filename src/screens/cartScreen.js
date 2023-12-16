@@ -5,17 +5,28 @@ import { deleteFromCart } from "../actions/cartActions";
 import Checkout from "../components/Checkout";
 import { Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import swal from "sweetalert2";
 export default function CartScreen() {
     const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     const dispatch=useDispatch()
-    // console.log(cartItems)
-    // useEffect(() => {
-    //   if (localStorage.getItem("currentUser") === null) {
-    //     window.location.href = "/";
-    //   }
-    // }, []);
+   useEffect(() => {
+      if (localStorage.getItem("currentUser") === null) {
+      
+        swal.fire({
+          title: "Please Login",
+                text: "Thank You",
+                icon: "warning",
+          confirmButtonText: "OK",
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            window.location.href='/login'
+          }
+        });
+      }
+    }, []);
 return (
     <div>
       <div className='row justity-content-center'>
