@@ -33,10 +33,10 @@ function App() {
     <Route path='/admin/addnewitem' Component={AddNewItem}></Route>
     <Route path='/admin/itemlist' Component={Itemlist}></Route>
       <Route path='/aboutus' Component={aboutUs}></Route>
-    <Route path='/home' exact Component={Menu}></Route>
+    <Route path='/' exact Component={Menu}></Route>
     <Route path='/cart' exact Component={cartScreen}></Route>
     <Route path='/register' exact Component={RegisterScreen}></Route>
-    <Route path='/' exact Component={LoginScreen}></Route>
+    <Route path='/login' exact Component={LoginScreen}></Route>
     <Route path='/orders' exact Component={OrderScreen}></Route>
     <Route path='/checkout' Component={Checkout}></Route>
     <Route path='/admin' Component={AdminScreen}></Route>
