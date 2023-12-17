@@ -49,8 +49,8 @@ export default function Homescreen() {
         items.map((menu) => {
           return (
             <div>
-              <div style={{ margin: "-8px" }} key={menu._id}>
-                <Menusa menu={menu} />
+              <div style={{ margin: "-8px" }} >
+                <Menusa menu={menu} key={menu._id}/>
               </div>
             </div>
           );
