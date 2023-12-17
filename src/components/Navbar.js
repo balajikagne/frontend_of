@@ -82,7 +82,7 @@ export default function Navbar() {
             )}
             <div className="navbar1">
             <li className="nav-item">
-              <a className="nav-link" href="/home">
+              <a className="nav-link" href="/">
                 <i class="fa-solid fa-home" style={{fontSize:'20px',paddingRight:'10px'}}></i>Home
               </a>
             </li>
