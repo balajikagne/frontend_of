@@ -33,7 +33,7 @@ function App() {
     <Route path='/admin/addnewitem' Component={AddNewItem}></Route>
     <Route path='/admin/itemlist' Component={Itemlist}></Route>
       <Route path='/aboutus' Component={aboutUs}></Route>
-    <Route path='/' exact Component={Menu}></Route>
+    <Route path='/home' exact Component={Menu}></Route>
     <Route path='/cart' exact Component={cartScreen}></Route>
     <Route path='/register' exact Component={RegisterScreen}></Route>
     <Route path='/login' exact Component={LoginScreen}></Route>
