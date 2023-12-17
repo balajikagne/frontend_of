@@ -19,7 +19,7 @@ export const loginUser=(user)=>async dispatch=>{
         // console.log(response)
         dispatch({type:'USER_LOGIN_SUCCESS',payload: response.data})
         localStorage.setItem('currentUser',JSON.stringify(response.data))
-        window.location.href='/'
+        window.location.href='/home'
     }
     catch(error){
         dispatch({type:'USER_LOGIN_FAILED',payload:error})
@@ -28,6 +28,6 @@ export const loginUser=(user)=>async dispatch=>{
 
 export const logoutUser=()=>dispatch=>{
     localStorage.removeItem('currentUser')
-    window.location.href='/';
+    window.location.href='/home';
 }
 
