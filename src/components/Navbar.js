@@ -13,7 +13,7 @@ export default function Navbar() {
      <div>
     <div style={{marginTop:'100px'}}>
       <nav className="navbar navbar-expand-lg fixed-top shadow-lg p-3 mb-5 bg-white rounded">
-      <a className="navbar-brand" href="/" >
+      <a className="navbar-brand" href="/home" >
           <img src="logo1.png" height={"40px"} width={"40px"} style={{marginBottom:'5px',marginRight:'10px'}}></img>
           <b className="testygoicon">TestyGo</b>
         </a>
@@ -64,7 +64,7 @@ export default function Navbar() {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/"
+                    href="/login"
                     onClick={() => {
                       dispatch(logoutUser());
                     }}
@@ -82,7 +82,7 @@ export default function Navbar() {
             )}
             <div className="navbar1">
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/home">
                 <i class="fa-solid fa-home" style={{fontSize:'20px',paddingRight:'10px'}}></i>Home
               </a>
             </li>
