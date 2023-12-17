@@ -263,7 +263,7 @@ export default function RegisterScreen() {
               Register
             </button>
             <br></br>
-           <NavLink  to="/login" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Already Registered</button></NavLink>
+           <NavLink  to="/login" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Go Back</button></NavLink>
           </div>
         </div>
       </div>
