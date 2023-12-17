@@ -70,7 +70,7 @@ export default function LoginScreen() {
               }}
               required
             ></input>
-            <div style={{marginTop:'17px',marginLeft:'5px'}}><i class="fa-solid fa-eye" onClick={()=>{
+            <div style={{marginTop:'17px',marginLeft:'5px'}}><i className="fa-solid fa-eye" onClick={()=>{
               setShowpassword((prev) => !prev);
             }}></i></div>
             </div>
@@ -86,6 +86,7 @@ export default function LoginScreen() {
     </div>
                 <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
       <div style={{display:'inline',textAlign:'left'}}>
+                <h4 style={{marginBottom:'20px'}}>Steps For Login</h4>
         <h2>1.New Users Please Register First</h2>
         <h2>2.Login</h2>
       </div>
