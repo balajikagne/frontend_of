@@ -1,6 +1,6 @@
 export const slideImages =[
     {
-        images:"pro2.png"
+        images:"prop-1.mp4"
     },
     {
         images:'pro4.png'
