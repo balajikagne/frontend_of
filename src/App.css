@@ -234,3 +234,16 @@ font-family: 'Courier New', Courier, monospace;
   transform: scale(1.08);
   
 }
+
+@media (max-width:475px){
+  .videoplayer{
+    height: 280px;
+    width: 320px;
+  }
+}
+@media (min-width:475px){
+  .videoplayer{
+    height: 600px;
+    width: 850px;
+  }
+}
