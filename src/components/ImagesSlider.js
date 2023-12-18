@@ -5,7 +5,7 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 export default function ImagesSlider({ slides }) {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-  const videoRef=useRef()
+  // const videoRef=useRef()
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
     // videoRef.current.play();
@@ -22,13 +22,7 @@ export default function ImagesSlider({ slides }) {
       nextSlide();
       
     }, 10000);
-    try{
-      videoRef.current.play();
-    }
-    catch(error)
-    {
-      videoRef.current.play();
-    }
+   
     // Cleanup function to clear the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, [current, length]);
@@ -51,7 +45,7 @@ const handle=()=>{
           >
             {index === current && (
               // <img src={slide.images} alt="travel images" className="Imageslide" />
-              <video className="videoplayer" muted ref={videoRef}>
+              <video className="videoplayer" muted autoplay>
         <source
           src={slide.images}
           type="video/mp4"
