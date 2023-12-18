@@ -45,7 +45,7 @@ const handle=()=>{
           >
             {index === current && (
               // <img src={slide.images} alt="travel images" className="Imageslide" />
-              <video className="videoplayer" muted autoplay>
+              <video className="videoplayer" muted autoPlay>
         <source
           src={slide.images}
           type="video/mp4"
