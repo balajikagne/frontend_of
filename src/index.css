@@ -50,6 +50,9 @@ font-family: 'Lato', sans-serif !important;
   font-size: 15px !important;
   
 }
+.btn:hover{
+  background-color: rgb(255, 251, 6)!important;
+}
 .fa-plus{
   color:green !important;
   margin: 5px;
