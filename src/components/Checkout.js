@@ -62,10 +62,11 @@ const Checkout=({subtotal})=> {
       else
       {
         const item = {
-        shippingAddress,
-        city,
-        pincode,
-        mobNumber
+          name:currentUser.name,
+        shippingAddress:shippingAddress,
+        city:'pune',
+        pincode:'411041',
+        mobNumber:currentUser.mobNumber
       };
       const webHooKURL='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
       const webHooKURL1='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
