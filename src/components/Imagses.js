@@ -5,4 +5,8 @@ export const slideImages =[
     {
         images:"prop-2.mp4"
     }
+    ,
+    {
+        images:"prop-3.mp4"
+    }
 ]
