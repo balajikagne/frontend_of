@@ -14,25 +14,7 @@ export default function Homescreen() {
   const itemstate = useSelector((state) => state.getAllitemsReducer);
 
   const { items, error, loading } = itemstate;
-  useEffect(() => {
-    if (localStorage.getItem("currentUser") === null) {
-    
-      swal.fire({
-        title: "Please Login",
-              text: "Thank You",
-              icon: "warning",
-        confirmButtonText: "OK",
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          window.location.href='/login'
-        }
-        else{
-          window.location.href='/login'
-        }
-      })
-    }
-  }, []);
+  
   useEffect(() => {
     dispatch(getAllitems());
   }, []);
