@@ -26,7 +26,7 @@ export default function Homescreen() {
       {loading ? (
         <Loading/>
       ) : error ? (
-        <Error error='something went wrong'/>
+        <Error error='We have been working on Testygo app for two days'/>
       ) : (
         items.map((menu) => {
           return (
