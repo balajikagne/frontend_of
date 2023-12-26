@@ -8,6 +8,7 @@ import { Row } from "react-bootstrap";
 import Filters from "../components/Filters";
 import Slidebar from "../components/Slidebar";
 import swal from "sweetalert2";
+import WarningLine from "../components/WarningLine";
 export default function Homescreen() {
   const dispatch = useDispatch();
 
@@ -20,6 +21,7 @@ export default function Homescreen() {
   }, []);
   return (
    <div>
+    <WarningLine/>
     <Slidebar/>
     <Filters/>
      <div className="democ">
