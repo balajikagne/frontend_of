@@ -4,7 +4,7 @@ function WarningLine() {
   return (
     <>
       <div className='redline'>
-        <div className='headline'><h2 >something went wrong</h2></div>
+        <div className='headline'><h2 >Sorry For the service being unavailable</h2></div>
       </div>
     </>
   )
