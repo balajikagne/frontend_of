@@ -8,6 +8,7 @@ import { deleteItem, getAllitems } from "../actions/MenuActions";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import { loginUserReducer } from "../Reducers/UserReducer";
+import { StockIn, StockOut } from "../actions/OrderActions";
 
 export default function Itemlist() {
   const dispatch = useDispatch();
@@ -81,9 +82,8 @@ export default function Itemlist() {
                       <tr>
                         <th>Image</th>
                         <th>Item Name</th>
-                        <th>Price</th>
-                        <th>Rate</th>
-                        <th>Action</th>
+                        <th>in</th>
+                        <th>Out</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -98,20 +98,55 @@ export default function Itemlist() {
                                 height={"100px"}
                               ></img>
                             </td>
-                            <td>{item.name}</td>
-                            <td>
-                              half :{item.prices[0]["half"]} <br></br>
-                              Full : {item.prices[0]["full"]}
+                            <td style={{ width: "100px" }}>{item.name}</td>
+                            <td style={{ width: "100px" }}>
+                              {/* stock out */}
+                              <h1>
+                                {item.stock === true ? (
+                                  <>
+                                    <h6 className="text-success">stock in</h6>
+                                  </>
+                                ) : (
+                                  <>
+                                    <Button
+                                      className="btn-danger"
+                                      onClick={() => {
+                                        dispatch(StockIn(item.name));
+                                      }}
+                                    >
+                                      Stock-in
+                                    </Button>
+                                  </>
+                                )}{" "}
+                              </h1>
                             </td>
-                            <td>{item.rate}</td>
                             <td>
-                              <i
+                              {/* <i
                                 class="fa-solid fa-trash"
                                 style={{ color: "red", cursor: "pointer" }}
                                 onClick={() => {
                                 dispatch(deleteItem(item._id));
                                 }}
-                              ></i>
+                              ></i> */}
+
+                              <h1>
+                                {item.stock === false ? (
+                                  <>
+                                    <h6 className="text-success">stock out</h6>
+                                  </>
+                                ) : (
+                                  <>
+                                    <Button
+                                      className="btn-danger"
+                                      onClick={() => {
+                                        dispatch(StockOut(item.name));
+                                      }}
+                                    >
+                                      Stock-out
+                                    </Button>
+                                  </>
+                                )}{" "}
+                              </h1>
                             </td>
                           </tr>
                         ))}
