@@ -20,6 +20,17 @@ export default function Menus({menu}) {
     <div className='shadow p-2 mb-3 bg-white rounded childc' style={{width:'180px'}}>
          <section id="itemloc">
     <div onClick={handleShow}>
+    <h1>
+                                {menu.stock === true ? (
+                                  <>
+                                    <h6 className="text-success" >Availble</h6>
+                                  </>
+                                ) : (
+                                  <>
+                                    <h6 style={{color:'red'}}>Unavailable</h6>
+                                  </>
+                                )}{" "}
+                              </h1>
       <h1><b>{menu.name}</b></h1>
       <img src={menu.img} className='img-fluid' style={{height:'90px',width:'180px'}}></img>
       </div>
