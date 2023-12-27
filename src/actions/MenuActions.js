@@ -3,7 +3,7 @@ import swal from 'sweetalert'
 export const getAllitems=()=>async dispatch=>{
     dispatch({type:'GET_ITEMS_REQ'})
     try {
-        const response=await axios.get('1https://super-worm-visor.cyclic.app/api/items/getallitems')
+        const response=await axios.get('https://super-worm-visor.cyclic.app/api/items/getallitems')
         
         dispatch({type:'GET_ITEMS_SUCCESS',payload :response.data})
     }catch(error){
