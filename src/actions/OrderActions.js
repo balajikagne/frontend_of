@@ -5,7 +5,7 @@ export const placeOrder = (token, subtotal) => async (dispatch, getState) => {
   const cartItems = getState().addtoCartReducer.cartItems;
   console.log(token,subtotal,currentUser,cartItems)
   try {
-    const res = await axios.post("/api/orders/placeorder", {
+    const res = await axios.post("https://super-worm-visor.cyclic.app/api/orders/placeorder", {
       token,
       subtotal,
       currentUser,
@@ -23,7 +23,7 @@ export const getUserOrders=()=>async (dispatch,getState)=>{
   dispatch({type:"USER_ORDER_REQ",
 });
 try{
-  const response=await axios.post("/api/orders/getuserorder",{
+  const response=await axios.post("https://super-worm-visor.cyclic.app/api/orders/getuserorder",{
     userid:currentUser._id,
   });
   console.log(response)
@@ -37,7 +37,7 @@ catch(error)
 export const getALLOrders = () => async (dispatch,getState) => {
     dispatch({ type: "ALL_ORDER_REQ" });
     try {
-      const res = await axios.get("/api/orders/getallorders");
+      const res = await axios.get("https://super-worm-visor.cyclic.app/api/orders/getallorders");
       dispatch({ type: "ALL_ORDER_SUCCESS" ,payload:res.data});
       
     } catch (error) {
@@ -49,8 +49,8 @@ export const getALLOrders = () => async (dispatch,getState) => {
   export const deliveredOrders = (orderid) => async (dispatch,getState) => {
     dispatch({ type: "GET_ALL_ORDER_REQ" });
     try {
-      const res = await axios.post("/api/orders/deliverorder",{orderid});
-      const orders=await  axios.get("/api/items/getallitems")
+      const res = await axios.post("https://super-worm-visor.cyclic.app/api/orders/deliverorder",{orderid});
+      const orders=await  axios.get("https://super-worm-visor.cyclic.app/api/items/getallitems")
       dispatch({ type: "GET_ALL_ORDER_SUCCESS" ,payload:orders.data});
       window.location.href="/admin/orderlist"
     } catch (error) {
@@ -62,8 +62,8 @@ export const getALLOrders = () => async (dispatch,getState) => {
   export const StockIn = (itemId) => async (dispatch,getState) => {
     dispatch({type:'GET_ITEMS_REQ'});
     try {
-      const res = await axios.post("/api/items/itemlistin",{itemId});
-      const orders=await  axios.get("/api/items/getallitems")
+      const res = await axios.post("https://super-worm-visor.cyclic.app/api/items/itemlistin",{itemId});
+      const orders=await  axios.get("https://super-worm-visor.cyclic.app/api/items/getallitems")
       dispatch({type:'GET_ITEMS_SUCCESS',payload:orders.data});
       // window.location.href="/admin/itemlist"
     } catch (error) {
@@ -75,8 +75,8 @@ export const getALLOrders = () => async (dispatch,getState) => {
   export const StockOut = (itemId) => async (dispatch,getState) => {
     dispatch({type:'GET_ITEMS_REQ'});
     try {
-      const res = await axios.post("/api/items/itemlistout",{itemId});
-      const orders=await  axios.get("/api/items/getallitems")
+      const res = await axios.post("https://super-worm-visor.cyclic.app/api/items/itemlistout",{itemId});
+      const orders=await  axios.get("https://super-worm-visor.cyclic.app/api/items/getallitems")
       dispatch({type:'GET_ITEMS_SUCCESS',payload:orders.data});
       // window.location.href="/admin/itemlist"
     } catch (error) {
