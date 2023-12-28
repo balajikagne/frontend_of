@@ -1,16 +1,10 @@
+import prop1 from "./prop-1.json"
+import prop2 from "./prop-2.json"
 export const slideImages =[
     {
-        images:"prop-5.mp4"
+        images:prop1
     },
     {
-        images:"prop-2.mp4"
-    }
-    ,
-    {
-        images:"pro-3.mp4"
-    }
-    ,
-    {
-        images:"pro-4.mp4"
+        images:prop2
     }
 ]
