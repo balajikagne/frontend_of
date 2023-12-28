@@ -16,7 +16,8 @@ import  axios  from "axios";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import swal from "sweetalert2";
-import dboy from "./Delivery_Boy.gif"
+import dboy from "./dboys.json"
+import Lottie from 'react-lottie';
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems;
@@ -275,11 +276,19 @@ const Checkout=({subtotal})=> {
       })
     }
   }, []);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: dboy,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
       <div>
-        <img src={dboy} height={'200px'} width={'300px'}></img>
+       <Lottie options={defaultOptions} height={300} width={300} />
       </div>
       <Form>
         <Col className="mb-3">
