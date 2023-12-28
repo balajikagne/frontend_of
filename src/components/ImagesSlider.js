@@ -1,7 +1,8 @@
 import React, { useState, useEffect ,useRef} from "react";
 import { slideImages } from "./Imagses";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-
+import Lottie from 'react-lottie';
+// import dboy from "./dboys.json"
 export default function ImagesSlider({ slides }) {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
@@ -30,9 +31,16 @@ export default function ImagesSlider({ slides }) {
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
   }
-const handle=()=>{
-  
-}
+const defaultOptions =(dboyid)=> {
+  return{
+    loop: true,
+  autoplay: true,
+  animationData: dboyid,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+  }
+};
   return (
     <>
       <section className="slider">
@@ -45,13 +53,16 @@ const handle=()=>{
           >
             {index === current && (
               // <img src={slide.images} alt="travel images" className="Imageslide" />
-              <video className="videoplayer" muted autoPlay>
-        <source
-          src={slide.images}
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+      //         <video className="videoplayer" muted autoPlay>
+      //   <source
+      //     src={slide.images}
+      //     type="video/mp4"
+      //   />
+      //   Your browser does not support the video tag.
+      // </video>
+      <div className="videoplayer" style={{marginTop:'20px'}} >
+      <Lottie options={defaultOptions(slide.images)}/>
+      </div>
             )}
           </div>
         ))}
@@ -60,4 +71,5 @@ const handle=()=>{
     </>
   );
 }
+
 
