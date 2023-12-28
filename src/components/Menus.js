@@ -13,7 +13,18 @@ export default function Menus({menu}) {
     const dispatch=useDispatch()
     function addtocart()
     {
+     if (menu.stock===false)
+     {
+      swal.fire({
+        title: "This item is out of stock",
+              text: "Thank You",
+              icon: "warning",
+        confirmButtonText: "OK",
+      })
+     }
+     else{
       dispatch(addToCart(menu,quantity,varient,menu.country))
+     }
       // console.log()
     }
   return (
