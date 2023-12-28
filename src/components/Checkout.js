@@ -16,6 +16,7 @@ import  axios  from "axios";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import swal from "sweetalert2";
+import dboy from "./Delivery_Boy.gif"
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems;
@@ -277,6 +278,9 @@ const Checkout=({subtotal})=> {
   return (
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
+      <div>
+        <img src={dboy} height={'200px'} width={'300px'}></img>
+      </div>
       <Form>
         <Col className="mb-3">
           <br></br>
