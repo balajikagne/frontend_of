@@ -61,7 +61,7 @@ const defaultOptions =(dboyid)=> {
       //   Your browser does not support the video tag.
       // </video>
       <div className="videoplayer" style={{marginTop:'20px'}} >
-      <Lottie options={defaultOptions(slide.images)}/>
+      <Lottie options={defaultOptions(slide.images)} style={{ width: '100%' }}/>
       </div>
             )}
           </div>
