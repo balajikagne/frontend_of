@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {Modal} from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux';
 import { addToCart } from '../actions/cartActions';
+import swal from 'sweetalert2';
 export default function Menus({menu}) {
     const [varient,setVarient]=useState("half");
     const [quantity,setQuantity]=useState(1);
