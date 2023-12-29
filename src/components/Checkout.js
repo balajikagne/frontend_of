@@ -242,8 +242,40 @@ const Checkout=({subtotal})=> {
           console.log(error)
         }
       }
+         Notification.requestPermission().then(perm=>{
+      if (perm==="granted")
+      {
+        const notification=new Notification("Testygo",{
+          body:"Your Order Is Confirmed",
+          data:{hellow:"Order will be delivered within 35 minutes"},
+          icon:'logo1.png',
+          tag:"welcome"
+        })
+        notification.addEventListener("close",e=>{
+          console.log(e)
+        })
+      }
+      let notification;
+      let interval;
+      document.addEventListener("visibilitychange",()=>{
+        if (document.visibilityState==="hidden")
+        {
+          const leaveDate=new Date()
+          interval=setInterval(()=>{
+            notification=new Notification("Track Order In My Order",{
+              body:`You have ${Math.round((new Date()-leaveDate)/1000)}seconds`,
+              icon:'logo1.png',
+              tag:"Thank you"
+            })
+          },100)
+        }
+        else{
+         if (interval) clearInterval(interval)
+          if (notification) notification.close()
+        }
+      })
+    })
       dispatch(placeOrder(item,subtotal));
-        console.log(item,subtotal);
       swal.fire({
         title: "Your order will be delivered within 35 minutes",
               text: "Thank You",
