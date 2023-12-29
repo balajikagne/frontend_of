@@ -242,7 +242,8 @@ const Checkout=({subtotal})=> {
           console.log(error)
         }
       }
-         Notification.requestPermission().then(perm=>{
+        let perm="granted";
+         Notification.requestPermission().then(()=>{
       if (perm==="granted")
       {
         const notification=new Notification("Testygo",{
