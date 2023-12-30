@@ -75,7 +75,7 @@ export const filterI=(category)=>async dispatch=>{
       let  filterdItem1;
     try{
         // console.log(category)
-        const res=await axios.get("1https://super-worm-visor.cyclic.app/api/items/getallitems")
+        const res=await axios.get("https://super-worm-visor.cyclic.app/api/items/getallitems")
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
            if (category==='all')
            {
