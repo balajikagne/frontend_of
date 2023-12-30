@@ -51,7 +51,7 @@ export default function Filters() {
         dispatch(filterItem(Value.toLowerCase()));
         }}/>
         <div style={{marginLeft:'10px',marginTop:'10px'}}>
-          <Button onClick={()=>{onSearch(Value)}}>search</Button>
+          <Button onClick={()=>{onSearch(Value.toLowerCase())}}>search</Button>
           </div>
            </div>
           </div>
@@ -94,7 +94,7 @@ export default function Filters() {
                 return(searchItem && inames.includes(searchItem) &&searchItem!==inames)
               }).map(item=>{
                 return<div className="dropdown-rows" key={item._id}>
-                  <h8  onClick={()=>{onSearch(item.name)}} >{item.name}</h8>
+                  <h8  onClick={()=>{onSearch(item.name.toLowerCase())}} >{item.name}</h8>
                 </div>
               }).slice(0,6)
             }
