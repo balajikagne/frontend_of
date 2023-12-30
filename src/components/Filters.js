@@ -7,6 +7,24 @@ export default function Filters() {
   const dispatch = useDispatch();
   const [searchkey,setsearch]=useState('');
   const [category,setcategory]=useState('');
+   const [getdata,setgetdata]=useState([]);
+  const [Value,setValue]=useState('')
+  useEffect(()=>{
+    axios.get("https://super-worm-visor.cyclic.app/api/items/getallitems").then(res=>{
+      
+      setgetdata(res.data);
+          }).catch(error=>{
+      console.log(error)
+    })
+  },[])
+  function onChange(e)
+  {
+    setValue(e.target.value)
+  }
+  function onSearch(e){
+    setValue(e)
+    dispatch(filterItem(e))
+  }
   function callback(e){
     // if (searchkey!=='' ||searchkey){
     //   dispatch(filterItem(searchkey.toLowerCase()))
@@ -14,6 +32,7 @@ export default function Filters() {
     // else{
     //   dispatch(filterI(category))
     // }
+    
     setcategory(e.target.value);
     // console.log()
     dispatch(filterI(e.target.value))
@@ -26,12 +45,12 @@ export default function Filters() {
     <div style={{marginBottom:'20px'}} className="p-4 bg-light mt-4 ">
       <div style={{display:'flex',marginBottom:'20px'}}>
            <div className="boxs" style={{marginTop:'-5px',width:'100%'}}>
-           <input className='search-size' style={{marginTop:'10px'}} value={searchkey} onChange={e=>setsearch(e.target.value)} placeholder="search" onKeyDown={(e) => {
+           <input className='search-size' style={{marginTop:'10px'}} value={Value} onChange={e=>{onChange(e)}} placeholder="search" onKeyDown={(e) => {
         if (e.key === "Enter" ||e.key ==='Search'||e.key==='Forward' || e.key==='Next')
-        dispatch(filterItem(searchkey.toLowerCase()));
+        dispatch(filterItem(Value.toLowerCase()));
         }}/>
         <div style={{marginLeft:'10px',marginTop:'10px'}}>
-          <Button onClick={()=>{dispatch(filterItem(searchkey.toLowerCase()))}}>search</Button>
+          <Button onClick={()=>{onSearch(Value)}}>search</Button>
           </div>
            </div>
           </div>
@@ -65,7 +84,21 @@ export default function Filters() {
           </Col>
         </Row>
       </Form>
-      
+      <div className="dropdow">
+    <div className="outer_dropdown">
+            {
+              getdata.filter(item=>{
+                let searchItem=Value.toLowerCase();
+                let inames=item.name.toLowerCase()
+                return(searchItem && inames.includes(searchItem) &&searchItem!==inames)
+              }).map(item=>{
+                return<div className="dropdown-rows" key={item._id}>
+                  <h8  onClick={()=>{onSearch(item.name)}} >{item.name}</h8>
+                </div>
+              }).slice(0,6)
+            }
+            </div>
+           </div>
     </div>
  <div style={{width:'100%',marginBottom:'40px'}}>
         <div className="scrollitems" style={{display:'flex',width:'100%',overflow:'scroll',overflowY:'hidden',marginBottom:'20px'}}>
