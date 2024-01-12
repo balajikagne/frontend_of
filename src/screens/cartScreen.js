@@ -11,6 +11,20 @@ export default function CartScreen() {
     const cartItems=cartstate.cartItems
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     const dispatch=useDispatch()
+    function CheckAction(){
+      if (subtotal===0)
+      {
+        swal.fire({
+          title: "Please add atleast 1 item in cart",
+                text: "Thank You",
+                icon: "warning",
+          confirmButtonText: "OK",
+        })
+      }
+      else{
+        window.location.href="/checkout"
+      }
+    }
    useEffect(() => {
     if (localStorage.getItem("currentUser") === null) {
     
@@ -39,7 +53,8 @@ return (
             <h2 style={{fontSize:'40px'}}>(30 RS /- Delivery Charges Below 100 Rs /-)</h2>
             <div className='totalp' style={{display:'flex'}}>
             <h2 style={{fontSize:'40px'}}>Subtotal : {subtotal} /Rs-</h2>
-            <button className="btn" style={{height:'40px',marginLeft:'50px'}}><NavLink to={"/checkout"} style={{fontSize:'20px',textDecoration:'none',cursor:"pointer"}}>Order Now</NavLink></button>
+                       <button className="btn" style={{height:'40px',marginLeft:'50px'}} onClick={()=>{CheckAction()}}>Order Now</button>
+
              </div>
             {cartItems.map(item=>{
                 return <div className="flex-container" key={item._id}>
