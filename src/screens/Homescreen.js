@@ -21,7 +21,7 @@ export default function Homescreen() {
   }, []);
   return (
    <div>
-    <WarningLine/>
+   // <WarningLine/>
     <Slidebar/>
     <Filters/>
      <div className="democ">
