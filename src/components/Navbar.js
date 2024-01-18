@@ -17,7 +17,7 @@ export default function Navbar() {
           <img src="logo1.png" height={"40px"} width={"40px"} style={{marginBottom:'5px',marginRight:'10px'}}></img>
           <b className="testygoicon">TestyGo</b>
         </a>
-     <div className="cartsitems1">
+     <div className="cartsitems1 iconame">
      <li className="cartsitems" >
               <a className="nav-link" href="/cart" style={{fontSize:'20px'}}>
               <i className="fa-solid fa-cart-shopping" style={{fontSize:'20px'}}></i> {cartstate.cartItems.length}
