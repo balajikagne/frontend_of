@@ -45,7 +45,7 @@ function App() {
      <Route path='/download' Component={Download}></Route>
     <Route path='/profile' Component={Profile}></Route>
     <Route path='/helpline' Component={HelpLine}></Route>
-    <Route path='/notify=?' Component={NotifyScreen}></Route>
+    <Route path='/notify' Component={NotifyScreen}></Route>
     </Routes>
     </BrowserRouter>
     </div>
