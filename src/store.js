@@ -11,6 +11,7 @@ import { AdditemsReducer } from './Reducers/itemReducers';
 import { getItemById } from './actions/MenuActions';
 import { allOrdersReducer } from './Reducers/orderReducer';
 import { getUserOrderReducer } from './Reducers/orderReducer';
+import { setAllitemsReducer } from './Reducers/itemReducers';
 const finalReducer =combineReducers({
     getAllitemsReducer:getAllitemsReducer,
     addtoCartReducer : addtoCartReducer,
