@@ -10,39 +10,7 @@ const aboutUs = () => {
     <div className="row h-100 align-items-center py-5">
       <div className="col-lg-6">
         <h1 className="display-4">About us page</h1>
-        <p className="lead text-muted mb-0">Welcome to TestyGo.com, your gateway to a world of culinary delight! Founded by balaji kagne and  Prasad Wandhekar, TestyGo.com is your go-to online food delivery platform for a delicious and convenient dining experience.
-
-Our Story
-
-TestyGo.com was born from a shared love for good food and a desire to make it accessible to everyone, anytime, and anywhere. balaji kagne and prasad wandhekar with his background in technology and a passion for culinary adventures, envisioned a platform that would bridge the gap between hungry hearts and delectable dishes. Balaji Kagne  a fellow food enthusiast and a seasoned entrepreneur, joined hands with Prasad wandhekar to bring this vision to life.
-
-Our Mission
-
-At TestyGo.com, our mission is simple yet impactful: to satisfy your cravings with a diverse selection of mouthwatering cuisines while ensuring convenience, affordability, and unparalleled taste.
-
-What Sets Us Apart
-
-Culinary Diversity: TestyGo.com is your culinary passport to explore a wide range of cuisines, from local favorites to global delights. Our extensive menu ensures that there's something for every palate.
-
-Easy Ordering: We've designed our platform to be user-friendly and efficient. Ordering your favorite dishes is just a few clicks away, making it hassle-free and enjoyable.
-
-Swift Delivery: We understand the importance of prompt and reliable food delivery. Our dedicated delivery team ensures that your order arrives hot and fresh at your doorstep, right on time.
-
-Quality Assurance: We partner with top-rated restaurants and chefs known for their commitment to quality and taste. Your satisfaction is our top priority, and we go the extra mile to deliver the best.
-
-Secure Transactions: Your payment information is safeguarded with the latest encryption technology, ensuring a secure and worry-free online ordering experience.
-
-Meet the Founders
-
-balaji kagne and prasad wandhekar , a tech-savvy food enthusiast, brings a blend of innovation and passion to TestyGo.com. His vision is to create a seamless and enjoyable food delivery experience for everyone.
-
-Balaji kagne and prasad wandhekar, a seasoned entrepreneur, understands the intricacies of business and customer satisfaction. His dedication to excellence drives TestyGo.com's growth and commitment to customer delight.
-
-Join Us for a Feast
-
-TestyGo.com invites you to embark on a culinary journey like no other. Whether you're a foodie looking to explore new flavors, a busy professional in need of a convenient meal solution, or simply craving your favorite dish, we've got you covered.
-
-Thank you for choosing TestyGo.com as your trusted food delivery partner. We're here to make your dining experience extraordinary, one delectable dish at a time. Order now and let your taste buds celebrate!</p>
+       
         <p className="lead text-muted"><a href="/" className="text-muted"> 
                     <u>Order Now</u></a>
         </p>
