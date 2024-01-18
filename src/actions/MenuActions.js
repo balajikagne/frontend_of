@@ -10,7 +10,17 @@ export const getAllitems=()=>async dispatch=>{
         dispatch({type:"GET_ITEMS_FAILED",payload : error})
     }
 }
-
+export const getAllitems_new=()=>async (dispatch, getState) => {
+    dispatch({type:'GET_ITEMS_REQ_NEW'})
+    
+    try {
+        // const response=await axios.get('/api/items/getallitems')
+        const res=await axios.get("/api/items/Notificationlist")////
+        dispatch({type:'GET_ITEMS_SUCCESS_NEW',payload :res.data})
+    }catch(error){
+        dispatch({type:"GET_ITEMS_FAILED_NEW",payload : error})
+    }
+}
 export const addItems=(item)=>async (dispatch)=>{
     dispatch({type:'ADD_ITEMS_REQ'})
     
