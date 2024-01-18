@@ -362,6 +362,17 @@ font-family: 'Courier New', Courier, monospace;
 .cartsitems1{
   display: flex;
 }
+.outnoti{
+  display: flex;
+}
+.des-notify{
+  text-align: left;
+}
+.img-notify >img{
+  margin-right: 20px;
+  height: 100px;
+  width: 100px;
+}
 
 
 
