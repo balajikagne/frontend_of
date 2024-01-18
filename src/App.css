@@ -374,5 +374,8 @@ font-family: 'Courier New', Courier, monospace;
   width: 100px;
 }
 
+.fa-bell:hover{
+  color: aqua;
 
+}
 
