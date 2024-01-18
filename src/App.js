@@ -22,6 +22,7 @@ import FullOrderInfo from './screens/FullOrderInfo';
 import Download from './components/Download';
 import Profile from './screens/Profile';
 import HelpLine from './screens/HelpLine';
+import NotifyScreen from './screens/NotifyScreen';
 function App() {
   return (
     <div className='App'>
@@ -44,6 +45,7 @@ function App() {
      <Route path='/download' Component={Download}></Route>
     <Route path='/profile' Component={Profile}></Route>
     <Route path='/helpline' Component={HelpLine}></Route>
+    <Route path='/notify=?' Component={NotifyScreen}></Route>
     </Routes>
     </BrowserRouter>
     </div>
