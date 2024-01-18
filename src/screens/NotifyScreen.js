@@ -10,7 +10,7 @@ function NotifyScreen() {
     
     const notification=useSelector(notify=>notify.setAllitemsReducer)
     const { items, error, loading }=notification;
-    console.log(notification)
+    console.log(notification,"heh")
     useEffect(()=>{
       dispatch(getAllitems_new())
   },[])
