@@ -16,6 +16,7 @@ export const getAllitems_new=()=>async (dispatch, getState) => {
     try {
         // const response=await axios.get('/api/items/getallitems')
         const res=await axios.get("/api/items/Notificationlist")////
+        console.log(res.data)
         dispatch({type:'GET_ITEMS_SUCCESS_NEW',payload :res.data})
     }catch(error){
         dispatch({type:"GET_ITEMS_FAILED_NEW",payload : error})
