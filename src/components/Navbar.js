@@ -54,7 +54,7 @@ export default function Navbar() {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i class="fa-solid fa-user"></i> {currentUser.name}
+                  <i className="fa-solid fa-user"></i> {currentUser.name}
                 </a>
 
                 <div
@@ -62,10 +62,10 @@ export default function Navbar() {
                   aria-labelledby="dropdownMenuLink"
                 >
                     <a className="dropdown-item" href="/profile">
-                  <i class="fas fa-user-circle mr-2"></i>Profile
+                  <i className="fas fa-user-circle mr-2"></i>Profile
                   </a>
                   <a className="dropdown-item" href="/orders">
-                    <i class="fa-solid fa-bag-shopping"></i>My Orders
+                    <i className="fa-solid fa-bag-shopping"></i>My Orders
                   </a>
                   <a
                     className="dropdown-item"
@@ -74,46 +74,46 @@ export default function Navbar() {
                       dispatch(logoutUser());
                     }}
                   >
-                    <li><i class="fa-solid fa-right-from-bracket"></i>Logout</li>
+                    <li><i className="fa-solid fa-right-from-bracket"></i>Logout</li>
                   </a>
                 </div>
               </div>
             ) : (
               <li className="nav-item">
                 <a className="nav-link" href="/login">
-                  <i class="fas fa-sign-in"></i>Login <span className="sr-only">(current)</span>
+                  <i className="fas fa-sign-in"></i>Login <span className="sr-only">(current)</span>
                 </a>
               </li>
             )}
             <div className="navbar1">
             <li className="nav-item">
               <a className="nav-link" href="/">
-                <i class="fa-solid fa-home" style={{fontSize:'20px',paddingRight:'10px'}}></i>Home
+                <i className="fa-solid fa-home" style={{fontSize:'20px',paddingRight:'10px'}}></i>Home
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/admin">
-                <i class="fa-solid fa-lock" style={{fontSize:'20px',paddingRight:'10px'}}></i>Admin
+                <i className="fa-solid fa-lock" style={{fontSize:'20px',paddingRight:'10px'}}></i>Admin
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/aboutus">
-                <i class="fa-solid fa-address-card" style={{fontSize:'20px',paddingRight:'10px'}}></i>About us
+                <i className="fa-solid fa-address-card" style={{fontSize:'20px',paddingRight:'10px'}}></i>About us
               </a>
             </li>
                <li className="nav-item">
               <a className="nav-link" href="https://forms.gle/RmJtbGjadz1yfzUQ8">
-                <i class="fa-solid fa-comment" style={{fontSize:'20px',paddingRight:'10px'}}></i>Feedback
+                <i className="fa-solid fa-comment" style={{fontSize:'20px',paddingRight:'10px'}}></i>Feedback
               </a>
             </li>
               <li className="nav-item">
               <a className="nav-link" href="/helpline">
-              <i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>HelpLine Number
+              <i className="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>HelpLine Number
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href='/download'>
-                <i class="fa-solid fa-download" style={{fontSize:'20px',paddingRight:'10px'}}></i>Download App
+                <i className="fa-solid fa-download" style={{fontSize:'20px',paddingRight:'10px'}}></i>Download App
               </a>
             </li>
             </div>
