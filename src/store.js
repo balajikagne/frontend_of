@@ -21,7 +21,8 @@ const finalReducer =combineReducers({
     getItemById:getItemById,
     allOrdersReducer:allOrdersReducer,
     getUserOrderReducer:getUserOrderReducer,
-    getItemByIdReducer:getItemByIdReducer
+    getItemByIdReducer:getItemByIdReducer,
+    setAllitemsReducer:setAllitemsReducer
 })
 const cartItems=localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')):[]
 const currentUser=localStorage.getItem('currentUser')? JSON.parse(localStorage.getItem('currentUser')):null
