@@ -30,7 +30,7 @@ export default function Navbar() {
         </li>
      </div>
         <button
-          className="navbar-toggler iconame"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
