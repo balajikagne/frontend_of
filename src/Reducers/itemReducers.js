@@ -16,7 +16,24 @@ export const getAllitemsReducer=(state={items:[]},action)=>{
         default:return state
     }
 }
-
+export const setAllitemsReducer=(state={items:[]},action)=>{
+    switch(action.type)
+    {
+        case 'GET_ITEMS_REQ_NEW':return{
+            loading:true,
+            ...state
+        }
+        case 'GET_ITEMS_SUCCESS_NEW':return{
+            loading:false,
+            items:action.payload
+        }
+        case 'GET_ITEMS_FAILED_NEW':return{
+            error:action.payload,
+            loading:false
+        }
+        default:return state
+    }
+}
 export const AdditemsReducer=(state={},action)=>{
     switch(action.type)
     {
