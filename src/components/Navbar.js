@@ -20,12 +20,12 @@ export default function Navbar() {
      <div className="cartsitems1">
      <li className="cartsitems" >
               <a className="nav-link" href="/cart" style={{fontSize:'20px'}}>
-              <i class="fa-solid fa-cart-shopping" style={{fontSize:'20px'}}></i> {cartstate.cartItems.length}
+              <i className="fa-solid fa-cart-shopping" style={{fontSize:'20px'}}></i> {cartstate.cartItems.length}
               </a>
         </li>
         <li className="cartsitems" >
             <a className="nav-link" href="/" style={{fontSize:'20px'}}>
-              <i class="fa-solid fa-bell"></i>
+              <i className="fa-solid fa-bell"></i>
               </a>
         </li>
      </div>
