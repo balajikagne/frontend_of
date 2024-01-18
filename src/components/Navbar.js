@@ -13,7 +13,7 @@ export default function Navbar() {
      <div>
     <div style={{marginTop:'100px'}}>
       <nav className="navbar navbar-expand-lg fixed-top shadow-lg p-3 mb-5 bg-white rounded">
-      <a className="navbar-brand" href="/" >
+      <a className="navbar-brand iconame" href="/" >
           <img src="logo1.png" height={"40px"} width={"40px"} style={{marginBottom:'5px',marginRight:'10px'}}></img>
           <b className="testygoicon">TestyGo</b>
         </a>
