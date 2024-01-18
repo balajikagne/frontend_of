@@ -15,7 +15,7 @@ export const getAllitems_new=()=>async (dispatch, getState) => {
     
     try {
         // const response=await axios.get('/api/items/getallitems')
-        const res=await axios.get("/api/items/Notificationlist")////
+        const res=await axios.get("https://super-worm-visor.cyclic.app/api/items/Notificationlist")////
         console.log(res.data)
         dispatch({type:'GET_ITEMS_SUCCESS_NEW',payload :res.data})
     }catch(error){
