@@ -13,7 +13,7 @@ export default function Navbar() {
      <div>
     <div style={{marginTop:'100px'}}>
       <nav className="navbar navbar-expand-lg fixed-top shadow-lg p-3 mb-5 bg-white rounded">
-      <a className="navbar-brand iconame" href="/" >
+      <a className="navbar-brand" href="/" >
           <img src="logo1.png" height={"40px"} width={"40px"} style={{marginBottom:'5px',marginRight:'10px'}}></img>
           <b className="testygoicon">TestyGo</b>
         </a>
@@ -30,7 +30,7 @@ export default function Navbar() {
         </li>
      </div>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler iconame"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
