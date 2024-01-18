@@ -359,7 +359,9 @@ font-family: 'Courier New', Courier, monospace;
     
   }
 }
-
+.cartsitems1{
+  display: flex;
+}
 
 
 
