@@ -24,9 +24,9 @@ export default function Navbar() {
               </a>
         </li>
         <li className="cartsitems" >
-             
+            <a className="nav-link" href="/cart" style={{fontSize:'20px'}}>
               <i class="fa-solid fa-bell"></i>
-            
+              </a>
         </li>
      </div>
         <button
