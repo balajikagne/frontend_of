@@ -35,7 +35,7 @@ export default function Menus({menu}) {
     <h1>
                                 {menu.stock === true ? (
                                   <>
-                                    <h6 className="text-success" >Availble</h6>
+                                    <h6 className="text-success" >Available</h6>
                                   </>
                                 ) : (
                                   <>
