@@ -7,8 +7,5 @@ export const slideImages =[
     },
     {
         images:prop2
-    },
-    {
-        images:prop3
     }
 ]
