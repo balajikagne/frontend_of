@@ -6,6 +6,6 @@ export const slideImages =[
         images:prop1
     },
     {
-        images:prop3
+        images:prop2
     }
 ]
