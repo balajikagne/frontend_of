@@ -150,7 +150,7 @@ export default function RegisterScreen() {
 
   function register() {
     if (OTP_MOB_A[0] !== " " ||mobNumber!=='') {
-      if (password !== cpassword ||||mobNumber!==''||otp!==''||OTP_MOB_A[0] === " " ||password===''||name==='') {
+      if (password !== cpassword && mobNumber===''&& otp===''&& OTP_MOB_A[0] === " " && password===''&& name==='') {
         // alert("passwords not matched");
         console.log("hellow")
        swal.fire({
@@ -161,13 +161,13 @@ export default function RegisterScreen() {
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          // window.location.href='/register'
+          window.location.href='/register'
         }
       });
         
       } 
       else {
-        console.log("hellow2")
+       
         const user = {
           name,
           // location,
