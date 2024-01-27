@@ -35,7 +35,10 @@ export default function RegisterScreen() {
   }
 
   function onSignInSubmit() {
-    const myInterval = setInterval(() => {
+    
+    try {
+      if (mobNumber !== "") {
+        const myInterval = setInterval(() => {
       swal.fire({
         title: "Please verify that you are human",
         text: "Thank You",
@@ -47,8 +50,6 @@ export default function RegisterScreen() {
       clearInterval(myInterval);
     }, 1500);
 
-    try {
-      if (mobNumber !== "") {
         configure();
         try {
           let phoneNumber = "+91" + mobNumber;
@@ -58,6 +59,7 @@ export default function RegisterScreen() {
 
           signInWithPhoneNumber(auth, phoneNumber, appVerifier)
             .then((confirmationResult) => {
+              
               // SMS sent. Prompt user to type the code from the message, then sign the
               // user in with confirmationResult.confirm(code).
               window.confirmationResult = confirmationResult;
