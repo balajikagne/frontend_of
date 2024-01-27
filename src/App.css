@@ -382,4 +382,7 @@ font-family: 'Courier New', Courier, monospace;
    margin-left: -20px;
 
 }
-
+.btnrs{
+  display: flex;
+  gap: 30px;
+}
