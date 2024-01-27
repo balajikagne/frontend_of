@@ -164,7 +164,7 @@ export default function RegisterScreen() {
       } catch (error) {
         // console.log(error);
         swal.fire({
-          title: "Please enter OTP currectly !",
+          title: "Please enter information currectly !",
           text: "Thank You",
           icon: "warning",
           confirmButtonText: "OK",
@@ -172,7 +172,7 @@ export default function RegisterScreen() {
       }
     } else {
       swal.fire({
-        title: "Please enter OTP currectly !",
+        title: "Please enter information currectly !",
         text: "Thank You",
         icon: "warning",
         confirmButtonText: "OK",
