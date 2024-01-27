@@ -6,7 +6,7 @@ import Success from "../components/Success";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import swal from "sweetalert2";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { auth } from "../firebase.config";
 import { RecaptchaVerifier } from "firebase/auth";
 import { getAuth, signInWithPhoneNumber } from "firebase/auth";
@@ -35,67 +35,80 @@ export default function RegisterScreen() {
   }
 
   function onSignInSubmit() {
-   try{
-    if (mobNumber!=='')
-   {
-    configure();
-    try {
-     
-      let phoneNumber = "+91" + mobNumber;
-      console.log(phoneNumber);
-      let appVerifier = window.recaptchaVerifier;
-      const auth = getAuth();
+    const myInterval = setInterval(() => {
+      swal.fire({
+        title: "Please verify that you are human",
+        text: "Thank You",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+    }, 1500);
+    setTimeout(() => {
+      clearInterval(myInterval);
+    }, 1500);
 
-      signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-        .then((confirmationResult) => {
-          // SMS sent. Prompt user to type the code from the message, then sign the
-          // user in with confirmationResult.confirm(code).
-          window.confirmationResult = confirmationResult;
-          console.log("OTP has been sent");
-          swal.fire({
-        title: "OTP sent successfully",
-              text: "Thank You",
-              icon: "success",
-        confirmButtonText: "OK",
-      })
-          // ...
-        })
-        .catch((error) => {
-          // Error; SMS not sent
-          // ...
-          console.log("SMS has not been sent");
-          swal.fire({
-        title: "Please enter mobile number currently !",
-              text: "Thank You",
-              icon: "warning",
-        confirmButtonText: "OK",
-      })
+    try {
+      if (mobNumber !== "") {
+        configure();
+        try {
+          let phoneNumber = "+91" + mobNumber;
+          console.log(phoneNumber);
+          let appVerifier = window.recaptchaVerifier;
+          const auth = getAuth();
+
+          signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+            .then((confirmationResult) => {
+              // SMS sent. Prompt user to type the code from the message, then sign the
+              // user in with confirmationResult.confirm(code).
+              window.confirmationResult = confirmationResult;
+              console.log("OTP has been sent");
+              swal.fire({
+                title: "OTP sent successfully",
+                text: "Thank You",
+                icon: "success",
+                confirmButtonText: "OK",
+              });
+              // ...
+            })
+            .catch((error) => {
+              // Error; SMS not sent
+              // ...
+              console.log("SMS has not been sent");
+              swal.fire({
+                title: "Please enter mobile number currently !",
+                text: "Thank You",
+                icon: "warning",
+                confirmButtonText: "OK",
+              });
+            });
+        } catch (error) {
+          alert("something went wrong");
+        }
+      } else {
+        swal.fire({
+          title: "Please enter mobile number currently !",
+          text: "Thank You",
+          icon: "warning",
+          confirmButtonText: "OK",
         });
+      }
     } catch (error) {
-      alert("something went wrong");
-    }
-   }
-   else{
-     swal.fire({
-        title: "Please enter mobile number currently !",
-              text: "Thank You",
-              icon: "warning",
-        confirmButtonText: "OK",
-      })
-       
-   }
-   }catch(error){
-   swal.fire({
+      swal.fire({
         title: "Please refresh the page and Re-enter the Mobile Number!",
-              text: "Thank You",
-              icon: "warning",
+        text: "Thank You",
+        icon: "warning",
         confirmButtonText: "OK",
-      })
-   }
+      });
+    }
   }
 
   function onSubmitOTP() {
-    if (otp !== "") {
+    if (
+      password !== cpassword ||
+      otp !== "" ||
+      mobNumber !== "" ||
+      name !== ""
+    ) {
       let code = otp;
       try {
         window.confirmationResult
@@ -108,13 +121,32 @@ export default function RegisterScreen() {
             for (let i = 0; i <= 9; i++) {
               OTP_MOB_A[i] = a[i + 3];
             }
-            swal.fire({
-        title: "OTP verified successfully",
-              text: "Thank You",
-              icon: "success",
-        confirmButtonText: "OK",
-      })
-            
+            swal
+              .fire({
+                title: "OTP verified successfully",
+                text: "Thank You",
+                icon: "success",
+                confirmButtonText: "OK",
+              })
+              .then((result) => {
+                if (result.isConfirmed) {
+                  const user = {
+                    name,
+                    // location,
+                    mobNumber,
+                    password,
+                  };
+                  dispatch(registerUser(user));
+                } else {
+                  const user = {
+                    name,
+                    // location,
+                    mobNumber,
+                    password,
+                  };
+                  dispatch(registerUser(user));
+                }
+              });
 
             // ...
           })
@@ -123,62 +155,28 @@ export default function RegisterScreen() {
             // ...
             // console.log(error)
             swal.fire({
-        title: "Please enter OTP currectly !",
+              title: "Please enter information currectly !",
               text: "Thank You",
               icon: "warning",
-        confirmButtonText: "OK",
-      })
+              confirmButtonText: "OK",
+            });
           });
       } catch (error) {
         // console.log(error);
-         swal.fire({
-        title: "Please enter OTP currectly !",
-              text: "Thank You",
-              icon: "warning",
-        confirmButtonText: "OK",
-      })
+        swal.fire({
+          title: "Please enter OTP currectly !",
+          text: "Thank You",
+          icon: "warning",
+          confirmButtonText: "OK",
+        });
       }
     } else {
-       swal.fire({
+      swal.fire({
         title: "Please enter OTP currectly !",
-              text: "Thank You",
-              icon: "warning",
+        text: "Thank You",
+        icon: "warning",
         confirmButtonText: "OK",
-      })
-    }
-  }
-
-  function register() {
-    if (OTP_MOB_A[0] !== " " ||mobNumber!=='') {
-      if (password !== cpassword || mobNumber===''|| otp===''|| OTP_MOB_A[0] === "" || password===''|| name==='') {
-        // alert("passwords not matched");
-        console.log("hellow")
-       swal.fire({
-        title: "Please enter all information currectly",
-              text: "Thank You",
-              icon: "warning",
-        confirmButtonText: "OK",
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          window.location.href='/register'
-        }
       });
-        
-      } 
-      else {
-       
-        const user = {
-          name,
-          // location,
-          mobNumber,
-          password,
-        }
-        dispatch(registerUser(user));
-      }
-    } 
-    else {
-      alert("Please enter opt currectly");
     }
   }
   return (
@@ -190,7 +188,7 @@ export default function RegisterScreen() {
           {success && <Success success="User Register Successfully" />}
           {error && <Error error="mobNumber already register" />}
           <h3 className="text-center m-2" style={{ fontSize: "35px" }}>
-           <i class="fa-solid fa-pen-to-square"></i> Register
+            <i class="fa-solid fa-pen-to-square"></i> Register
           </h3>
           <div>
             <input
@@ -227,27 +225,36 @@ export default function RegisterScreen() {
               id="sign-in-button"
               onClick={onSignInSubmit}
               className="btn mt-3"
-                 style={{marginRight:'40px'}}
+              style={{ marginRight: "40px" }}
             >
               Send OTP
             </button>
-            <button onClick={onSubmitOTP} className="btn mt-3">
-              Verify
-            </button>
-            <div style={{display:'flex',justifyContent:'left',marginTop:'10px',cursor:'pointer'}}>
-            <input
-              type={showpassword ? "text" : "password"}
-              placeholder="password"
-              className="form-control"
-              value={password}
-              onChange={(e) => {
-                setpassword(e.target.value);
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "left",
+                marginTop: "10px",
+                cursor: "pointer",
               }}
-              required
-            ></input>
-            <div style={{marginTop:'17px',marginLeft:'5px'}}><i class="fa-solid fa-eye" onClick={()=>{
-              setShowpassword((prev) => !prev);
-            }}></i></div>
+            >
+              <input
+                type={showpassword ? "text" : "password"}
+                placeholder="password"
+                className="form-control"
+                value={password}
+                onChange={(e) => {
+                  setpassword(e.target.value);
+                }}
+                required
+              ></input>
+              <div style={{ marginTop: "17px", marginLeft: "5px" }}>
+                <i
+                  class="fa-solid fa-eye"
+                  onClick={() => {
+                    setShowpassword((prev) => !prev);
+                  }}
+                ></i>
+              </div>
             </div>
             <input
               type="password"
@@ -259,11 +266,22 @@ export default function RegisterScreen() {
               }}
               required
             ></input>
-            <button onClick={register} className="btn mt-3">
-              Register
-            </button>
-            <br></br>
-           <NavLink  to="/login" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">Go Back</button></NavLink>
+            <div className="btnrs">
+              <button onClick={onSubmitOTP} className="btn mt-3">
+                Register
+              </button>
+
+              <a href="/register" style={{ textDecoration: "none" }}>
+                <button className="btn mt-3">Refresh</button>
+              </a>
+
+              <NavLink
+                to="/login"
+                style={{ color: "black", textDecoration: "none" }}
+              >
+                <button className="btn mt-3">Go Back</button>
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
