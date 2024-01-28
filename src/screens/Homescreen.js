@@ -42,7 +42,7 @@ export default function Homescreen() {
               return (new Date(b.updatedAt) - new Date(a.updatedAt)) && (a.prices[0].full - b.prices[0].full);
             })
             .map((menu) => (
-              <div key={menu._id} style={{ margin: "-8px" }}>
+              <div key={menu._id} style={{ margin: "-4px" }}>
                 <Menusa menu={menu} />
               </div>
             ))
