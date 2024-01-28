@@ -23,6 +23,8 @@ import Download from './components/Download';
 import Profile from './screens/Profile';
 import HelpLine from './screens/HelpLine';
 import NotifyScreen from './screens/NotifyScreen';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className='App'>
@@ -48,6 +50,17 @@ function App() {
     <Route path='/notify' Component={NotifyScreen}></Route>
     </Routes>
     </BrowserRouter>
+    <ToastContainer 
+    position="bottom-center"  // Set the position to bottom center
+    autoClose={3000}  // Adjust the auto-close duration in milliseconds (e.g., 3000 for 3 seconds)
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    />
     </div>
   );
 }
