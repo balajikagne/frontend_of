@@ -49,7 +49,7 @@ export default function Menus({ menu }) {
           <img
             src={menu.img}
             className="img-fluid"
-            style={{ height: "90px", width: "180px" }}
+            style={{ height: "120px", width: "260px" }}
           ></img>
         </div>
         <div className="flex-container">
