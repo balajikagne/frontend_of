@@ -33,13 +33,13 @@ export default function Homescreen() {
             .sort((a, b) => {
               // First, sort by availability (onlineAvailable)
               if (a.stock && !b.stock) {
-                return -1; // 'a' is available, 'b' is not, so 'a' comes first
+                return -1 && a.prices[0].full - b.prices[0].full; // 'a' is available, 'b' is not, so 'a' comes first
               } else if (!a.stock && b.stock) {
-                return 1; // 'a' is not available, 'b' is, so 'b' comes first
+                return 1 && a.prices[0].full - b.prices[0].full; // 'a' is not available, 'b' is, so 'b' comes first
               }
 
               // Within each group, sort by updatedAt in descending order
-              return new Date(b.updatedAt) - new Date(a.updatedAt);
+              return (new Date(b.updatedAt) - new Date(a.updatedAt)) && (a.prices[0].full - b.prices[0].full);
             })
             .map((menu) => (
               <div key={menu._id} style={{ margin: "-8px" }}>
