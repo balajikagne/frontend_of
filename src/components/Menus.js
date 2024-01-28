@@ -14,7 +14,6 @@ export default function Menus({ menu }) {
 
   const dispatch = useDispatch();
   function addtocart() {
-    toast.success('Item added to cart successfully');
     if (menu.stock === false) {
       swal.fire({
         title: "This item is out of stock",
@@ -23,6 +22,7 @@ export default function Menus({ menu }) {
         confirmButtonText: "OK",
       });
     } else {
+      toast.success('Item added to cart successfully');
       dispatch(addToCart(menu, quantity, varient, menu.country));
     }
     // console.log()
