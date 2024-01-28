@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../actions/cartActions";
+import { toast } from 'react-toastify';
 import swal from "sweetalert2";
 export default function Menus({ menu }) {
   const [varient, setVarient] = useState("half");
@@ -13,6 +14,7 @@ export default function Menus({ menu }) {
 
   const dispatch = useDispatch();
   function addtocart() {
+    toast.success('Item added to cart!');
     if (menu.stock === false) {
       swal.fire({
         title: "This item is out of stock",
