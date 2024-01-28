@@ -52,7 +52,7 @@ function App() {
     </BrowserRouter>
     <ToastContainer 
     position="top-center"  // Set the position to bottom center
-    autoClose={3000}  // Adjust the auto-close duration in milliseconds (e.g., 3000 for 3 seconds)
+    autoClose={1000}  // Adjust the auto-close duration in milliseconds (e.g., 3000 for 3 seconds)
     hideProgressBar={false}
     newestOnTop={false}
     closeOnClick
