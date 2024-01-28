@@ -386,3 +386,8 @@ font-family: 'Courier New', Courier, monospace;
   display: flex;
   gap: 30px;
 }
+.tname1{
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
