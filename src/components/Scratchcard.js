@@ -106,8 +106,9 @@ function Scratchcard({prizeValue}) {
         </div>
        <div className="container">
             <div className="base">
-                <h4>You Won</h4>
-                <h3>{prizeValue}</h3>
+                <h4>You got order</h4>
+                 <h4>At</h4>
+                <h3>{prizeValue} Rs</h3>
             </div>
             <canvas
                 id="scratch"
