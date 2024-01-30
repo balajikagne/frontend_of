@@ -32,7 +32,7 @@ export default function CartScreen() {
         title: "Please Create Account",
               text: "Thank You",
               icon: "warning",
-        confirmButtonText: "OK",
+        confirmButtonText: "Create",
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
