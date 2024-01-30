@@ -1,9 +1,8 @@
 import axios from "axios";
-export const placeOrder = (token, subtotal) => async (dispatch, getState) => {
+export const placeOrder = (token, subtotal,checker) => async (dispatch, getState) => {
   dispatch({ type: "PLACE_ORDER_REQ" });
   const currentUser = getState().loginUserReducer.currentUser;
   const cartItems = getState().addtoCartReducer.cartItems;
-  console.log(token,subtotal,currentUser,cartItems)
   try {
     const res = await axios.post("https://super-worm-visor.cyclic.app/api/orders/placeorder", {
       token,
@@ -12,7 +11,9 @@ export const placeOrder = (token, subtotal) => async (dispatch, getState) => {
       cartItems,
     });
     dispatch({ type: "PLACE_ORDER_SUCCESS" });
-   
+    if (checker===true){
+      window.location.href='/orders'
+    }
   } catch (error) {
     dispatch({ type: "PLACE_ORDER_FAILED" });
     console.log(error);
