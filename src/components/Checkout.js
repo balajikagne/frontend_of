@@ -18,6 +18,7 @@ import 'react-phone-input-2/lib/style.css'
 import swal from "sweetalert2";
 import dboy from "./dboys.json"
 import Lottie from 'react-lottie';
+import Scratchcard from "./Scratchcard";
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems;
@@ -32,6 +33,7 @@ const Checkout=({subtotal})=> {
   const [mobNumber, setmobNumber] = useState("");
   const [showError, setShowError] = useState(false);
   const [time,settime]=useState(new Date())
+  const [prizeValue, setPrizeValue] = useState(Math.floor (subtotal-(subtotal*(5/100))));
     const dispatch=useDispatch();
     const allordersState=useSelector(state=>state.allOrdersReducer)
   const {loading,error,orders}=allordersState
@@ -46,6 +48,7 @@ const Checkout=({subtotal})=> {
       setShowError(false);
     }
   }
+ 
     const submitform = async (e) => {
       e.preventDefault();
       if (showError==true ||shippingAddress==="" ||subtotal===0){
@@ -243,19 +246,51 @@ const Checkout=({subtotal})=> {
         }
       }
        
-      dispatch(placeOrder(item,subtotal));
+      
       swal.fire({
         title: "Your order will be delivered within 35 minutes",
               text: "Thank You",
               icon: "success",
         confirmButtonText: "OK",
       }).then((result) => {
-          window.location.href='/orders'
+        if (result.isConfirmed){
+          if (subtotal>=200)
+          {
+            let checker=false;
+            dispatch(placeOrder(item,prizeValue));
+            setDemo(false)
+          }
+          else{
+            let checker=true;
+            dispatch(placeOrder(item,subtotal,checker))
+
+          }
+        }
+        else{
+          let checker=true;
+          dispatch(placeOrder(item,subtotal,checker));
+        }
         
       });
+      
       }
     };
   useEffect(() => {
+    const prizeOptions = [
+      Math.floor (subtotal-(subtotal*(10/100))),
+       Math.floor (subtotal-(subtotal*(12/100))),
+       Math.floor (subtotal-(subtotal*(11/100))),
+       Math.floor (subtotal-(subtotal*(9/100))),
+       Math.floor (subtotal-(subtotal*(14/100))),
+       Math.floor (subtotal-(subtotal*(15/100))),
+       Math.floor (subtotal-(subtotal*(11/100))),
+       Math.floor (subtotal-(subtotal*(7/100))),
+       Math.floor (subtotal-(subtotal*(4/100))),
+       Math.floor (subtotal-(subtotal*(13/100)))
+  ];
+  const randomPrize =
+  prizeOptions[Math.floor(Math.random() * prizeOptions.length)];
+  setPrizeValue(randomPrize);
     if (localStorage.getItem("currentUser") === null) {
     
       swal.fire({
@@ -282,49 +317,54 @@ const Checkout=({subtotal})=> {
       preserveAspectRatio: 'xMidYMid slice',
     },
   };
+  const [demo,setDemo]=useState(true)
   return (
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
-      <div>
+      {
+        demo ? (
+          <div>
        <Lottie options={defaultOptions} height={300} width={300} />
-      </div>
-      <Form>
-        <Col className="mb-3">
-          <br></br>
-          <Form.Group as={Col} controlId="formGridnae">
-            <Form.Label>Delivery address</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Delivery address"
-              value={shippingAddress}
-              onChange={(e) => setshippingAddress(e.target.value)}
-            />
-          </Form.Group>
-
+      
+        <Form>
+          <Col className="mb-3">
+            <br></br>
+            <Form.Group as={Col} controlId="formGridnae">
+              <Form.Label>Delivery address</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Delivery address"
+                value={shippingAddress}
+                onChange={(e) => setshippingAddress(e.target.value)}
+              />
+            </Form.Group>
+  
+            {/* <Form.Group as={Col} controlId="formGridnae"> */}
+              {/* <Form.Label>city</Form.Label> */}
+              {/* <Form.Control
+                type="text"
+                placeholder="city"
+                value={city}
+                onChange={(e) => setcity(e.target.value)}
+              /> */}
+            {/* </Form.Group> */}
+          </Col>
+  
           {/* <Form.Group as={Col} controlId="formGridnae"> */}
-            {/* <Form.Label>city</Form.Label> */}
+            {/* <Form.Label>pincode</Form.Label> */}
             {/* <Form.Control
-              type="text"
-              placeholder="city"
-              value={city}
-              onChange={(e) => setcity(e.target.value)}
+              type="number"
+              placeholder="pincode"
+              value={pincode}
+              onChange={(e) => setpincode(e.target.value)}
             /> */}
           {/* </Form.Group> */}
-        </Col>
-
-        {/* <Form.Group as={Col} controlId="formGridnae"> */}
-          {/* <Form.Label>pincode</Form.Label> */}
-          {/* <Form.Control
-            type="number"
-            placeholder="pincode"
-            value={pincode}
-            onChange={(e) => setpincode(e.target.value)}
-          /> */}
-        {/* </Form.Group> */}
-        <Button style={{marginTop:'10px'}} variant="primary" onClick={submitform}>
-         ORDER NOW
-        </Button>
-      </Form>
+          <Button style={{marginTop:'10px'}} variant="primary" onClick={submitform}>
+           ORDER NOW
+          </Button>
+        </Form>
+        </div>):(<Scratchcard prizeValue={prizeValue}/>)
+      }
     </div>
   
   )
