@@ -363,7 +363,7 @@ const Checkout=({subtotal})=> {
            ORDER NOW
           </Button>
         </Form>
-        </div>):(<Scratchcard prizeValue={prizeValue}/>)
+        </div>):(<Scratchcard prizeValue={prizeValue} subtotal={subtotal}/>)
       }
     </div>
   
