@@ -120,6 +120,9 @@ function Scratchcard({prizeValue}) {
                 }}
             ></canvas>
         </div>
+             <div>
+        <NavLink  to="/orders" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">My Orders</button></NavLink>
+        </div>
     </div>
   )
 }
