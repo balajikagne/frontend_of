@@ -27,10 +27,10 @@ export const loginUser=(user)=>async dispatch=>{
             confirmButtonText: "OK",
           }).then((result)=>{
             if (result.isConfirmed){
-                window.location.href='/'
+                window.location.href='/profile'
             }
             else{
-                window.location.href='/'
+                window.location.href='/profile'
             }
           })
     }
