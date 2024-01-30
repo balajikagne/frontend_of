@@ -267,8 +267,17 @@ const Checkout=({subtotal})=> {
           }
         }
         else{
-          let checker=true;
-          dispatch(placeOrder(item,subtotal,checker));
+          if (subtotal>=200)
+          {
+            let checker=false;
+            dispatch(placeOrder(item,prizeValue));
+            setDemo(false)
+          }
+          else{
+            let checker=true;
+            dispatch(placeOrder(item,subtotal,checker))
+
+          }
         }
         
       });
