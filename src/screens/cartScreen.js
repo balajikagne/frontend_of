@@ -29,17 +29,17 @@ export default function CartScreen() {
     if (localStorage.getItem("currentUser") === null) {
     
       swal.fire({
-        title: "Please Login",
+        title: "Please Create Account",
               text: "Thank You",
               icon: "warning",
         confirmButtonText: "OK",
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          window.location.href='/login'
+          window.location.href='/register'
         }
         else{
-          window.location.href='/login'
+          window.location.href='/register'
         }
       })
     }
