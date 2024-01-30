@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 
-function Scratchcard({prizeValue}) {
+function Scratchcard({prizeValue,subtotal}) {
  
     useEffect(() => {
         const canvasElement = document.getElementById("scratch");
@@ -107,8 +107,11 @@ function Scratchcard({prizeValue}) {
         </div>
        <div className="container">
             <div className="base">
-                <h4>You got order</h4>
+                <h4>You get order</h4>
                  <h4>At</h4>
+                  <span style={{ textDecoration: "line-through" }}>
+                {subtotal}
+              </span>
                 <h3>{prizeValue} Rs</h3>
             </div>
             <canvas
