@@ -105,7 +105,7 @@ function Scratchcard({prizeValue,subtotal}) {
         <div>
             <h2>YOU WON SCRATCHCARD</h2>
         </div>
-       <div className="container">
+       <div className="containerSC">
             <div className="base">
                 <h4>You get order</h4>
                  <h4>At</h4>
