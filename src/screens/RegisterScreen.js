@@ -269,20 +269,22 @@ export default function RegisterScreen() {
               required
             ></input>
             <div className="btnrs">
+                <NavLink
+                to="/login"
+                style={{ color: "black", textDecoration: "none" }}
+              >
+                <button className="btn mt-3">Go Back</button>
+              </NavLink>
+                
               <button onClick={onSubmitOTP} className="btn mt-3">
-                Register
+                Create
               </button>
 
               <a href="/register" style={{ textDecoration: "none" }}>
                 <button className="btn mt-3">Refresh</button>
               </a>
 
-              <NavLink
-                to="/login"
-                style={{ color: "black", textDecoration: "none" }}
-              >
-                <button className="btn mt-3">Go Back</button>
-              </NavLink>
+              
             </div>
           </div>
         </div>
