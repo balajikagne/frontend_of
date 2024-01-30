@@ -187,6 +187,11 @@ export default function RegisterScreen() {
       });
     }
   }
+  useEffect(() => {
+    if (localStorage.getItem("currentUser") !== null) {
+      window.location.href='/'
+    }
+  }, []);
   return (
     <div>
       <div className="row justify-content-center mt-5">
