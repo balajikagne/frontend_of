@@ -28,7 +28,11 @@ export default function LoginScreen() {
       setShowError(false);
     }
   }
-  
+  useEffect(() => {
+    if (localStorage.getItem("currentUser") !== null) {
+      window.location.href='/'
+    }
+  }, []);
   function login(){
     const user={mobNumber,password}
     dispatch(loginUser(user))
