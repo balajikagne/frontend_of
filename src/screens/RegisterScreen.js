@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../actions/UserActions";
+import { loginUser, registerUser } from "../actions/UserActions";
 import Success from "../components/Success";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
@@ -138,7 +138,9 @@ export default function RegisterScreen() {
                     mobNumber,
                     password,
                   };
+                  const user1={mobNumber,password}
                   dispatch(registerUser(user));
+                  dispatch(loginUser(user1));
                 } else {
                   const user = {
                     name,
@@ -146,7 +148,11 @@ export default function RegisterScreen() {
                     mobNumber,
                     password,
                   };
+                  const user1={mobNumber,password}
                   dispatch(registerUser(user));
+                  dispatch(loginUser(user1));
+
+                  
                 }
               });
 
