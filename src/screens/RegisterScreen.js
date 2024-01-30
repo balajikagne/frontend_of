@@ -190,7 +190,7 @@ export default function RegisterScreen() {
           {success && <Success success="User Register Successfully" />}
           {error && <Error error="mobNumber already register" />}
           <h3 className="text-center m-2" style={{ fontSize: "35px" }}>
-            <i class="fa-solid fa-pen-to-square"></i> Register
+            <i class="fa-solid fa-pen-to-square"></i> Create Account
           </h3>
           <div>
             <input
