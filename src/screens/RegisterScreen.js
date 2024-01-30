@@ -273,7 +273,7 @@ export default function RegisterScreen() {
                 to="/login"
                 style={{ color: "black", textDecoration: "none" }}
               >
-                <button className="btn mt-3">Go Back</button>
+                <button className="btn mt-3">Login</button>
               </NavLink>
                 
               <button onClick={onSubmitOTP} className="btn mt-3">
