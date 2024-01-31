@@ -40,7 +40,7 @@ export default function RegisterScreen() {
       if (mobNumber !== "") {
         const myInterval = setInterval(() => {
       swal.fire({
-        title: "Please verify that you are human",
+        title: "Please Click on I'm not robot.",
         text: "Thank You",
         icon: "success",
         confirmButtonText: "OK",
