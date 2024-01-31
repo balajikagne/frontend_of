@@ -123,17 +123,31 @@ export default function RegisterScreen() {
     ) {
       let code = otp;
       try {
-        window.confirmationResult
-          .confirm(code)
-          .then((result) => {
-            // User signed in successfully.
-            let user = result.user;
-            let a = user.phoneNumber;
+        // window.confirmationResult
+        //   .confirm(code)
+        //   .then((result) => {
+        //     // User signed in successfully.
+        //     let user = result.user;
+        //     let a = user.phoneNumber;
 
-            for (let i = 0; i <= 9; i++) {
-              OTP_MOB_A[i] = a[i + 3];
-            }
-            const user1 = {
+        //     for (let i = 0; i <= 9; i++) {
+        //       OTP_MOB_A[i] = a[i + 3];
+        //     }
+            
+        //     // ...
+        //   })
+        //   .catch((error) => {
+        //     // User couldn't sign in (bad verification code?)
+        //     // ...
+        //     // console.log(error)
+        //     swal.fire({
+        //       title: "Please enter information currectly !",
+        //       text: "Thank You",
+        //       icon: "warning",
+        //       confirmButtonText: "OK",
+        //     });
+        //   });
+        const user1 = {
                     name,
                     // location
                     mobNumber,
@@ -143,19 +157,6 @@ export default function RegisterScreen() {
            dispatch(registerUser(user1));
                   dispatch(loginUser(user2));
 
-            // ...
-          })
-          .catch((error) => {
-            // User couldn't sign in (bad verification code?)
-            // ...
-            // console.log(error)
-            swal.fire({
-              title: "Please enter information currectly !",
-              text: "Thank You",
-              icon: "warning",
-              confirmButtonText: "OK",
-            });
-          });
       } catch (error) {
         // console.log(error);
         swal.fire({
