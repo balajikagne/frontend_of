@@ -7,8 +7,19 @@ import 'react-bootstrap';
 export default function Navbar() {
   const cartstate = useSelector((state) => state.addtoCartReducer);
   const userstate = useSelector((state) => state.loginUserReducer);
+    const [cartAn,setcartAn]=useState(false)
   const { currentUser } = userstate;
   const dispatch = useDispatch();
+    useEffect(()=>{
+    if (cartstate.cartItems.length===0){
+      setcartAn(false)
+      console.log(cartAn)
+    }
+    else{
+      setcartAn(true)
+      console.log(cartAn)
+    }
+  },[cartstate.cartItems.length])
   return (
      <div>
     <div style={{marginTop:'100px'}}>
@@ -18,16 +29,14 @@ export default function Navbar() {
           <b className="testygoicon">TestyGo</b>
         </a>
      <div className="cartsitems1 iconame">
+      <div className="cartbox">
      <li className="cartsitems" >
               <a className="nav-link" href="/cart" style={{fontSize:'20px'}}>
-              <i className="fa-solid fa-cart-shopping" style={{fontSize:'20px'}}></i> {cartstate.cartItems.length}
+              {cartAn? (<><i className="fa-solid fa-cart-shopping animation-cart" style={{marginRight:'7px'}}></i><span className="animation-cart">{cartstate.cartItems.length}</span></> ):(<><i className="fa-solid fa-cart-shopping" style={{fontSize:'20px'}}></i>{cartstate.cartItems.length}</>)}
               </a>
+              
         </li>
-        <li className="cartsitems" >
-            <a className="nav-link" href="/notify" style={{fontSize:'20px'}}>
-              <i className="fa-solid fa-bell"></i>
-              </a>
-        </li>
+     </div>
      </div>
         <button
           className="navbar-toggler"
