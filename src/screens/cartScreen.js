@@ -22,16 +22,10 @@ export default function CartScreen() {
         })
       }
       else{
-        window.location.href="/checkout"
-      }
-    }
-   useEffect(() => {
-    if (localStorage.getItem("currentUser") === null) {
+           if (localStorage.getItem("currentUser") === null) {
     
       swal.fire({
         title: "Please Create Account",
-              text: "Thank You",
-              icon: "warning",
         confirmButtonText: "Create",
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
@@ -43,7 +37,11 @@ export default function CartScreen() {
         }
       })
     }
-  }, []);
+    else{
+ window.location.href="/checkout"
+      }
+    }
+   
 return (
     <div>
       <div className='row justity-content-center'>
