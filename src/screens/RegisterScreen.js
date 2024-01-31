@@ -236,28 +236,7 @@ export default function RegisterScreen() {
               }}
               required
             ></input>
-            // <input
-            //   type="text"
-            //   placeholder="OTP"
-            //   className="form-control"
-            //   value={otp}
-            //   onChange={(e) => {
-            //     setotp(e.target.value);
-            //   }}
-            //   required
-            // ></input>
-            // <div style={{display:'flex'}}>
-            //   {showTimer ? (<a onClick={()=>{callme()}} style={{ textDecoration: "none" }}>
-            //     <button className="btn mt-3">Resend OTP</button>
-            //   </a>):(<button
-            //   id="sign-in-button"
-            //   onClick={onSignInSubmit}
-            //   className="btn mt-3"
-            //   style={{ marginRight: "40px" }}
-            // >
-            // send OTP
-            // </button>)}
-            // {showTimer ?(<div style={{marginTop:'20px',marginLeft:'10px'}}><h8>{timer} seconds</h8></div>):(null)}</div>
+            
             <div
               style={{
                 display: "flex",
