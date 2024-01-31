@@ -134,38 +134,8 @@ export default function RegisterScreen() {
             for (let i = 0; i <= 9; i++) {
               OTP_MOB_A[i] = a[i + 3];
             }
-            swal
-              .fire({
-                title: "OTP verified successfully",
-                text: "Thank You",
-                icon: "success",
-                confirmButtonText: "OK",
-              })
-              .then((result) => {
-                if (result.isConfirmed) {
-                  const user = {
-                    name,
-                    // location,
-                    mobNumber,
-                    password,
-                  };
-                  const user1={mobNumber,password}
-                  dispatch(registerUser(user));
+           dispatch(registerUser(user));
                   dispatch(loginUser(user1));
-                } else {
-                  const user = {
-                    name,
-                    // location,
-                    mobNumber,
-                    password,
-                  };
-                  const user1={mobNumber,password}
-                  dispatch(registerUser(user));
-                  dispatch(loginUser(user1));
-
-                  
-                }
-              });
 
             // ...
           })
