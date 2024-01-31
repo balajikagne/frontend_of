@@ -134,6 +134,13 @@ export default function RegisterScreen() {
             for (let i = 0; i <= 9; i++) {
               OTP_MOB_A[i] = a[i + 3];
             }
+            const user = {
+                    name,
+                    // location,
+                    mobNumber,
+                    password,
+                  };
+                  const user1={mobNumber,password}
            dispatch(registerUser(user));
                   dispatch(loginUser(user1));
 
