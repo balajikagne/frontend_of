@@ -41,7 +41,7 @@ export default function CartScreen() {
  window.location.href="/checkout"
       }
     }
-   
+    }
 return (
     <div>
       <div className='row justity-content-center'>
