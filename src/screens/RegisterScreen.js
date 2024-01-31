@@ -180,16 +180,16 @@ export default function RegisterScreen() {
       window.location.href='/'
     }
   }, []);
-   useEffect(() => {
-    let interval;
-    if (timer > 0) {
-      interval = setInterval(() => {
-        setTimer((prevTimer) => prevTimer - 1);
-      }, 1000);
-    }
+  //  useEffect(() => {
+  //   let interval;
+  //   if (timer > 0) {
+  //     interval = setInterval(() => {
+  //       setTimer((prevTimer) => prevTimer - 1);
+  //     }, 1000);
+  //   }
 
-    return () => clearInterval(interval);
-  }, [timer]);
+  //   return () => clearInterval(interval);
+  // }, [timer]);
   const callme=()=>{
     swal.fire({
       title: "Please Re-enter Mobile Number!",
