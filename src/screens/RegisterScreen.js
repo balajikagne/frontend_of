@@ -19,6 +19,8 @@ export default function RegisterScreen() {
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
   const [showpassword, setShowpassword] = useState(false);
+  const [showTimer,setTimers]=useState(false)
+  const [timer, setTimer] = useState(20);
   const registerstate = useSelector((state) => state.registerUserReducer);
   const { error, loading, success } = registerstate;
   const dispatch = useDispatch();
@@ -69,7 +71,16 @@ export default function RegisterScreen() {
                 text: "Thank You",
                 icon: "success",
                 confirmButtonText: "OK",
-              });
+              }).then((result)=>{
+                if (result.isConfirmed){
+                  setTimer(20);
+                  setTimers(true)
+                }
+                else{
+                  setTimer(20);
+                  setTimers(true)
+                }
+              });;
               // ...
             })
             .catch((error) => {
@@ -192,6 +203,30 @@ export default function RegisterScreen() {
       window.location.href='/'
     }
   }, []);
+   useEffect(() => {
+    let interval;
+    if (timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+    }
+
+    return () => clearInterval(interval);
+  }, [timer]);
+  const callme=()=>{
+    swal.fire({
+      title: "Please Re-enter Mobile Number!",
+      text: "Thank You",
+      confirmButtonText: "OK",
+    }).then((result)=>{
+      if (result.isConfirmed){
+        window.location.href="/register"
+      }
+      else{
+        window.location.href="/register"
+      }
+    });
+  }
   return (
     <div>
       <div className="row justify-content-center mt-5">
@@ -234,14 +269,18 @@ export default function RegisterScreen() {
               }}
               required
             ></input>
-            <button
+            <div style={{display:'flex'}}>
+              {showTimer ? (<a onClick={()=>{callme()}} style={{ textDecoration: "none" }}>
+                <button className="btn mt-3">Resend OTP</button>
+              </a>):(<button
               id="sign-in-button"
               onClick={onSignInSubmit}
               className="btn mt-3"
               style={{ marginRight: "40px" }}
             >
-              Send OTP
-            </button>
+            send OTP
+            </button>)}
+            {showTimer ?(<div style={{marginTop:'20px',marginLeft:'10px'}}><h8>{timer} seconds</h8></div>):(null)}</div>
             <div
               style={{
                 display: "flex",
