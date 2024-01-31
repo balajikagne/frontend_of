@@ -449,3 +449,20 @@ body {
     -webkit-user-select: none;
     user-select: none;
 }
+.animation-cart{
+  color: orange;
+  animation-name: slide;
+  animation-duration: 1s;
+  
+  animation-iteration-count: infinite;
+}
+@keyframes slide{
+  0%{
+    color:orange;
+    font-size: 15px;
+  }
+  100%{
+    color:red;
+    font-size: 25px;
+  }
+}
