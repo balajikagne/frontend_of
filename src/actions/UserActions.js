@@ -12,7 +12,7 @@ export const registerUser=(user)=>async dispatch=>{
     }
 }
 
-export const loginUser=(user)=>async dispatch=>{
+export const loginUser=(user,checker)=>async dispatch=>{
     dispatch({type:'USER_LOGIN_REQ'})
 
     try{
@@ -20,19 +20,21 @@ export const loginUser=(user)=>async dispatch=>{
         // console.log(response)
         dispatch({type:'USER_LOGIN_SUCCESS',payload: response.data})
         localStorage.setItem('currentUser',JSON.stringify(response.data))
-        swal.fire({
-            title: "Login successfully",
-            text: "Thank You",
-            icon: "success",
-            confirmButtonText: "OK",
-          }).then((result)=>{
-            if (result.isConfirmed){
-                window.location.href='/profile'
-            }
-            else{
-                window.location.href='/profile'
-            }
-          })
+       if (checker===true){
+            swal.fire({
+                title: "Login successfully",
+                text: "Thank You",
+                icon: "success",
+                confirmButtonText: "OK",
+              }).then((result)=>{
+                if (result.isConfirmed){
+                    window.location.href='/cart'
+                }
+                else{
+                    window.location.href='/cart'
+                }
+              })
+        }
     }
     catch(error){
         dispatch({type:'USER_LOGIN_FAILED',payload:error})
