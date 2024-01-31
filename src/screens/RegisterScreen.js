@@ -25,100 +25,99 @@ export default function RegisterScreen() {
   const { error, loading, success } = registerstate;
   const dispatch = useDispatch();
 
-  function configure() {
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
-      size: "visible",
-      callback: (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        this.onSignInSubmit();
-      },
-      defaultCountry: "IN",
-    });
-  }
+  // function configure() {
+  //   window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
+  //     size: "visible",
+  //     callback: (response) => {
+  //       // reCAPTCHA solved, allow signInWithPhoneNumber.
+  //       this.onSignInSubmit();
+  //     },
+  //     defaultCountry: "IN",
+  //   });
+  // }
 
-  function onSignInSubmit() {
+  // function onSignInSubmit() {
     
-    try {
-      if (mobNumber !== "") {
-        const myInterval = setInterval(() => {
-      swal.fire({
-        title: "Please Click on I'm not robot.",
-        text: "Thank You",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-    }, 1500);
-    setTimeout(() => {
-      clearInterval(myInterval);
-    }, 1500);
+  //   try {
+  //     if (mobNumber !== "") {
+  //       const myInterval = setInterval(() => {
+  //     swal.fire({
+  //       title: "Please Click on I'm not robot.",
+  //       text: "Thank You",
+  //       icon: "success",
+  //       confirmButtonText: "OK",
+  //     });
+  //   }, 1500);
+  //   setTimeout(() => {
+  //     clearInterval(myInterval);
+  //   }, 1500);
 
-        configure();
-        try {
-          let phoneNumber = "+91" + mobNumber;
-          console.log(phoneNumber);
-          let appVerifier = window.recaptchaVerifier;
-          const auth = getAuth();
+  //       configure();
+  //       try {
+  //         let phoneNumber = "+91" + mobNumber;
+  //         console.log(phoneNumber);
+  //         let appVerifier = window.recaptchaVerifier;
+  //         const auth = getAuth();
 
-          signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-            .then((confirmationResult) => {
+  //         signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+  //           .then((confirmationResult) => {
               
-              // SMS sent. Prompt user to type the code from the message, then sign the
-              // user in with confirmationResult.confirm(code).
-              window.confirmationResult = confirmationResult;
-              console.log("OTP has been sent");
-              swal.fire({
-                title: "OTP sent successfully",
-                text: "Thank You",
-                icon: "success",
-                confirmButtonText: "OK",
-              }).then((result)=>{
-                if (result.isConfirmed){
-                  setTimer(20);
-                  setTimers(true)
-                }
-                else{
-                  setTimer(20);
-                  setTimers(true)
-                }
-              });;
-              // ...
-            })
-            .catch((error) => {
-              // Error; SMS not sent
-              // ...
-              console.log("SMS has not been sent");
-              swal.fire({
-                title: "Please enter mobile number currently !",
-                text: "Thank You",
-                icon: "warning",
-                confirmButtonText: "OK",
-              });
-            });
-        } catch (error) {
-          alert("something went wrong");
-        }
-      } else {
-        swal.fire({
-          title: "Please enter mobile number currently !",
-          text: "Thank You",
-          icon: "warning",
-          confirmButtonText: "OK",
-        });
-      }
-    } catch (error) {
-      swal.fire({
-        title: "Please refresh the page and Re-enter the Mobile Number!",
-        text: "Thank You",
-        icon: "warning",
-        confirmButtonText: "OK",
-      });
-    }
-  }
+  //             // SMS sent. Prompt user to type the code from the message, then sign the
+  //             // user in with confirmationResult.confirm(code).
+  //             window.confirmationResult = confirmationResult;
+  //             console.log("OTP has been sent");
+  //             swal.fire({
+  //               title: "OTP sent successfully",
+  //               text: "Thank You",
+  //               icon: "success",
+  //               confirmButtonText: "OK",
+  //             }).then((result)=>{
+  //               if (result.isConfirmed){
+  //                 setTimer(20);
+  //                 setTimers(true)
+  //               }
+  //               else{
+  //                 setTimer(20);
+  //                 setTimers(true)
+  //               }
+  //             });;
+  //             // ...
+  //           })
+  //           .catch((error) => {
+  //             // Error; SMS not sent
+  //             // ...
+  //             console.log("SMS has not been sent");
+  //             swal.fire({
+  //               title: "Please enter mobile number currently !",
+  //               text: "Thank You",
+  //               icon: "warning",
+  //               confirmButtonText: "OK",
+  //             });
+  //           });
+  //       } catch (error) {
+  //         alert("something went wrong");
+  //       }
+  //     } else {
+  //       swal.fire({
+  //         title: "Please enter mobile number currently !",
+  //         text: "Thank You",
+  //         icon: "warning",
+  //         confirmButtonText: "OK",
+  //       });
+  //     }
+  //   } catch (error) {
+  //     swal.fire({
+  //       title: "Please refresh the page and Re-enter the Mobile Number!",
+  //       text: "Thank You",
+  //       icon: "warning",
+  //       confirmButtonText: "OK",
+  //     });
+  //   }
+  // }
 
   function onSubmitOTP() {
     if (
-      password !== cpassword ||
-      otp !== "" ||
+      password !== cpassword||
       mobNumber !== "" ||
       name !== ""
     ) {
@@ -236,28 +235,28 @@ export default function RegisterScreen() {
               }}
               required
             ></input>
-            <input
-              type="text"
-              placeholder="OTP"
-              className="form-control"
-              value={otp}
-              onChange={(e) => {
-                setotp(e.target.value);
-              }}
-              required
-            ></input>
-            <div style={{display:'flex'}}>
-              {showTimer ? (<a onClick={()=>{callme()}} style={{ textDecoration: "none" }}>
-                <button className="btn mt-3">Resend OTP</button>
-              </a>):(<button
-              id="sign-in-button"
-              onClick={onSignInSubmit}
-              className="btn mt-3"
-              style={{ marginRight: "40px" }}
-            >
-            send OTP
-            </button>)}
-            {showTimer ?(<div style={{marginTop:'20px',marginLeft:'10px'}}><h8>{timer} seconds</h8></div>):(null)}</div>
+            // <input
+            //   type="text"
+            //   placeholder="OTP"
+            //   className="form-control"
+            //   value={otp}
+            //   onChange={(e) => {
+            //     setotp(e.target.value);
+            //   }}
+            //   required
+            // ></input>
+            // <div style={{display:'flex'}}>
+            //   {showTimer ? (<a onClick={()=>{callme()}} style={{ textDecoration: "none" }}>
+            //     <button className="btn mt-3">Resend OTP</button>
+            //   </a>):(<button
+            //   id="sign-in-button"
+            //   onClick={onSignInSubmit}
+            //   className="btn mt-3"
+            //   style={{ marginRight: "40px" }}
+            // >
+            // send OTP
+            // </button>)}
+            // {showTimer ?(<div style={{marginTop:'20px',marginLeft:'10px'}}><h8>{timer} seconds</h8></div>):(null)}</div>
             <div
               style={{
                 display: "flex",
