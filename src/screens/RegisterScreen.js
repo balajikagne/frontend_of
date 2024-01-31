@@ -24,7 +24,7 @@ export default function RegisterScreen() {
   const registerstate = useSelector((state) => state.registerUserReducer);
   const { error, loading, success } = registerstate;
   const dispatch = useDispatch();
-const checker=true
+
   function configure() {
     window.recaptchaVerifier = new RecaptchaVerifier(auth, "sign-in-button", {
       size: "visible",
@@ -161,7 +161,7 @@ const checker=true
                   };
                   const user1={mobNumber,password}
                   dispatch(registerUser(user));
-                  dispatch(loginUser(user1,checker));
+                  dispatch(loginUser(user1));
 
                   
                 }
