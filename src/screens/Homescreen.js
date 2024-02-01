@@ -16,7 +16,7 @@ export default function Homescreen() {
 
   useEffect(() => {
     dispatch(getAllitems());
-  }, []);
+  });
 
   return (
     <div>
