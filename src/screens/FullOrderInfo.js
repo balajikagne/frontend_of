@@ -20,7 +20,7 @@ function FullOrderInfo({amount}) {
     axios
       .get(
         `https://super-worm-visor.cyclic.app/api/items/start-timer/${location.state.orderId}`
-      )
+      ).then((response) => console.log(response.data))
       .catch((error) => console.error(error));
   }, []); // Include location.state.orderId in dependency array
 
