@@ -32,7 +32,7 @@ function MapOrders({order}) {
             track=50
             variant="info"
             Dcolor='red'
-            now ='Out For Delivery';
+            now ='Preparing For Delivery';
         }
         let amount=order.orderAmount;
         let array=order.orderItems
