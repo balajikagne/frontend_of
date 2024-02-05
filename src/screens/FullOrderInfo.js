@@ -7,11 +7,45 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 import { getUserOrderReducer } from '../Reducers/orderReducer'
 import { NavLink, useLocation } from 'react-router-dom';
-import ProgressBar from 'react-bootstrap/ProgressBar'
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import axios from "axios";
 function FullOrderInfo({amount}) {
     const location =useLocation();
     let scolor=location.state.Dcolor;
     const [currentTime, setCurrentTime] = useState('');
+     const [remainingTime, setRemainingTime] = useState(0);
+
+  useEffect(() => {
+    // Make an HTTP request to start the timer when the component mounts
+    axios
+      .get(
+        `https://super-worm-visor.cyclic.app/api/items/start-timer/${location.state.orderId}`
+      )
+      .catch((error) => console.error(error));
+  }, []); // Include location.state.orderId in dependency array
+
+  useEffect(() => {
+    // Periodically fetch the remaining time from the server
+    const intervalId = setInterval(() => {
+      axios
+        .get(
+          `https://super-worm-visor.cyclic.app/api/items/get-timer/${location.state.orderId}`
+        )
+        .then((response) => {
+          const remainingTime = response.data.remainingTime;
+          // Update your UI with the remaining time
+          setRemainingTime(remainingTime);
+        })
+        .catch((error) => console.error(error));
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [location.state.orderId]); // Include location.state.orderId in dependency array
+  const formatRemainingTime = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
 
   useEffect(() => {
     const updateCurrentTime = () => {
@@ -77,6 +111,15 @@ function FullOrderInfo({amount}) {
                     <h2 style={{fontSize:'25px'}}>Delivery status</h2>
                     <h1 style={{color:"blue"}}> Order Confirmation Status : <span style={{fontSize:'15px',fontWeight:'10px'}}>Confirmed Successfully</span></h1>
                     <h1 style={{backgroundColor:"yellow"}}>Order Delivery Status:  <span style={{color:scolor}}>{location.state.Dstatus}</span></h1>
+                          <div style={{marginBottom:'30px',marginTop:'30px'}}>
+          {(remainingTime===0) ? (<>
+            <li className="nav-item">
+        <a href="tel:+917498821001" style={{color:'black',textDecoration:'none',color:'green'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>Helpline Number-2</a>
+            </li></>):(<>
+            <div>
+            <h6 className="Timer_class">Remaining Time: {formatRemainingTime(remainingTime)}</h6>
+          </div></>)}
+          </div>
                     <ProgressBar animated now={location.state.track} variant={location.state.variant} label={`${location.state.now}`}/>
                     <div style={{display:'flex'}}>
                     <div style={{display:'flex',marginTop:"10px",width:'100%'}}><i class="fa-solid fa-truck" style={{fontSize:'30px'}}></i>
