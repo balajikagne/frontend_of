@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { getUserOrders } from '../actions/OrderActions'
 import Success from "../components/Success";
@@ -11,6 +11,30 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 function FullOrderInfo({amount}) {
     const location =useLocation();
     let scolor=location.state.Dcolor;
+    const [currentTime, setCurrentTime] = useState('');
+
+  useEffect(() => {
+    const updateCurrentTime = () => {
+      const now = new Date();
+      const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      // Format the time
+      const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+      setCurrentTime(formattedTime);
+    };
+
+    // Update the time every second
+    const intervalId = setInterval(updateCurrentTime, 1000);
+
+    // Clear the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Empty dependency array to run the effect only once on mount
+
   return (
     <>
       <div className='text-left w-100% m-1'>
@@ -36,20 +60,23 @@ function FullOrderInfo({amount}) {
                     <hr></hr>
                     <h2 style={{fontSize:'25px'}}>Total Bill And Date</h2>
                     <h1> Amount :{location.state.amount}</h1>
-                    <h1> Date :{location.state.Date}</h1>
+                    
+                    <h1 style={{color:'orange'}}> Date :{location.state.Date}</h1>
+                    <h1 style={{color:'orange'}}> Time :{currentTime}</h1>
+
                     </div>
                     <div>
                     <hr></hr>
                     <h2 style={{fontSize:'25px'}}>Delivery Address</h2>
                     <h1> street :{location.state.street}</h1>
                     <h1> city :{location.state.city}</h1>
-                    <h1> country :{location.state.country}</h1>
+                    <h1> country :India</h1>
                     </div>
                     <div>
                         <hr></hr>
                     <h2 style={{fontSize:'25px'}}>Delivery status</h2>
-                    <h1> Order Confirmation Status : <span style={{fontSize:'15px',fontWeight:'10px'}}>Confirmed Successfully</span></h1>
-                    <h1 >Order Delivery Status:  <span style={{color:scolor}}>{location.state.Dstatus}</span></h1>
+                    <h1 style={{color:"blue"}}> Order Confirmation Status : <span style={{fontSize:'15px',fontWeight:'10px'}}>Confirmed Successfully</span></h1>
+                    <h1 style={{backgroundColor:"yellow"}}>Order Delivery Status:  <span style={{color:scolor}}>{location.state.Dstatus}</span></h1>
                     <ProgressBar animated now={location.state.track} variant={location.state.variant} label={`${location.state.now}`}/>
                     <div style={{display:'flex'}}>
                     <div style={{display:'flex',marginTop:"10px",width:'100%'}}><i class="fa-solid fa-truck" style={{fontSize:'30px'}}></i>
