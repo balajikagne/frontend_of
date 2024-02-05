@@ -12,7 +12,7 @@ export const placeOrder = (token, subtotal,checker) => async (dispatch, getState
     });
     dispatch({ type: "PLACE_ORDER_SUCCESS" });
     if (checker===true){
-      window.location.href='/orders'
+      window.location.href='/oderfullinfo'
     }
   } catch (error) {
     dispatch({ type: "PLACE_ORDER_FAILED" });
