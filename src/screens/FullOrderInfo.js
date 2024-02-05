@@ -10,17 +10,18 @@ import { NavLink, useLocation } from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import axios from "axios";
 function FullOrderInfo({amount}) {
-    const location =useLocation();
-    let scolor=location.state.Dcolor;
-    const [currentTime, setCurrentTime] = useState('');
-     const [remainingTime, setRemainingTime] = useState(0);
+   const location = useLocation();
+  let scolor = location.state.Dcolor;
+  const dispatch = useDispatch();
+  const [remainingTime, setRemainingTime] = useState(0);
 
   useEffect(() => {
     // Make an HTTP request to start the timer when the component mounts
     axios
       .get(
         `https://super-worm-visor.cyclic.app/api/items/start-timer/${location.state.orderId}`
-      ).then((response) => console.log(response.data))
+      )
+      .then((response) => console.log(response.data))
       .catch((error) => console.error(error));
   }, []); // Include location.state.orderId in dependency array
 
@@ -33,8 +34,8 @@ function FullOrderInfo({amount}) {
         )
         .then((response) => {
           const remainingTime = response.data.remainingTime;
+          console.log(remainingTime);
           // Update your UI with the remaining time
-             console.log(remainingTime);
           setRemainingTime(remainingTime);
         })
         .catch((error) => console.error(error));
@@ -47,28 +48,6 @@ function FullOrderInfo({amount}) {
     const seconds = timeInSeconds % 60;
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
-
-  useEffect(() => {
-    const updateCurrentTime = () => {
-      const now = new Date();
-      const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-
-      // Format the time
-      const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-      setCurrentTime(formattedTime);
-    };
-
-    // Update the time every second
-    const intervalId = setInterval(updateCurrentTime, 1000);
-
-    // Clear the interval when the component is unmounted
-    return () => clearInterval(intervalId);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Empty dependency array to run the effect only once on mount
 
   return (
     <>
@@ -97,8 +76,7 @@ function FullOrderInfo({amount}) {
                     <h1> Amount :{location.state.amount}</h1>
                     
                     <h1 style={{color:'orange'}}> Date :{location.state.Date}</h1>
-                    <h1 style={{color:'orange'}}> Time :{currentTime}</h1>
-
+                   
                     </div>
                     <div>
                     <hr></hr>
