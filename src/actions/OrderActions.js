@@ -27,7 +27,7 @@ try{
   const response=await axios.post("https://super-worm-visor.cyclic.app/api/orders/getuserorder",{
     userid:currentUser._id,
   });
-  console.log(response)
+ 
   dispatch({type:"USER_ORDER_SUCCESS",payload:response.data});
 }
 catch(error)
