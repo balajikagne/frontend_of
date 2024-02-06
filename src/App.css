@@ -335,9 +335,8 @@ font-family: 'Courier New', Courier, monospace;
     background-color: rgb(251, 251, 251);
     position: relative;
     width: 70%;
-    top: -50px;
-    z-index: 9;
-    margin-bottom: -100rem;
+    top: -20px;
+    margin-bottom: -5rem;
   }
   .outer_dropdown:hover{
     background-color: rgb(251, 251, 251);
