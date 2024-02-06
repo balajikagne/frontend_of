@@ -38,9 +38,16 @@ export default function Filters() {
     // console.log()
     dispatch(filterI(e.target.value))
   }
-  function scall(e){
+ function scall(e){
     dispatch(filterI(e))
-  }
+    if (e=='all'){
+      setFilter_category('ALL Menus')
+    }
+    else{
+      setFilter_category(e.toUpperCase())
+    }
+  } 
+  const [Filter_category,setFilter_category]=useState('ALL Menus')
   return (
     <>
     <div style={{marginBottom:'20px'}} className="p-4 bg-light mt-4 ">
@@ -101,6 +108,9 @@ export default function Filters() {
           <div style={{height:'100px',width:'100px',cursor:'pointer'}} onClick={(e)=>{scall('combo pack')}}><a style={{textDecoration:'none',color:'black'}} href="#itemloc"><img src='https://media.istockphoto.com/id/1196317163/photo/delicious-fresh-and-tasty-flat-bread-italian-pepperoni-or-margherita-pizza-view-of-salami.jpg?s=612x612&w=0&k=20&c=oSm5WTc6nY76Y1QQMiq3BPRs7JAeG7S-mY2qTQ_lW8k=' id="sitem"></img><h2 className='tname'>Combo Pack</h2></a></div>  
           <div style={{height:'100px',width:'100px',cursor:'pointer'}} onClick={(e)=>{scall('soup')}}><a style={{textDecoration:'none',color:'black'}} href="#itemloc"><img src='https://media.istockphoto.com/id/579739258/photo/lemon-coriander-soup.jpg?s=612x612&w=0&k=20&c=816iYZig2GJUKwchjx9i563IZy3c8gemq9uD8N6G9nU=' id="sitem"></img><h2 className='tname'>Soup</h2></a></div>
         </div>
+      </div>
+              <div className="Filter_category" style={{marginBottom:"50px"}}>
+        <h2>{Filter_category}</h2>
       </div>
   </>
   );
