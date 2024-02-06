@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { resetCart } from '../actions/cartActions';
+import { useDispatch } from 'react-redux';
 
 function Scratchcard({prizeValue,subtotal}) {
  
@@ -100,6 +102,12 @@ function Scratchcard({prizeValue,subtotal}) {
  
         initializeCanvas();
     }, []);
+  const navigate=useNavigate()
+    const dispatch=useDispatch()
+    function callRemove(){
+        dispatch(resetCart())
+        navigate("/orders")
+    }
   return (
     <div>
         <div>
@@ -125,7 +133,7 @@ function Scratchcard({prizeValue,subtotal}) {
             ></canvas>
         </div>
              <div>
-        <NavLink  to="/orders" style={{color:'black',textDecoration:'none'}}><button className="btn mt-3">My Orders</button></NavLink>
+<button className="btn mt-3" onClick={()=>{callRemove()}}>My Orders</button>
         </div>
     </div>
   )
