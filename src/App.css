@@ -311,12 +311,10 @@ font-family: 'Courier New', Courier, monospace;
 @media (min-width:768px)
 {
   .outer_dropdown{
-    background-color: rgb(251, 251, 251);
-    position: relative;
-    width: 50%;
+     background-color: rgb(251, 251, 251);
+    width: 80%;
     top: -50px;
-    z-index: 1;
-    margin-bottom: -100rem;
+    margin-bottom: -5rem;
   }
   .dropdown-rows:hover{
     cursor: pointer;
