@@ -30,7 +30,7 @@ export default function Filters() {
     } else {
       setFilter_category(e.toUpperCase());
     }
-    onClick()
+    
   }
   function callback(e){
     // if (searchkey!=='' ||searchkey){
