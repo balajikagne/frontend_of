@@ -90,7 +90,9 @@ export const filterI=(category)=>async dispatch=>{
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
            if (category==='all')
            {
-            window.location.href="/";
+            filterdItem1=res.data
+            dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem1})
+            return
            }
            else if (category==='')
            {
