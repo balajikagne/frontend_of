@@ -265,7 +265,7 @@ const Checkout=({subtotal})=> {
           else{
             let checker=true;
              dispatch(placeOrder(item,subtotal,checker))
-            dispatch(resetCart());
+            dispatch(resetCart(checker));
            
 
           }
@@ -281,7 +281,7 @@ const Checkout=({subtotal})=> {
           else{
             let checker=true;
             dispatch(placeOrder(item,subtotal,checker))
-            dispatch(resetCart());
+            dispatch(resetCart(checker));
             
 
           }
