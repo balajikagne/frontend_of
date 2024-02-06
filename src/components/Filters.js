@@ -25,6 +25,12 @@ export default function Filters() {
   function onSearch(e){
     setValue(e)
     dispatch(filterItem(e))
+    if (e == "all") {
+      setFilter_category("ALL Menus");
+    } else {
+      setFilter_category(e.toUpperCase());
+    }
+    onClick()
   }
   function callback(e){
     // if (searchkey!=='' ||searchkey){
