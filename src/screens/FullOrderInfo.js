@@ -13,41 +13,41 @@ function FullOrderInfo({ amount }) {
   const location = useLocation();
   let scolor = location.state.Dcolor;
   const dispatch = useDispatch();
-  const [remainingTime, setRemainingTime] = useState(0);
+  // const [remainingTime, setRemainingTime] = useState(0);
 
-  useEffect(() => {
-    // Make an HTTP request to start the timer when the component mounts
-    axios
-      .get(
-        `https://super-worm-visor.cyclic.app/api/items/start-timer/${location.state.orderId}`
-      )
-      .then((response) => console.log(response.data))
-      .catch((error) => console.error(error));
-  }, []); // Include location.state.orderId in dependency array
+  // useEffect(() => {
+  //   // Make an HTTP request to start the timer when the component mounts
+  //   axios
+  //     .get(
+  //       `https://super-worm-visor.cyclic.app/api/items/start-timer/${location.state.orderId}`
+  //     )
+  //     .then((response) => console.log(response.data))
+  //     .catch((error) => console.error(error));
+  // }, []); // Include location.state.orderId in dependency array
 
-  useEffect(() => {
-    // Periodically fetch the remaining time from the server
-    const intervalId = setInterval(() => {
-      axios
-        .get(
-          `https://super-worm-visor.cyclic.app/api/items/get-timer/${location.state.orderId}`
-        )
-        .then((response) => {
-          const remainingTime = response.data.remainingTime;
+  // useEffect(() => {
+  //   // Periodically fetch the remaining time from the server
+  //   const intervalId = setInterval(() => {
+  //     axios
+  //       .get(
+  //         `https://super-worm-visor.cyclic.app/api/items/get-timer/${location.state.orderId}`
+  //       )
+  //       .then((response) => {
+  //         const remainingTime = response.data.remainingTime;
          
-          // Update your UI with the remaining time
-          setRemainingTime(remainingTime);
-        })
-        .catch((error) => console.error(error));
-    }, 1000);
+  //         // Update your UI with the remaining time
+  //         setRemainingTime(remainingTime);
+  //       })
+  //       .catch((error) => console.error(error));
+  //   }, 1000);
 
-    return () => clearInterval(intervalId);
-  }, [location.state.orderId]); // Include location.state.orderId in dependency array
-  const formatRemainingTime = (timeInSeconds) => {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = timeInSeconds % 60;
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-  };
+  //   return () => clearInterval(intervalId);
+  // }, [location.state.orderId]); // Include location.state.orderId in dependency array
+  // const formatRemainingTime = (timeInSeconds) => {
+  //   const minutes = Math.floor(timeInSeconds / 60);
+  //   const seconds = timeInSeconds % 60;
+  //   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  // };
 
   return (
     <>
@@ -106,13 +106,9 @@ function FullOrderInfo({ amount }) {
             <span style={{ color: scolor }}>{location.state.Dstatus}</span>
           </h1>
           <div style={{marginBottom:'30px',marginTop:'30px'}}>
-          {(remainingTime === 0 || location.state.IsDelivered===true)  ? (<>
-            <li className="nav-item">
+           <li className="nav-item">
         <a href="tel:+917498821001" style={{color:'black',textDecoration:'none',color:'green'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>Helpline Number-2</a>
-            </li></>):(<>
-            <div>
-            <h6 className="Timer_class">Remaining Time: {formatRemainingTime(remainingTime)}</h6>
-          </div></>)}
+            </li>
           </div>
           <ProgressBar
             animated
