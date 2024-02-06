@@ -34,7 +34,7 @@ function FullOrderInfo({ amount }) {
         )
         .then((response) => {
           const remainingTime = response.data.remainingTime;
-          console.log(remainingTime)
+         
           // Update your UI with the remaining time
           setRemainingTime(remainingTime);
         })
