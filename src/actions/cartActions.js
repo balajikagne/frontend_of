@@ -37,3 +37,9 @@ export const deleteFromCart=(menu)=>(dispatch,getState)=>{
     const cartItems=getState().addtoCartReducer.cartItems
     localStorage.setItem('cartItems',JSON.stringify(cartItems))
 }
+
+export const resetCart = ()=>(dispatch,getState)=>{
+    dispatch({type:'RESET_CART'})
+    const cartItems=getState().addtoCartReducer.cartItems
+    localStorage.setItem('cartItems',JSON.stringify(cartItems))
+};
