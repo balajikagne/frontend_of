@@ -55,36 +55,7 @@ export default function Filters() {
           </div>
            </div>
           </div>
-      <Form>
-        <Row>
-          <Col>
-            <Form.Select value={category} aria-label="Default select example" onChange={(e)=>{callback(e)}}>
-              <option>all</option>
-              <option>beverages</option>
-              <option>cake</option>
-              <option>combo pack</option>
-              <option>coffee</option>
-              <option>fries</option>
-              <option>maggie</option>
-              <option>milkshake</option>
-              <option>nonveg burger</option>
-              <option>nonveg pizza</option>
-              <option>nonveg rice</option>
-              <option>nonveg sandwich</option>
-              <option>nonveg roll</option>
-              <option>nuggets</option>
-              <option>veg burger</option>
-              <option>veg pizza</option>
-              <option>veg noodles</option>
-              <option>veg rice</option>
-              <option>veg roll</option>
-              <option>veg sandwich</option>
-              <option>soup</option>
-              <option>starters</option>
-            </Form.Select>
-          </Col>
-        </Row>
-      </Form>
+     
       <div className="dropdow">
     <div className="outer_dropdown">
             {
