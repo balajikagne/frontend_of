@@ -106,7 +106,7 @@ function FullOrderInfo({ amount }) {
             <span style={{ color: scolor }}>{location.state.Dstatus}</span>
           </h1>
           <div style={{marginBottom:'30px',marginTop:'30px'}}>
-          {(remainingTime===0) ? (<>
+          {(remainingTime === 0 || location.state.IsDelivered===true)  ? (<>
             <li className="nav-item">
         <a href="tel:+917498821001" style={{color:'black',textDecoration:'none',color:'green'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>Helpline Number-2</a>
             </li></>):(<>
