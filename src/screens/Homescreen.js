@@ -29,17 +29,22 @@ export default function Homescreen() {
           <Error error="Check Internet Connection" />
         ) : (
           items
-            .slice()
             .sort((a, b) => {
-              // First, sort by availability (onlineAvailable)
-              if (a.stock && !b.stock) {
-                return -1; // 'a' is available, 'b' is not, so 'a' comes first
-              } else if (!a.stock && b.stock) {
-                return 1;
+              console.log(a.country);
+            
+              // First, sort by availability and country (onlineAvailable)
+              if (a.country === 'nilesh' && a.stock && (b.country !== 'nilesh' || !b.stock)) {
+                return -1; // 'a' is available and 'nilesh', 'b' is not 'nilesh' or not available, so 'a' comes first
+              } else if (a.stock && a.country !== 'nilesh' && (!b.country || !b.stock)) {
+                return -1; // 'a' is available and not 'nilesh', 'b' is not available or not 'nilesh', so 'a' comes first
+              } else if ((!a.stock || !b.country) && (b.stock && b.country !== 'nilesh')) {
+                return 1; // 'a' is not available or not 'nilesh', 'b' is available and not 'nilesh', so 'b' comes first
+              } else if ((!a.country || !a.stock) && (!b.country || !b.stock)) {
+                return 1; // 'a' is not available or not 'nilesh', 'b' is not available or not 'nilesh', so 'b' comes first
               }
-
+            
               // Within each group, sort by updatedAt in descending order
-              return (new Date(b.updatedAt) - new Date(a.updatedAt));
+              // return new Date(b.updatedAt) - new Date(a.updatedAt);
             })
             .map((menu) => (
               <div key={menu._id} style={{ margin: "-4px" }}>
