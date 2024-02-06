@@ -18,6 +18,7 @@ import 'react-phone-input-2/lib/style.css'
 import swal from "sweetalert2";
 import dboy from "./dboys.json"
 import Lottie from 'react-lottie';
+import {resetCart } from '../actions/cartActions';
 import Scratchcard from "./Scratchcard";
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
@@ -257,11 +258,13 @@ const Checkout=({subtotal})=> {
           if (subtotal>=200)
           {
             let checker=false;
+            dispatch(resetCart());
             dispatch(placeOrder(item,prizeValue));
             setDemo(false)
           }
           else{
             let checker=true;
+            dispatch(resetCart());
             dispatch(placeOrder(item,subtotal,checker))
 
           }
@@ -270,11 +273,13 @@ const Checkout=({subtotal})=> {
           if (subtotal>=200)
           {
             let checker=false;
+            dispatch(resetCart());
             dispatch(placeOrder(item,prizeValue));
             setDemo(false)
           }
           else{
             let checker=true;
+            dispatch(resetCart());
             dispatch(placeOrder(item,subtotal,checker))
 
           }
