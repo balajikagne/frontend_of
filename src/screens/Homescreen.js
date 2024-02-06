@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Menusa from "../components/Menus";
 import { getAllitems } from "../actions/MenuActions";
@@ -17,12 +17,21 @@ export default function Homescreen() {
   useEffect(() => {
     dispatch(getAllitems());
   },[]);
-
+   const section2Ref = useRef(null);
+ const filterButtonClick = () => {
+    // Ensure that section2Ref.current is not null before calling scrollIntoView
+    if (section2Ref.current) {
+      section2Ref.current.scrollIntoView({
+        top: 400, // Adjust this value based on how much you want the container to scroll vertically
+        behavior: 'smooth', // Optional: Add smooth scrolling effect
+      });
+    }
+  };
   return (
     <div>
       <Slidebar />
-      <Filters />
-      <div className="democ">
+      <Filters onClick={filterButtonClick}/>
+      <div className="democ" ref={section2Ref}>
         {loading ? (
           <Loading />
         ) : error ? (
