@@ -26,7 +26,7 @@ export default function Homescreen() {
         {loading ? (
           <Loading />
         ) : error ? (
-          <Error error="We have been working on Testygo app for two days" />
+          <Error error="Check Internet Connection" />
         ) : (
           items
             .slice()
