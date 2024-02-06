@@ -4,7 +4,7 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 import { filterI, filterItem } from "../actions/MenuActions";
 import { useEffect } from "react";
 import axios from "axios"
-export default function Filters() {
+export default function Filters({ onClick }) {
   const dispatch = useDispatch();
   const [searchkey,setsearch]=useState('');
   const [category,setcategory]=useState('');
@@ -30,7 +30,7 @@ export default function Filters() {
     } else {
       setFilter_category(e.toUpperCase());
     }
-    
+    onClick()
   }
   function callback(e){
     // if (searchkey!=='' ||searchkey){
@@ -52,6 +52,7 @@ export default function Filters() {
     else{
       setFilter_category(e.toUpperCase())
     }
+   onClick()
   } 
   const [Filter_category,setFilter_category]=useState('ALL Menus')
   return (
