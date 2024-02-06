@@ -32,7 +32,7 @@ export default function Menus({ menu }) {
       className="shadow p-2 bg-white rounded childc"
       style={{ width: "280px" }}
     >
-      <section id="itemloc">
+      <section >
         <div onClick={handleShow}>
           <h1>
             {menu.stock === true ? (
