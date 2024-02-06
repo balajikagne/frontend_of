@@ -258,14 +258,15 @@ const Checkout=({subtotal})=> {
           if (subtotal>=200)
           {
             let checker=false;
-            dispatch(resetCart());
             dispatch(placeOrder(item,prizeValue));
+            dispatch(resetCart());
             setDemo(false)
           }
           else{
             let checker=true;
+             dispatch(placeOrder(item,subtotal,checker))
             dispatch(resetCart());
-            dispatch(placeOrder(item,subtotal,checker))
+           
 
           }
         }
@@ -273,14 +274,15 @@ const Checkout=({subtotal})=> {
           if (subtotal>=200)
           {
             let checker=false;
+             dispatch(placeOrder(item,prizeValue));
             dispatch(resetCart());
-            dispatch(placeOrder(item,prizeValue));
             setDemo(false)
           }
           else{
             let checker=true;
-            dispatch(resetCart());
             dispatch(placeOrder(item,subtotal,checker))
+            dispatch(resetCart());
+            
 
           }
         }
