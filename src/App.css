@@ -467,3 +467,9 @@ body {
   font-size: 1.4rem;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.order_date_time > h6{
+  color: red;
+  font-size: 1.5rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
