@@ -10,8 +10,12 @@ export const placeOrder = (token, subtotal,checker) => async (dispatch, getState
       currentUser,
       cartItems,
     });
+    
     dispatch({ type: "PLACE_ORDER_SUCCESS" });
-   
+     if (checker===true)
+     {
+      window.location.href='/orders';
+     }
   } catch (error) {
     dispatch({ type: "PLACE_ORDER_FAILED" });
     console.log(error);
