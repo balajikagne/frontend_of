@@ -48,7 +48,19 @@ function FullOrderInfo({ amount }) {
   //   const seconds = timeInSeconds % 60;
   //   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   // };
+const dateString = `${location.state.Date}`; // Assuming location.state.Date is a valid date string
+  const trimmedDateString = dateString.replace(/\.$/, '').replace(/\.{2,}$/, '');
+  const timestamp = Date.parse(trimmedDateString);
+  const newTimestamp = timestamp + 35 * 60 * 1000; // 35 minutes in milliseconds
+  
+  const dateObject = new Date(newTimestamp);
+  const hours = dateObject.getHours();
+  const minutes = dateObject.getMinutes();
+  const seconds = dateObject.getSeconds();
 
+  // Convert hours to 12-hour clock format
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const formattedHours = hours % 12 || 12;
   return (
     <>
       <div className="text-left w-100% m-1">
@@ -101,6 +113,9 @@ function FullOrderInfo({ amount }) {
               Confirmed Successfully
             </span>
           </h1>
+                <div className="order_date_time">
+            <h6>Order Delivered At  {` ${formattedHours}:${minutes} ${ampm}`}</h6>
+          </div>
           <h1>
             Order Delivery Status:{" "}
             <span style={{ color: scolor }}>{location.state.Dstatus}</span>
