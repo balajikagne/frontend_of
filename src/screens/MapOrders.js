@@ -70,7 +70,7 @@ function MapOrders({order}) {
                 </div>
                 <div style={{display:'flex',gap:'60px'}}>
                     <h2>Total Amount :{order.orderAmount}</h2>
-                    <b><h2>Data :{order.createdAt.substring(0,10)}</h2></b>
+                    <b><h2>Data :{order.dateis}</h2></b>
                 </div>
            </div>
            <hr></hr>
