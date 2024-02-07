@@ -123,7 +123,7 @@ const dateString = `${location.state.Date}`; // Assuming location.state.Date is 
           </h1>
                <div className="order_date_time">
           <h6 style={{color:'black'}}>Order Time : {` ${formattedHours1}:${minutes1} ${ampm}`}</h6>
-            <h6 style={{fontSize:'1.5rem'}}>Order Delivered At : {` ${formattedHours}:${minutes} ${ampm}`}</h6>
+            <h6 style={{fontSize:'1.5rem'}}>Order Deliver At : {` ${formattedHours}:${minutes} ${ampm}`}</h6>
           </div>
           <div style={{marginBottom:'30px',marginTop:'30px'}}>
            <li className="nav-item">
