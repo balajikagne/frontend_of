@@ -57,6 +57,7 @@ const dateString = `${location.state.Date}`; // Assuming location.state.Date is 
   const hours = dateObject.getHours();
   const minutes = dateObject.getMinutes();
   const seconds = dateObject.getSeconds();
+   const dateObject1 = new Date(timestamp);
   const hours1 = dateObject1.getHours();
   const minutes1 = dateObject1.getMinutes();
   // Convert hours to 12-hour clock format
