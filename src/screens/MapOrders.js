@@ -3,6 +3,7 @@ import FullOrderInfo from './FullOrderInfo'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router';
 import { timers } from 'jquery';
+import { resetCart } from '../actions/cartActions';
 
 function MapOrders({order}) {
     const[amount,setamount]=useState('');
@@ -40,6 +41,9 @@ function MapOrders({order}) {
         navigate("/oderfullinfo",{state:{orderId:order._id,IsDelivered:order.isDelivered,amount:amount,street:order.shippingAddress.street,city:order.shippingAddress.city,country:order.shippingAddress.country,Date:order.dateis,infoitem:array,cname:order.name,mNumber:order.mobNumber,Dstatus:Status,track:track,variant:variant,Dcolor:Dcolor,now:now}})
        
     }
+    useEffect(()=>{
+        dispatch(resetCart())
+    },[])
   return (
     <div>  
       <div className='col-md-4'>
