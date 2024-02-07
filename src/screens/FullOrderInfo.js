@@ -66,7 +66,7 @@ const dateString = `${location.state.Date}`; // Assuming location.state.Date is 
   const formattedHours1 = hours1 % 12 || 12;
   return (
     <>
-      <div className="text-left w-100% m-1">
+      <div className="text-left w-100% m-1" style={{marginBottom:'60px'}}>
         <div>
           <div>
             {" "}
