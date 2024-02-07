@@ -265,7 +265,6 @@ const Checkout=({subtotal})=> {
           else{
             let checker=true;
              dispatch(placeOrder(item,subtotal,checker))
-            dispatch(resetCart(checker));
            
 
           }
@@ -276,12 +275,10 @@ const Checkout=({subtotal})=> {
             let checker=false;
              dispatch(placeOrder(item,prizeValue));
             setDemo(false)
-            
           }
           else{
             let checker=true;
             dispatch(placeOrder(item,subtotal,checker))
-            dispatch(resetCart(checker));
             
 
           }
