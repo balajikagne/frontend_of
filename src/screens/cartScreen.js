@@ -43,7 +43,7 @@ export default function CartScreen() {
     }
     }
 return (
-    <div>
+   <div>
       <div className='row justity-content-center'>
         <div>
             <h2 style={{fontSize:'40px'}}>My Cart</h2><br></br>
@@ -60,12 +60,14 @@ return (
                     <img src={item.img} style={{height:'80px',height:'80px'}}></img>
                 </div>
                 <div className="text-left m-1 w-100 box-1">
-                <h1>{item.name}[{item.varient}]</h1>
+                <h1>{item.name}</h1>
                 <h1>price :{item.quantity}*{item.prices[0][item.varient]}={item.price}</h1>
-                <h1 style={{display:'flex'}}>Quantity :</h1>
+                <div style={{display:"flex"}}>
+                <h7 style={{display:'flex',fontSize:"14px"}}>Quantity :</h7>
                 <i className="fa-solid fa-plus" area-hidden="true" onClick={()=>{dispatch(addToCart(item,item.quantity+1,item.varient))}}></i>
                 <b>{item.quantity}</b>
                 <i className="fa-solid fa-minus" area-hidden="true" onClick={()=>{dispatch(addToCart(item,item.quantity-1,item.varient))}}></i>
+                </div>
                 <hr></hr>
                 </div>
                 <div className="m-1 w-100">
