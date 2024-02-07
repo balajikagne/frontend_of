@@ -472,4 +472,47 @@ body {
   font-size: 1.2rem;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+.offer_logo{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-left: 10px;
+  animation-name: offer_logo;
+  animation-duration: 2s;
+  transition: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes offer_logo {
+  0%{
+    height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-left: 10px;
+    border-radius: 50%;
+    border: 10px solid rgb(233, 24, 24);
+  }
+  25%{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 10px;
+      border-radius: 50%;
+      border: 10px solid rgb(250, 197, 7);
+  }
+  75%{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 10px;
+      border-radius: 50%;
+      border: 10px solid rgb(236, 161, 161);
+  }
+  100%{
+    height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-left: 10px;
+    border-radius: 50%;
+    border: 10px solid rgb(250, 142, 10);
+  }
+}
