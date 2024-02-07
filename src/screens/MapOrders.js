@@ -37,7 +37,7 @@ function MapOrders({order}) {
         let amount=order.orderAmount;
         let array=order.orderItems
         let date=order.createdAt.substring(0,10);
-        navigate("/oderfullinfo",{state:{orderId:order._id,IsDelivered:order.isDelivered,amount:amount,street:order.shippingAddress.street,city:order.shippingAddress.city,country:order.shippingAddress.country,Date:order.createdAt.substring(0,20),infoitem:array,cname:order.name,mNumber:order.mobNumber,Dstatus:Status,track:track,variant:variant,Dcolor:Dcolor,now:now}})
+        navigate("/oderfullinfo",{state:{orderId:order._id,IsDelivered:order.isDelivered,amount:amount,street:order.shippingAddress.street,city:order.shippingAddress.city,country:order.shippingAddress.country,Date:order.dateis,infoitem:array,cname:order.name,mNumber:order.mobNumber,Dstatus:Status,track:track,variant:variant,Dcolor:Dcolor,now:now}})
        
     }
   return (
