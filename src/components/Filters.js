@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Form, Col, Row, Button } from "react-bootstrap";
-import { filterI, filterItem } from "../actions/MenuActions";
+import { filterI, filterItem, filterP } from "../actions/MenuActions";
 import { useEffect } from "react";
 import axios from "axios"
 export default function Filters({ onClick }) {
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
   const [searchkey,setsearch]=useState('');
-  const [category,setcategory]=useState('');
+  const [category,setcategory]=useState('all');
    const [getdata,setgetdata]=useState([]);
   const [Value,setValue]=useState('')
   useEffect(()=>{
@@ -23,6 +23,7 @@ export default function Filters({ onClick }) {
     setValue(e.target.value)
   }
   function onSearch(e){
+    setsearch('')
     setValue(e)
     dispatch(filterItem(e))
     if (e == "all") {
@@ -32,22 +33,15 @@ export default function Filters({ onClick }) {
     }
     onClick()
   }
-  function callback(e){
-    // if (searchkey!=='' ||searchkey){
-    //   dispatch(filterItem(searchkey.toLowerCase()))
-    // }
-    // else{
-    //   dispatch(filterI(category))
-    // }
-    
-    setcategory(e.target.value);
-    // console.log()
-    dispatch(filterI(e.target.value))
+ function callback(e){
+    dispatch(filterP(e,category))
   }
- function scall(e){
+function scall(e){
+  setsearch('')
+  setcategory(e);
     dispatch(filterI(e))
     if (e=='all'){
-      setFilter_category('ALL Menus')
+      setFilter_category('all')
     }
     else{
       setFilter_category(e.toUpperCase())
@@ -115,6 +109,21 @@ export default function Filters({ onClick }) {
           <div style={{height:'100px',width:'100px',cursor:'pointer'}} onClick={(e)=>{scall('combo pack')}}><a style={{textDecoration:'none',color:'black'}} href="#itemloc"><img src='https://media.istockphoto.com/id/1196317163/photo/delicious-fresh-and-tasty-flat-bread-italian-pepperoni-or-margherita-pizza-view-of-salami.jpg?s=612x612&w=0&k=20&c=oSm5WTc6nY76Y1QQMiq3BPRs7JAeG7S-mY2qTQ_lW8k=' id="sitem"></img><h2 className='tname'>Combo Pack</h2></a></div>  
           <div style={{height:'100px',width:'100px',cursor:'pointer'}} onClick={(e)=>{scall('soup')}}><a style={{textDecoration:'none',color:'black'}} href="#itemloc"><img src='https://media.istockphoto.com/id/579739258/photo/lemon-coriander-soup.jpg?s=612x612&w=0&k=20&c=816iYZig2GJUKwchjx9i563IZy3c8gemq9uD8N6G9nU=' id="sitem"></img><h2 className='tname'>Soup</h2></a></div>
         </div>
+              <Form>
+        <Row>
+          <Col>
+            <Form.Select value={searchkey} aria-label="Default select example" onChange={(e)=>{if(e.target.value==='Select'){
+            return null;
+            }else{
+              setsearch(e.target.value);callback(e.target.value);
+            }}}>
+              <option>Select</option>
+              <option>low to high</option>
+              <option>high to low</option>
+            </Form.Select>
+          </Col>
+        </Row>
+      </Form>
       </div>
               <div className="Filter_category" style={{marginBottom:"50px"}}>
         <h2>{Filter_category}</h2>
