@@ -105,3 +105,75 @@ export const filterI=(category)=>async dispatch=>{
         console.log(error)
     }
 }
+export const filterP=(searchkey,category)=>async dispatch=>{
+    
+    dispatch({type:'GET_ITEMS_REQ'})
+      let  filterdItem1;
+    //   console.log('hellow')
+    try{
+        console.log(searchkey,category)
+        
+            
+           if (searchkey==='low to high' && category==='all')
+           {
+            const res=await axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+            // filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
+            let filter2=res.data.sort((a, b) => {
+                const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
+                const lowestPriceB = Math.min(parseFloat(b.prices[0].half), parseFloat(b.prices[0].full));
+  
+                return lowestPriceA - lowestPriceB;
+              })
+            dispatch({type:'GET_ITEMS_SUCCESS',payload:filter2})
+            return;
+           }
+           else if (searchkey=='low to high' && category!=='all')
+           {
+            const res=await axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+            filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
+            let filter2=filterdItem1.sort((a, b) => {
+                const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
+                const lowestPriceB = Math.min(parseFloat(b.prices[0].half), parseFloat(b.prices[0].full));
+  
+                return lowestPriceA - lowestPriceB;
+              })
+            dispatch({type:'GET_ITEMS_SUCCESS',payload:filter2})
+            return;
+           }
+           else if (searchkey=='high to low' && category!=='all')
+           {
+            const res=await axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+            filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
+            let filter2=filterdItem1.sort((a, b) => {
+                const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
+                const lowestPriceB = Math.min(parseFloat(b.prices[0].half), parseFloat(b.prices[0].full));
+  
+                return lowestPriceB - lowestPriceA;
+              })
+            dispatch({type:'GET_ITEMS_SUCCESS',payload:filter2})
+            return;
+           }
+           else if (searchkey==='high to low' && category==='all'){
+            const res=await axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+            // filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
+            let filter2=res.data.sort((a, b) => {
+                const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
+                const lowestPriceB = Math.min(parseFloat(b.prices[0].half), parseFloat(b.prices[0].full));
+  
+                return lowestPriceB - lowestPriceA;
+              })
+            dispatch({type:'GET_ITEMS_SUCCESS',payload:filter2})
+            return;
+           }
+          else{
+            const res=await axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+            filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
+            dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem1})
+          }
+       
+    }
+    catch(error){
+        dispatch({type:'GET_ITEMS_FAILED',payload:error});
+        console.log(error)
+    }
+}
