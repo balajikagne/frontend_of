@@ -31,7 +31,7 @@ const aboutUs = () => {
     <TeamMember
       name="Nilesh Kadam (Co-Founder)"
       imageSrc="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/410811558_1514198539380529_106832668786001308_n.jpg?ccb=11-4&oh=01_AdTC-Hv-aqYA1T_7rdkPgtJgsQtuNCgJRe2fiC9aUenZng&oe=65D222C1&_nc_sid=e6ed6c&_nc_cat=104" // Replace with actual image source
-      linkedinUrl="https://www.linkedin.com/in/nilesh-kadam/" // Replace with actual LinkedIn URL
+      linkedinUrl="/" // Replace with actual LinkedIn URL
       description="Nilesh Kadam, our marketing maestro at Testygo, collaborates with Balaji to make your food delivery experience extraordinary. While Balaji focuses on coding and bringing fresh ideas to Testygo, Nilesh ensures that our platform's message reaches food enthusiasts far and wide. Together, they create a dynamic duo, combining technical excellence with effective marketing strategies to make Testygo your preferred food delivery destination."
     />
   </div>
