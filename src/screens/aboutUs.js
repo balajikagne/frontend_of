@@ -25,7 +25,7 @@ const aboutUs = () => {
       name="Balaji Kagne"
       imageSrc="https://media.licdn.com/dms/image/D4D03AQEO94m4Mi3_wQ/profile-displayphoto-shrink_400_400/0/1689003547275?e=1712793600&v=beta&t=Fmxeui3wYUjhUQVtPA03pDJ_GB30EJI8zVh_IhZobHA" // Replace with actual image source
       linkedinUrl="https://www.linkedin.com/in/balaji-kagne-777a40222/" // Replace with actual LinkedIn URL
-      description="Meet Balaji Kagne, the visionary founder of Testygo, the go-to food delivery platform. Balaji is the coding genius behind our platform, translating innovative ideas into seamless user experiences. His dedication to crafting efficient and user-friendly solutions makes Testygo a leader in the food delivery industry."
+      description="Meet Balaji Kagne, the visionary member of Testygo, the go-to food delivery platform. Balaji is the coding genius behind our platform, translating innovative ideas into seamless user experiences. His dedication to crafting efficient and user-friendly solutions makes Testygo a leader in the food delivery industry."
     />
      <TeamMember
       name="Prasad Wandekar"
