@@ -22,16 +22,21 @@ const aboutUs = () => {
     <>
      <div>
     <TeamMember
-      name="Balaji Kagne (Founder)"
+      name="Balaji Kagne"
       imageSrc="https://media.licdn.com/dms/image/D4D03AQEO94m4Mi3_wQ/profile-displayphoto-shrink_400_400/0/1689003547275?e=1712793600&v=beta&t=Fmxeui3wYUjhUQVtPA03pDJ_GB30EJI8zVh_IhZobHA" // Replace with actual image source
       linkedinUrl="https://www.linkedin.com/in/balaji-kagne-777a40222/" // Replace with actual LinkedIn URL
       description="Meet Balaji Kagne, the visionary founder of Testygo, the go-to food delivery platform. Balaji is the coding genius behind our platform, translating innovative ideas into seamless user experiences. His dedication to crafting efficient and user-friendly solutions makes Testygo a leader in the food delivery industry."
     />
-
+     <TeamMember
+      name="Prasad Wandekar"
+      imageSrc="https://media.licdn.com/dms/image/D4D03AQE-3a_koPctVQ/profile-displayphoto-shrink_100_100/0/1706471296818?e=1713398400&v=beta&t=trVyOujDDoyi_X3GI_uuGuP_RVZ4rGnl660Ojw8Pipw" // Replace with actual image source
+      linkedinUrl="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADOZnq4B5BpGbLkeLCqNK9o7s66GVBxkrLU&keywords=prasad%20wandhekar&origin=RICH_QUERY_SUGGESTION&position=0&searchId=3995837a-0eb3-4adc-b2ca-9c5ba8ad988d&sid=xK%2C&spellCorrectionEnabled=false" // Replace with actual LinkedIn URL
+      description="Description: Prasad Wandekar, a dedicated member of Testygo, brings valuable expertise to the team. His focus on efficient operations and customer satisfaction helps drive the success of the food delivery platform. Prasad collaborates with the team to ensure seamless processes and a positive experience for both customers and partners."
+    />
     <TeamMember
-      name="Nilesh Kadam (Co-Founder)"
+      name="Nilesh Kadam"
       imageSrc="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/410811558_1514198539380529_106832668786001308_n.jpg?ccb=11-4&oh=01_AdTC-Hv-aqYA1T_7rdkPgtJgsQtuNCgJRe2fiC9aUenZng&oe=65D222C1&_nc_sid=e6ed6c&_nc_cat=104" // Replace with actual image source
-      linkedinUrl="/" // Replace with actual LinkedIn URL
+      linkedinUrl="https://www.linkedin.com/in/nilesh-kadam/" // Replace with actual LinkedIn URL
       description="Nilesh Kadam, our marketing maestro at Testygo, collaborates with Balaji to make your food delivery experience extraordinary. While Balaji focuses on coding and bringing fresh ideas to Testygo, Nilesh ensures that our platform's message reaches food enthusiasts far and wide. Together, they create a dynamic duo, combining technical excellence with effective marketing strategies to make Testygo your preferred food delivery destination."
     />
   </div>
