@@ -4,7 +4,7 @@ export const placeOrder = (token, subtotal,checker) => async (dispatch, getState
   const currentUser = getState().loginUserReducer.currentUser;
   const cartItems = getState().addtoCartReducer.cartItems;
   try {
-    const res = await axios.post("https://bored-ruby-woolens.cyclic.app/api/orders/placeorder", {
+    const res = await axios.post("https://fair-lime-grasshopper-slip.cyclic.app/api/orders/placeorder", {
       token,
       subtotal,
       currentUser,
@@ -26,7 +26,7 @@ export const getUserOrders=()=>async (dispatch,getState)=>{
   dispatch({type:"USER_ORDER_REQ",
 });
 try{
-  const response=await axios.post("https://bored-ruby-woolens.cyclic.app/api/orders/getuserorder",{
+  const response=await axios.post("https://fair-lime-grasshopper-slip.cyclic.app/api/orders/getuserorder",{
     userid:currentUser._id,
   });
  
@@ -40,7 +40,7 @@ catch(error)
 export const getALLOrders = () => async (dispatch,getState) => {
     dispatch({ type: "ALL_ORDER_REQ" });
     try {
-      const res = await axios.get("https://bored-ruby-woolens.cyclic.app/api/orders/getallorders");
+      const res = await axios.get("https://fair-lime-grasshopper-slip.cyclic.app/api/orders/getallorders");
       dispatch({ type: "ALL_ORDER_SUCCESS" ,payload:res.data});
       
     } catch (error) {
@@ -52,8 +52,8 @@ export const getALLOrders = () => async (dispatch,getState) => {
   export const deliveredOrders = (orderid) => async (dispatch,getState) => {
     dispatch({ type: "GET_ALL_ORDER_REQ" });
     try {
-      const res = await axios.post("https://bored-ruby-woolens.cyclic.app/api/orders/deliverorder",{orderid});
-      const orders=await  axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+      const res = await axios.post("https://fair-lime-grasshopper-slip.cyclic.app/api/orders/deliverorder",{orderid});
+      const orders=await  axios.get("https://fair-lime-grasshopper-slip.cyclic.app/api/items/getallitems")
       dispatch({ type: "GET_ALL_ORDER_SUCCESS" ,payload:orders.data});
       window.location.href="/admin/orderlist"
     } catch (error) {
@@ -65,8 +65,8 @@ export const getALLOrders = () => async (dispatch,getState) => {
   export const StockIn = (itemId) => async (dispatch,getState) => {
     dispatch({type:'GET_ITEMS_REQ'});
     try {
-      const res = await axios.post("https://bored-ruby-woolens.cyclic.app/api/items/itemlistin",{itemId});
-      const orders=await  axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+      const res = await axios.post("https://fair-lime-grasshopper-slip.cyclic.app/api/items/itemlistin",{itemId});
+      const orders=await  axios.get("https://fair-lime-grasshopper-slip.cyclic.app/api/items/getallitems")
       dispatch({type:'GET_ITEMS_SUCCESS',payload:orders.data});
       // window.location.href="/admin/itemlist"
     } catch (error) {
@@ -78,8 +78,8 @@ export const getALLOrders = () => async (dispatch,getState) => {
   export const StockOut = (itemId) => async (dispatch,getState) => {
     dispatch({type:'GET_ITEMS_REQ'});
     try {
-      const res = await axios.post("https://bored-ruby-woolens.cyclic.app/api/items/itemlistout",{itemId});
-      const orders=await  axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems")
+      const res = await axios.post("https://fair-lime-grasshopper-slip.cyclic.app/api/items/itemlistout",{itemId});
+      const orders=await  axios.get("https://fair-lime-grasshopper-slip.cyclic.app/api/items/getallitems")
       dispatch({type:'GET_ITEMS_SUCCESS',payload:orders.data});
       // window.location.href="/admin/itemlist"
     } catch (error) {
