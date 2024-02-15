@@ -11,7 +11,7 @@ export default function Filters({ onClick }) {
    const [getdata,setgetdata]=useState([]);
   const [Value,setValue]=useState('')
   useEffect(()=>{
-    axios.get("https://bored-ruby-woolens.cyclic.app/api/items/getallitems").then(res=>{
+    axios.get("https://fair-lime-grasshopper-slip.cyclic.app/api/items/getallitems").then(res=>{
       
       setgetdata(res.data);
           }).catch(error=>{
