@@ -3,7 +3,7 @@ import swal from 'sweetalert'
 export const getAllitems=()=>async dispatch=>{
     dispatch({type:'GET_ITEMS_REQ'})
     try {
-        const response=await axios.get('https://balajibackend-demo-1.onrender.com/api/items/getallitems')
+        const response=await axios.get('https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems')
         
         dispatch({type:'GET_ITEMS_SUCCESS',payload :response.data})
     }catch(error){
@@ -15,7 +15,7 @@ export const getAllitems_new=()=>async (dispatch, getState) => {
     
     try {
         // const response=await axios.get('/api/items/getallitems')
-        const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/Notificationlist")////
+        const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/Notificationlist")////
         console.log(res.data)
         dispatch({type:'GET_ITEMS_SUCCESS_NEW',payload :res.data})
     }catch(error){
@@ -26,7 +26,7 @@ export const addItems=(item)=>async (dispatch)=>{
     dispatch({type:'ADD_ITEMS_REQ'})
     
     try {
-        const response=await axios.post('https://balajibackend-demo-1.onrender.com/api/items/additem',item)
+        const response=await axios.post('https://tiny-lime-squid-tie.cyclic.app/api/items/additem',item)
     
         dispatch({type:'ADD_ITEMS_SUCCESS',payload :response.data})
     }catch(error){
@@ -39,7 +39,7 @@ export const getItemById=(item)=>async (dispatch)=>{
     dispatch({type:'GET_ITEMBYID_REQ'})
     console.log(item);
     try {
-        const response=await axios.post('https://balajibackend-demo-1.onrender.com/items/getitembyid',item)
+        const response=await axios.post('https://tiny-lime-squid-tie.cyclic.app/items/getitembyid',item)
       
         dispatch({type:'GET_ITEMBYID_SUCCESS',payload :response.data})
     }catch(error){
@@ -52,7 +52,7 @@ export const getItemById=(item)=>async (dispatch)=>{
 export const deleteItem=(itemId)=>async (dispatch)=>{
     console.log({itemId})
     try {
-        const response=await axios.post('https://balajibackend-demo-1.onrender.com/api/items/deleteitem',{itemId})
+        const response=await axios.post('https://tiny-lime-squid-tie.cyclic.app/api/items/deleteitem',{itemId})
         swal("Item deleted successfully")
         window.location.href="/admin/itemlist"
         
@@ -67,7 +67,7 @@ export const filterItem=(searchkey,category)=>async dispatch=>{
     
     dispatch({type:'GET_ITEMS_REQ'})
     try{
-        const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")
+        const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems")
         filterdItem=res.data.filter(item => item.name.toLowerCase().includes(searchkey))
         // if (category!=='all'){
         //     filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
@@ -86,7 +86,7 @@ export const filterI=(category)=>async dispatch=>{
       let  filterdItem1;
     try{
         // console.log(category)
-        const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")
+        const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems")
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
            if (category==='all')
            {
@@ -116,7 +116,7 @@ export const filterP=(searchkey,category)=>async dispatch=>{
             
            if (searchkey==='low to high' && category==='all')
            {
-            const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")
+            const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems")
             // filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
             let filter2=res.data.sort((a, b) => {
                 const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
@@ -129,7 +129,7 @@ export const filterP=(searchkey,category)=>async dispatch=>{
            }
            else if (searchkey=='low to high' && category!=='all')
            {
-            const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")
+            const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems")
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
             let filter2=filterdItem1.sort((a, b) => {
                 const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
@@ -142,7 +142,7 @@ export const filterP=(searchkey,category)=>async dispatch=>{
            }
            else if (searchkey=='high to low' && category!=='all')
            {
-            const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")
+            const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems")
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
             let filter2=filterdItem1.sort((a, b) => {
                 const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
@@ -154,7 +154,7 @@ export const filterP=(searchkey,category)=>async dispatch=>{
             return;
            }
            else if (searchkey==='high to low' && category==='all'){
-            const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")
+            const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems")
             // filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
             let filter2=res.data.sort((a, b) => {
                 const lowestPriceA = Math.min(parseFloat(a.prices[0].half), parseFloat(a.prices[0].full));
@@ -166,7 +166,7 @@ export const filterP=(searchkey,category)=>async dispatch=>{
             return;
            }
           else{
-            const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")
+            const res=await axios.get("https://tiny-lime-squid-tie.cyclic.app/api/items/getallitems")
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
             dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem1})
           }
