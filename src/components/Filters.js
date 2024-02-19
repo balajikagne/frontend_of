@@ -23,6 +23,8 @@ export default function Filters({ onClick }) {
     setValue(e.target.value)
   }
   function onSearch(e){
+      handleLoading();
+    setIsLoading(true)
     setsearch('')
     setValue(e)
     dispatch(filterItem(e))
@@ -37,6 +39,8 @@ export default function Filters({ onClick }) {
     dispatch(filterP(e,category))
   }
 function scall(e){
+    handleLoading();
+    setIsLoading(true)
   setsearch('')
   setcategory(e);
     dispatch(filterI(e))
@@ -49,6 +53,19 @@ function scall(e){
    onClick()
   } 
   const [Filter_category,setFilter_category]=useState('ALL Menus')
+   const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoading = () => {
+    // Simulate loading for 5 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 5000 milliseconds (5 seconds)
+
+    // Clear the timeout when the component unmounts
+    return () => {
+      clearTimeout(timer);
+    };
+  };
   return (
     <>
     <div style={{marginBottom:'20px'}} className="p-4 bg-light mt-4 ">
@@ -128,6 +145,20 @@ function scall(e){
               <div className="Filter_category" style={{marginBottom:"50px"}}>
         <h2>{Filter_category}</h2>
       </div>
+               <div style={{marginTop:'-40px'}}>
+      {isLoading ? (
+        <div>
+          <p>Loading...</p>
+          {/* You can replace this with your preferred loading spinner or animation */}
+          <div className="spinner"></div>
+        </div>
+      ) : (
+        <div>
+          {/* Content to display after loading */}
+          <p>Data loaded successfully!</p>
+        </div>
+      )}
+    </div>
   </>
   );
 }
