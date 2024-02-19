@@ -334,6 +334,7 @@ const Checkout=({subtotal})=> {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [address, setAddress] = useState('');
+  const [City, setCity] = useState('');
   useEffect(() => {
     let watchId;
 
@@ -353,6 +354,8 @@ const Checkout=({subtotal})=> {
               const data = await response.json();
               const formattedAddress = data.results[0].formatted;
               setAddress(formattedAddress);
+              const cityComponent = data.results[0].components.city;
+              setCity(cityComponent || 'City not found');
             } catch (error) {
               console.error('Error fetching address:', error);
             }
@@ -391,7 +394,7 @@ const Checkout=({subtotal})=> {
       {
         demo ? (
           <div>
-       <Lottie options={defaultOptions} height={300} width={300} />
+       <Lottie options={defaultOptions} height={200} width={200} />
       
         <Form>
           <Col className="mb-3">
