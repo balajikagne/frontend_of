@@ -59,7 +59,7 @@ function scall(e){
     // Simulate loading for 5 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000); // 5000 milliseconds (5 seconds)
+    }, 5000); // 5000 milliseconds (5 seconds)
 
     // Clear the timeout when the component unmounts
     return () => {
