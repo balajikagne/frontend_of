@@ -331,9 +331,63 @@ const Checkout=({subtotal})=> {
     },
   };
   const [demo,setDemo]=useState(true)
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
+  const [address, setAddress] = useState('');
+  useEffect(() => {
+    let watchId;
+
+    const getLocation = () => {
+      if (navigator.geolocation) {
+        watchId = navigator.geolocation.watchPosition(
+          async (position) => {
+            setLatitude(position.coords.latitude);
+            setLongitude(position.coords.longitude);
+
+            // Reverse geocoding to get the address
+            const apiKey = '5dde273c2e37474a8417af7108e91ffe';
+            const reverseGeocodeUrl = `https://api.opencagedata.com/geocode/v1/json?q=${position.coords.latitude}+${position.coords.longitude}&key=${apiKey}`;
+
+            try {
+              const response = await fetch(reverseGeocodeUrl);
+              const data = await response.json();
+              const formattedAddress = data.results[0].formatted;
+              setAddress(formattedAddress);
+            } catch (error) {
+              console.error('Error fetching address:', error);
+            }
+          },
+          (error) => {
+            console.error('Error getting location:', error);
+          }
+        );
+      } else {
+        console.error('Geolocation is not supported by this browser.');
+      }
+    };
+
+    getLocation();
+
+    // Cleanup watcher on component unmount
+    return () => {
+      navigator.geolocation.clearWatch(watchId);
+    };
+  }, []);
   return (
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
+       <div>
+      <h2>Live Location Tracker</h2>
+      {latitude && longitude ? (
+        <div>
+          <p>Latitude: {latitude}</p>
+          <p>Longitude: {longitude}</p>
+          <p>Address: {address || 'Fetching address...'}</p>
+        </div>
+      ) : (
+        <p>Fetching location...</p>
+      )}
+    </div>
       {
         demo ? (
           <div>
