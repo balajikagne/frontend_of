@@ -34,7 +34,7 @@ const Checkout=({subtotal})=> {
   const [mobNumber, setmobNumber] = useState("");
   const [showError, setShowError] = useState(false);
   const [time,settime]=useState(new Date())
-  const [prizeValue, setPrizeValue] = useState(Math.floor (subtotal-(subtotal*(5/100))));
+  const [prizeValue, setPrizeValue] = useState(Math.floor (subtotal-(subtotal*(1/100))));
     const dispatch=useDispatch();
     const allordersState=useSelector(state=>state.allOrdersReducer)
   const {loading,error,orders}=allordersState
@@ -290,16 +290,16 @@ const Checkout=({subtotal})=> {
     };
   useEffect(() => {
     const prizeOptions = [
-      Math.floor (subtotal-(subtotal*(10/100))),
-       Math.floor (subtotal-(subtotal*(12/100))),
-       Math.floor (subtotal-(subtotal*(11/100))),
-       Math.floor (subtotal-(subtotal*(9/100))),
-       Math.floor (subtotal-(subtotal*(14/100))),
-       Math.floor (subtotal-(subtotal*(15/100))),
-       Math.floor (subtotal-(subtotal*(11/100))),
-       Math.floor (subtotal-(subtotal*(7/100))),
+      Math.floor (subtotal-(subtotal*(2/100))),
+       Math.floor (subtotal-(subtotal*(1/100))),
+       Math.floor (subtotal-(subtotal*(3/100))),
+       Math.floor (subtotal-(subtotal*(1/100))),
        Math.floor (subtotal-(subtotal*(4/100))),
-       Math.floor (subtotal-(subtotal*(13/100)))
+       Math.floor (subtotal-(subtotal*(5/100))),
+       Math.floor (subtotal-(subtotal*(1/100))),
+       Math.floor (subtotal-(subtotal*(2/100))),
+       Math.floor (subtotal-(subtotal*(4/100))),
+       Math.floor (subtotal-(subtotal*(3/100)))
   ];
   const randomPrize =
   prizeOptions[Math.floor(Math.random() * prizeOptions.length)];
