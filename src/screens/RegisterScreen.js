@@ -249,7 +249,7 @@ export default function RegisterScreen() {
                         setlocation(e.target.value);
                       }}
                     >
-                      <option>pict</option>
+                      <option>pune</option>
                       <option>vita</option>
                     </Form.Select>
                   </Col>
