@@ -39,8 +39,6 @@ export default function Homescreen() {
         ) : (
           items
             .sort((a, b) => {
-              console.log(a.country);
-            
               // First, sort by availability and country (onlineAvailable)
               if (a.country === 'nilesh' && a.stock && (b.country !== 'nilesh' || !b.stock)) {
                 return -1; // 'a' is available and 'nilesh', 'b' is not 'nilesh' or not available, so 'a' comes first
