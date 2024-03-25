@@ -149,8 +149,8 @@ export default function RegisterScreen() {
         //     });
         //   });
         const user1 = {
-                    name,
-                    location
+                   name,
+                    location,
                     mobNumber,
                     password,
                   };
