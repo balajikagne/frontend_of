@@ -156,6 +156,7 @@ export default function RegisterScreen() {
                   };
                   const user2={mobNumber,password}
            dispatch(registerUser(user1));
+        console.log(user2)
                   dispatch(loginUser(user2));
 
       } catch (error) {
