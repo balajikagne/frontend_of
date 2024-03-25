@@ -120,7 +120,7 @@ export default function RegisterScreen() {
     if (
       password !== cpassword||
       mobNumber !== "" ||
-      name !== ""
+      name !== "" || password==="" || cpassword===""
     ) {
       let code = otp;
       try {
