@@ -1,11 +1,17 @@
 import axios from 'axios';
 import swal from 'sweetalert'
-export const getAllitems=()=>async dispatch=>{
+export const getAllitems=()=>async (dispatch, getState) => {
     dispatch({type:'GET_ITEMS_REQ'})
+    const currentUser = getState().loginUserReducer.currentUser;
+    
+    let filterdlocation;////
+    let location=currentUser.location////
+    
     try {
-        const response=await axios.get('https://zany-clam-sundress.cyclic.app/api/items/getallitems')
-        
-        dispatch({type:'GET_ITEMS_SUCCESS',payload :response.data})
+        // const response=await axios.get('/api/items/getallitems')
+        const res=await axios.get("https://zany-clam-sundress.cyclic.app/api/items/getallitems")////
+        filterdlocation=res.data.filter(item=>item.location.toLowerCase().includes(location));////
+        dispatch({type:'GET_ITEMS_SUCCESS',payload :filterdlocation})
     }catch(error){
         dispatch({type:"GET_ITEMS_FAILED",payload : error})
     }
@@ -61,44 +67,115 @@ export const deleteItem=(itemId)=>async (dispatch)=>{
     }
 }
 
-export const filterItem=(searchkey,category)=>async dispatch=>{
-    let filterdItem;
-    // let filterdItem1;
-    
+export const filterItem=(searchkey)=>async (dispatch, getState)=>{
     dispatch({type:'GET_ITEMS_REQ'})
+    const currentUser = getState().loginUserReducer.currentUser;
+    
+    let filterdlocation;////
+    let location=currentUser.location
+      let  filterdItem1;
+            let filterdItem2;////
     try{
+        // console.log(category)
         const res=await axios.get("https://zany-clam-sundress.cyclic.app/api/items/getallitems")
-        filterdItem=res.data.filter(item => item.name.toLowerCase().includes(searchkey))
-        // if (category!=='all'){
-        //     filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
-        // }
-        dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem})
-       
+            filterdItem1=res.data.filter(item=>item.name.toLowerCase().includes(searchkey));////
+            console.log(filterdItem1,'hellow');////
+
+            filterdItem2=filterdItem1.filter(item=>item.location.toLowerCase()===location);////
+            // if (filterdItem1!==null){////
+            //      filterdItem2=filterdItem1.filter(item=>item.location.toLowerCase()===location);////
+            //      if (filterdItem2.length===0){
+            //         swal.fire({
+            //             title: "those items are not availble in this area",
+            //                   text: "Thank You",
+            //                   icon: "info",
+            //             confirmButtonText: "OK",
+            //           }).then((result) => {
+            //             /* Read more about isConfirmed, isDenied below */
+            //             if (result.isConfirmed) {
+            //               window.location.href='/'
+            //             }
+            //           });
+            //        }
+            //        else{
+            //         console.log("done")
+            //         dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem2})
+            //        }
+            // }////
+        //     if (category==='all')
+        //    {
+        //     const res=await axios.get("https://balajibackend-demo-1.onrender.com/api/items/getallitems")////
+        // filterdlocation=res.data.filter(item=>item.location.toLowerCase().includes(location));////
+        // dispatch({type:'GET_ITEMS_SUCCESS',payload :filterdlocation})
+        // console.log('all')
+        // return;
+        //    }
+        //    else if (category==='')
+        //    {
+        //     // window.location.href='/';
+        //     console.log('nothing')
+
+        //    }
+        
+        dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem2})////
     }
     catch(error){
         dispatch({type:'GET_ITEMS_FAILED',payload:error});
         console.log(error)
     }
 }
-export const filterI=(category)=>async dispatch=>{
+export const filterI=(category)=>async (dispatch, getState)=>{
     
     dispatch({type:'GET_ITEMS_REQ'})
+    const currentUser = getState().loginUserReducer.currentUser;
+    
+    let filterdlocation;////
+    let location=currentUser.location
       let  filterdItem1;
+            let filterdItem2;////
     try{
         // console.log(category)
         const res=await axios.get("https://zany-clam-sundress.cyclic.app/api/items/getallitems")
             filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
-           if (category==='all')
+            console.log(filterdItem1,'hellow');////
+
+            filterdItem2=filterdItem1.filter(item=>item.location.toLowerCase()===location);////
+            // if (filterdItem1!==null){////
+            //      filterdItem2=filterdItem1.filter(item=>item.location.toLowerCase()===location);////
+            //      if (filterdItem2.length===0){
+            //         swal.fire({
+            //             title: "those items are not availble in this area",
+            //                   text: "Thank You",
+            //                   icon: "info",
+            //             confirmButtonText: "OK",
+            //           }).then((result) => {
+            //             /* Read more about isConfirmed, isDenied below */
+            //             if (result.isConfirmed) {
+            //               window.location.href='/'
+            //             }
+            //           });
+            //        }
+            //        else{
+            //         console.log("done")
+            //         dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem2})
+            //        }
+            // }////
+            if (category==='all')
            {
-            filterdItem1=res.data
-            dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem1})
-            return
+            const res=await axios.get("https://zany-clam-sundress.cyclic.app/api/items/getallitems")////
+        filterdlocation=res.data.filter(item=>item.location.toLowerCase().includes(location));////
+        dispatch({type:'GET_ITEMS_SUCCESS',payload :filterdlocation})
+        console.log('all')
+        return;
            }
            else if (category==='')
            {
-            window.location.href='/';
+            // window.location.href='/';
+            console.log('nothing')
+
            }
-        dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem1})
+        
+        dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem2})////
     }
     catch(error){
         dispatch({type:'GET_ITEMS_FAILED',payload:error});
