@@ -5,6 +5,7 @@ import { loginUser, registerUser } from "../actions/UserActions";
 import Success from "../components/Success";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import { Form, Col, Row, Button } from "react-bootstrap";
 import swal from "sweetalert2";
 import { NavLink } from "react-router-dom";
 import { auth } from "../firebase.config";
@@ -14,7 +15,7 @@ let OTP_MOB_A = [];
 export default function RegisterScreen() {
   const [name, setname] = useState("");
   const [otp, setotp] = useState("");
-  // const [location, setlocation] = useState("");
+  const [location, setlocation] = useState("pune");
   const [mobNumber, setmobNumber] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
@@ -149,7 +150,7 @@ export default function RegisterScreen() {
         //   });
         const user1 = {
                     name,
-                    // location
+                    location
                     mobNumber,
                     password,
                   };
@@ -236,7 +237,25 @@ export default function RegisterScreen() {
               }}
               required
             ></input>
-            
+            <Form style={{ marginTop: "15px", width: "100%" }}>
+              <Form.Group controlId="locationSelect">
+                <Form.Label>Select Location</Form.Label>
+                <Row>
+                  <Col>
+                    <Form.Select
+                      value={location}
+                      aria-label="Select"
+                      onChange={(e) => {
+                        setlocation(e.target.value);
+                      }}
+                    >
+                      <option>pict</option>
+                      <option>vita</option>
+                    </Form.Select>
+                  </Col>
+                </Row>
+              </Form.Group>
+            </Form>
             <div
               style={{
                 display: "flex",
