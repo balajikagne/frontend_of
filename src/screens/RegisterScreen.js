@@ -148,16 +148,20 @@ export default function RegisterScreen() {
         //       confirmButtonText: "OK",
         //     });
         //   });
-        const user1 = {
-                   name,
+       const user1 = {
+                    name,
                     location,
                     mobNumber,
                     password,
                   };
                   const user2={mobNumber,password}
-           dispatch(registerUser(user1));
-     
-                  dispatch(loginUser(user2));
+                  dispatch(registerUser(user1));
+                  swal.fire({
+                          title: "Welcome",
+                          text: "Thank You",
+                          icon: "success",
+                          confirmButtonText: "OK",
+                        })
 
       } catch (error) {
         // console.log(error);
