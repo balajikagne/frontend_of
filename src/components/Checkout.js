@@ -74,7 +74,7 @@ const Checkout=({subtotal})=> {
         pincode:'411041',
         mobNumber:currentUser.mobNumber
       };
-      const webHooKURL='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
+      const webHooKURL='https://discordapp.com/api/webhooks/1162687599907962970/z6lUM60fJ840z3LkYrCEkeSdqPuDyHj9M01jerNCUxf9Oxx0wzrgSDAtLtH84aRTfYN1'
       const webHooKURL1='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
       const webHooKURL2='https://discord.com/api/webhooks/1162626500021985391/2R6fX-NYPTndUKh985Fbd4YonIWPTq0v8OlcrmxbZL-GEg4ds9O8Ga1lOUh4S1Xsyxcd'
      
@@ -99,9 +99,9 @@ const Checkout=({subtotal})=> {
       {
        
         // console.log(cartItems[2].country)
-        if (cartItems[i].country==='manoj')
+        if (cartItems[i].country==='nikhil')
         {
-          checkdealer1='manoj';
+          checkdealer1='nikhil';
           arrName1[i]=cartItems[i].name+" ";
           arrQuantity1[i]=cartItems[i].quantity+" ";
           totalprice1=totalprice1+cartItems[i].price;
@@ -122,7 +122,7 @@ const Checkout=({subtotal})=> {
         }
         //if else condition
       }
-      if (checkdealer1==='manoj')
+      if (checkdealer1==='nikhil')
       {
         try{
           const datauser={
