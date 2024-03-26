@@ -25,7 +25,7 @@ const Checkout=({subtotal})=> {
     const cartItems=cartstate.cartItems;
    const userstate = useSelector((state) => state.loginUserReducer);
   const { currentUser } = userstate;
-    console.log(cartItems);
+   
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
   const [shippingAddress, setshippingAddress] = useState("");
   const [city, setcity] = useState("pune");
@@ -335,62 +335,11 @@ const Checkout=({subtotal})=> {
   const [longitude, setLongitude] = useState(null);
   const [address, setAddress] = useState('');
   const [City, setCity] = useState('');
-  useEffect(() => {
-    let watchId;
 
-    const getLocation = () => {
-      if (navigator.geolocation) {
-        watchId = navigator.geolocation.watchPosition(
-          async (position) => {
-            setLatitude(position.coords.latitude);
-            setLongitude(position.coords.longitude);
-
-            // Reverse geocoding to get the address
-            const apiKey = '5dde273c2e37474a8417af7108e91ffe';
-            const reverseGeocodeUrl = `https://api.opencagedata.com/geocode/v1/json?q=${position.coords.latitude}+${position.coords.longitude}&key=${apiKey}`;
-
-            try {
-              const response = await fetch(reverseGeocodeUrl);
-              const data = await response.json();
-              const formattedAddress = data.results[0].formatted;
-              setAddress(formattedAddress);
-              const cityComponent = data.results[0].components.city;
-              setCity(cityComponent || 'City not found');
-            } catch (error) {
-              console.error('Error fetching address:', error);
-            }
-          },
-          (error) => {
-            console.error('Error getting location:', error);
-          }
-        );
-      } else {
-        console.error('Geolocation is not supported by this browser.');
-      }
-    };
-
-    getLocation();
-
-    // Cleanup watcher on component unmount
-    return () => {
-      navigator.geolocation.clearWatch(watchId);
-    };
-  }, []);
+  
   return (
       <div>
       <h4 className="bg-dark text-light p-2">Order Now</h4>
-       <div>
-      <h2>Live Location Tracker</h2>
-      {latitude && longitude ? (
-        <div>
-          <p>Latitude: {latitude}</p>
-          <p>Longitude: {longitude}</p>
-          <p>Address: {address || 'Fetching address...'}</p>
-        </div>
-      ) : (
-        <p>Fetching location...</p>
-      )}
-    </div>
       {
         demo ? (
           <div>
