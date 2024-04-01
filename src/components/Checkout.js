@@ -17,7 +17,6 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import swal from "sweetalert2";
 import dboy from "./dboys.json"
-import Lottie from 'react-lottie';
 import {resetCart } from '../actions/cartActions';
 import Scratchcard from "./Scratchcard";
 const Checkout=({subtotal})=> {
@@ -343,7 +342,7 @@ const Checkout=({subtotal})=> {
       {
         demo ? (
           <div>
-       <Lottie options={defaultOptions} height={200} width={200} />
+       
       
         <Form>
           <Col className="mb-3">
