@@ -31,7 +31,7 @@ function Profile() {
         <i style={{marginTop:'4px'}} class="fa-solid fa-phone"></i><strong style={{fontSize:'21px',marginTop:'-3px'}}>Mobile Number :</strong><h4>{currentUser.mobNumber}</h4>
         </div>
         <div style={{display:'flex',marginLeft:'10px',gap:'10px'}}>
-        <i style={{marginTop:'4px'}} class="fa-solid fa-city"></i><strong style={{fontSize:'21px',marginTop:'-3px'}}>City :</strong><h4>pune</h4>
+        <i style={{marginTop:'4px'}} class="fa-solid fa-city"></i><strong style={{fontSize:'21px',marginTop:'-3px'}}>City :</strong><h4>{currentUser.location}</h4>
         </div>
         <div style={{display:'flex',marginLeft:'10px',gap:'10px'}}>
         <i style={{marginTop:'4px'}} class="fa-solid fa-map-pin"></i><strong style={{fontSize:'21px',marginTop:'-3px'}}>Pincode :</strong><h4>411001</h4>
