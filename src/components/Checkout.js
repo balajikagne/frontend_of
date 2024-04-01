@@ -125,7 +125,7 @@ const Checkout=({subtotal})=> {
       {
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}\nLive address:${address}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${currentUser.location}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}\nLive address:${address}`,
             tts:false,
             color:'white',
           }
