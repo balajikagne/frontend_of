@@ -256,6 +256,7 @@ export default function RegisterScreen() {
                     >
                       <option>pune</option>
                       <option>vita</option>
+                        <option>palus</option>
                     </Form.Select>
                   </Col>
                 </Row>
