@@ -11,9 +11,7 @@ Embark on a journey of gastronomic delight with TestyGo, your trusted food deliv
         <img src="logo1.png" height={'100px'}></img>
         <h3 style={{fontSize:'40px'}}>TestyGo</h3>
         <div>
-        <li className="nav-item">
-        <a href="tel:+919309100534" style={{color:'black',textDecoration:'none',color:'green'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>9309100534</a>
-            </li>
+        
             <li className="nav-item">
         <a href="tel:+917498821001" style={{color:'black',textDecoration:'none',color:'green'}}><i class="fa-solid fa-phone" style={{fontSize:'20px',paddingRight:'10px'}}></i>7498821001</a>
             </li>
