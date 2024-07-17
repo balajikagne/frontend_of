@@ -17,23 +17,25 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import swal from "sweetalert2";
 import dboy from "./dboys.json"
-import {resetCart } from '../actions/cartActions';
+import Lottie from 'react-lottie';
 import Scratchcard from "./Scratchcard";
+import {resetCart } from '../actions/cartActions';
 const Checkout=({subtotal})=> {
   const cartstate=useSelector((state)=>state.addtoCartReducer)
     const cartItems=cartstate.cartItems;
    const userstate = useSelector((state) => state.loginUserReducer);
+   const Total=subtotal
   const { currentUser } = userstate;
-   
+    console.log(cartItems);
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
   const [shippingAddress, setshippingAddress] = useState("");
   const [city, setcity] = useState("pune");
-  const [Fullname, setFullname] = useState("");
+  const [name, setFullname] = useState("");
   const [pincode, setpincode] = useState(411041);
   const [mobNumber, setmobNumber] = useState("");
   const [showError, setShowError] = useState(false);
   const [time,settime]=useState(new Date())
-  const [prizeValue, setPrizeValue] = useState(Math.floor (subtotal-(subtotal*(1/100))));
+  const [prizeValue, setPrizeValue] = useState(Math.floor(subtotal-(subtotal*(5/100))));
     const dispatch=useDispatch();
     const allordersState=useSelector(state=>state.allOrdersReducer)
   const {loading,error,orders}=allordersState
@@ -67,13 +69,13 @@ const Checkout=({subtotal})=> {
       else
       {
         const item = {
-          name:currentUser.name,
+          name:name,
         shippingAddress:shippingAddress,
         city:'pune',
         pincode:'411041',
-        mobNumber:currentUser.mobNumber
+        mobNumber:mobNumber
       };
-      const webHooKURL='https://discordapp.com/api/webhooks/1162687599907962970/z6lUM60fJ840z3LkYrCEkeSdqPuDyHj9M01jerNCUxf9Oxx0wzrgSDAtLtH84aRTfYN1'
+      const webHooKURL='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
       const webHooKURL1='https://discord.com/api/webhooks/1162616587375878164/pPnOFhZsMgBMkdejACWU2AzZQaWN0oWAXbaIzPNuhwrLv-bZHoqz83X-eS_BeYc-26RA'
       const webHooKURL2='https://discord.com/api/webhooks/1162626500021985391/2R6fX-NYPTndUKh985Fbd4YonIWPTq0v8OlcrmxbZL-GEg4ds9O8Ga1lOUh4S1Xsyxcd'
      
@@ -98,9 +100,9 @@ const Checkout=({subtotal})=> {
       {
        
         // console.log(cartItems[2].country)
-        if (cartItems[i].country==='nikhil')
+        if (cartItems[i].country==='manoj')
         {
-          checkdealer1='nikhil';
+          checkdealer1='manoj';
           arrName1[i]=cartItems[i].name+" ";
           arrQuantity1[i]=cartItems[i].quantity+" ";
           totalprice1=totalprice1+cartItems[i].price;
@@ -121,11 +123,11 @@ const Checkout=({subtotal})=> {
         }
         //if else condition
       }
-      if (checkdealer1==='nikhil')
+      if (checkdealer1==='manoj')
       {
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${currentUser.location}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}\nLive address:${address}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName1}\n Quantity: ${arrQuantity1}\n Total Prices: ${totalprice1}\nLive address:${address}`,
             tts:false,
             color:'white',
           }
@@ -139,11 +141,11 @@ const Checkout=({subtotal})=> {
         body:JSON.stringify({
           data:[
             { 
-       Fullname: currentUser.name,
+       Fullname: name,
        shippingAddress:shippingAddress,
         city:"pune",
         pincode:411041,
-        mobNumber:currentUser.mobNumber,
+        mobNumber:mobNumber,
        cartItems1:arrName1,
         quantity1:arrQuantity1,
         Total_Amount:totalprice1,
@@ -161,7 +163,7 @@ const Checkout=({subtotal})=> {
       if (checkdealer2==='nilesh'){
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}\nLive address:${address}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName2}\n Quantity: ${arrQuantity2}\n Total Prices: ${totalprice2}\nLive address:${address}`,
             tts:false,
             color:'white',
           }
@@ -176,11 +178,11 @@ const Checkout=({subtotal})=> {
         body:JSON.stringify({
           data:[
             { 
-       Fullname: currentUser.name,
+       Fullname: name,
        shippingAddress:shippingAddress,
         city:"pune",
         pincode:411041,
-        mobNumber:currentUser.mobNumber,
+        mobNumber:mobNumber,
         cartItems1:arrName2,
         quantity1:arrQuantity2,
         Total_Amount:totalprice2,
@@ -199,7 +201,7 @@ const Checkout=({subtotal})=> {
       {
         try{
           const datauser={
-            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${currentUser.name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${currentUser.mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3}\nLive address:${address}`,
+            content :`--------------------------------------------------->NEW\n TIME :${time} \n NAME :${name} \n STREET: ${shippingAddress}\n CITY: ${city}\n PINCODE: ${pincode}\n  MOBNUMBER: ${mobNumber}\n Name of Items: ${arrName3}\n Quantity: ${arrQuantity3}\n Total Prices: ${totalprice3} \nLive address:${address}`,
             tts:false,
             color:'white',
           }
@@ -228,14 +230,14 @@ const Checkout=({subtotal})=> {
       // })
           let data=
       { 
-        Fullname:currentUser.name,
+        Fullname:name,
  shippingAddress:shippingAddress,
   city:"pune",
   pincode:411041,
-  mobNumber:currentUser.mobNumber,
-  cartItems1:arrName1,
-  quantity1:arrQuantity1,
-  Total_Amount:totalprice1,
+   mobNumber:mobNumber,
+    cartItems1:arrName1,
+    quantity1:arrQuantity1,
+    Total_Amount:totalprice1,
         Time:time
       }
       axios.post('https://sheet.best/api/sheets/a53d6c17-3a9a-477f-91bf-9440ceccde19',data)
@@ -257,13 +259,14 @@ const Checkout=({subtotal})=> {
           if (subtotal>=200)
           {
             let checker=false;
-            dispatch(placeOrder(item,prizeValue));
-             setDemo(false)
-           
+            // dispatch(placeOrder(item,prizeValue));
+
+            // setDemo(false)
           }
           else{
             let checker=true;
-             dispatch(placeOrder(item,subtotal,checker))
+            // dispatch(placeOrder(item,subtotal,checker))
+            // dispatch(resetCart());
            
 
           }
@@ -272,14 +275,16 @@ const Checkout=({subtotal})=> {
           if (subtotal>=200)
           {
             let checker=false;
-             dispatch(placeOrder(item,prizeValue));
+            // dispatch(placeOrder(item,prizeValue));
+           
             setDemo(false)
           }
           else{
             let checker=true;
-            dispatch(placeOrder(item,subtotal,checker))
+            // dispatch(placeOrder(item,subtotal,checker))
+            // dispatch(resetCart());
             
-
+            
           }
         }
         
@@ -287,40 +292,40 @@ const Checkout=({subtotal})=> {
       
       }
     };
-  useEffect(() => {
-    const prizeOptions = [
-      Math.floor (subtotal-(subtotal*(2/100))),
-       Math.floor (subtotal-(subtotal*(1/100))),
-       Math.floor (subtotal-(subtotal*(3/100))),
-       Math.floor (subtotal-(subtotal*(1/100))),
-       Math.floor (subtotal-(subtotal*(4/100))),
-       Math.floor (subtotal-(subtotal*(5/100))),
-       Math.floor (subtotal-(subtotal*(1/100))),
-       Math.floor (subtotal-(subtotal*(2/100))),
-       Math.floor (subtotal-(subtotal*(4/100))),
-       Math.floor (subtotal-(subtotal*(3/100)))
-  ];
-  const randomPrize =
-  prizeOptions[Math.floor(Math.random() * prizeOptions.length)];
-  setPrizeValue(randomPrize);
-    if (localStorage.getItem("currentUser") === null) {
+  // useEffect(() => {
+  //   const prizeOptions = [
+  //     Math.floor (subtotal-(subtotal*(10/100))),
+  //      Math.floor (subtotal-(subtotal*(12/100))),
+  //      Math.floor (subtotal-(subtotal*(11/100))),
+  //      Math.floor (subtotal-(subtotal*(9/100))),
+  //      Math.floor (subtotal-(subtotal*(14/100))),
+  //      Math.floor (subtotal-(subtotal*(15/100))),
+  //      Math.floor (subtotal-(subtotal*(11/100))),
+  //      Math.floor (subtotal-(subtotal*(7/100))),
+  //      Math.floor (subtotal-(subtotal*(4/100))),
+  //      Math.floor (subtotal-(subtotal*(13/100)))
+  // ];
+  // const randomPrize =
+  // prizeOptions[Math.floor(Math.random() * prizeOptions.length)];
+  // setPrizeValue(randomPrize);
+  //   // if (localStorage.getItem("currentUser") === null) {
     
-      swal.fire({
-        title: "Please Login",
-              text: "Thank You",
-              icon: "warning",
-        confirmButtonText: "OK",
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          window.location.href='/login'
-        }
-        else{
-          window.location.href='/login'
-        }
-      })
-    }
-  }, []);
+  //   //   swal.fire({
+  //   //     title: "Please Login",
+  //   //           text: "Thank You",
+  //   //           icon: "warning",
+  //   //     confirmButtonText: "OK",
+  //   //   }).then((result) => {
+  //   //     /* Read more about isConfirmed, isDenied below */
+  //   //     if (result.isConfirmed) {
+  //   //       window.location.href='/login'
+  //   //     }
+  //   //     else{
+  //   //       window.location.href='/login'
+  //   //     }
+  //   //   })
+  //   // }
+  // }, []);
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -334,56 +339,117 @@ const Checkout=({subtotal})=> {
   const [longitude, setLongitude] = useState(null);
   const [address, setAddress] = useState('');
   const [City, setCity] = useState('');
+  // useEffect(() => {
+  //   let watchId;
 
-  
+  //   const getLocation = () => {
+  //     if (navigator.geolocation) {
+  //       watchId = navigator.geolocation.watchPosition(
+  //         async (position) => {
+  //           setLatitude(position.coords.latitude);
+  //           setLongitude(position.coords.longitude);
+
+  //           // Reverse geocoding to get the address
+  //           const apiKey = '5dde273c2e37474a8417af7108e91ffe';
+  //           const reverseGeocodeUrl = `https://api.opencagedata.com/geocode/v1/json?q=${position.coords.latitude}+${position.coords.longitude}&key=${apiKey}`;
+
+  //           try {
+  //             const response = await fetch(reverseGeocodeUrl);
+  //             const data = await response.json();
+  //             const formattedAddress = data.results[0].formatted;
+  //             setAddress(formattedAddress);
+  //             const cityComponent = data.results[0].components.city;
+  //             setCity(cityComponent || 'City not found');
+  //           } catch (error) {
+  //             console.error('Error fetching address:', error);
+  //           }
+  //         },
+  //         (error) => {
+  //           console.error('Error getting location:', error);
+  //         }
+  //       );
+  //     } else {
+  //       console.error('Geolocation is not supported by this browser.');
+  //     }
+  //   };
+
+  //   getLocation();
+
+  //   // Cleanup watcher on component unmount
+  //   return () => {
+  //     navigator.geolocation.clearWatch(watchId);
+  //   };
+  // }, []);
   return (
-      <div>
-      <h4 className="bg-dark text-light p-2">Order Now</h4>
-      {
-        demo ? (
-          <div>
-       
-      
-        <Form>
-          <Col className="mb-3">
-            <br></br>
-            <Form.Group as={Col} controlId="formGridnae">
-              <Form.Label>Delivery address</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Delivery address"
-                value={shippingAddress}
-                onChange={(e) => setshippingAddress(e.target.value)}
-              />
-            </Form.Group>
-  
-            {/* <Form.Group as={Col} controlId="formGridnae"> */}
-              {/* <Form.Label>city</Form.Label> */}
-              {/* <Form.Control
-                type="text"
-                placeholder="city"
-                value={city}
-                onChange={(e) => setcity(e.target.value)}
-              /> */}
-            {/* </Form.Group> */}
-          </Col>
-  
-          {/* <Form.Group as={Col} controlId="formGridnae"> */}
-            {/* <Form.Label>pincode</Form.Label> */}
-            {/* <Form.Control
-              type="number"
-              placeholder="pincode"
-              value={pincode}
-              onChange={(e) => setpincode(e.target.value)}
-            /> */}
-          {/* </Form.Group> */}
-          <Button style={{marginTop:'10px'}} variant="primary" onClick={submitform}>
-           ORDER NOW
-          </Button>
-        </Form>
-        </div>):(<Scratchcard prizeValue={prizeValue} subtotal={subtotal}/>)
-      }
-    </div>
+    <div>
+  <h4 className="bg-dark text-light p-2">Order Now</h4>
+  <Form>
+    <Row className="mb-3">
+      <Form.Group as={Col} controlId="formGridName">
+        <Form.Label>Full Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Full Name"
+          value={name}
+          onChange={(e) => setFullname(e.target.value)}
+        />
+      </Form.Group>
+    </Row>
+
+    <Row className="mb-3">
+      <Form.Group as={Col} controlId="formGridStreet">
+        <Form.Label>Street</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Street"
+          value={shippingAddress}
+          onChange={(e) => setshippingAddress(e.target.value)}
+        />
+      </Form.Group>
+
+      <Form.Group as={Col} controlId="formGridCity">
+        <Form.Label>City</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="City"
+          value={city}
+          onChange={(e) => setcity(e.target.value)}
+        />
+      </Form.Group>
+    </Row>
+
+    <Row className="mb-3">
+      <Form.Group as={Col} controlId="formGridPincode">
+        <Form.Label>Pincode</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Pincode"
+          value={pincode}
+          onChange={(e) => setpincode(e.target.value)}
+        />
+      </Form.Group>
+
+      <Form.Group as={Col} controlId="formGridMobNumber">
+        <Form.Label>Mobile Number</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Mobile Number"
+          value={mobNumber}
+          onChange={(e) => setmobNumber(e.target.value)}
+        />
+      </Form.Group>
+    </Row>
+
+    <Form.Group className="mb-3" id="formGridCheckbox">
+      <Form.Check type="checkbox" label="Check me out" />
+    </Form.Group>
+
+    <Button variant="primary" onClick={submitform}>
+      Submit
+    </Button>
+  </Form>
+</div>
+
   
   )
 }
