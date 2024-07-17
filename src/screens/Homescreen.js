@@ -1,4 +1,4 @@
-import React, { useEffect ,useRef} from "react";
+import React, { useEffect ,useState,useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Menusa from "../components/Menus";
 import { getAllitems } from "../actions/MenuActions";
@@ -8,35 +8,19 @@ import { Row } from "react-bootstrap";
 import Filters from "../components/Filters";
 import Slidebar from "../components/Slidebar";
 import swal from "sweetalert2";
+import Menus from "../Menu";
 
 export default function Homescreen() {
   const dispatch = useDispatch();
   const itemstate = useSelector((state) => state.getAllitemsReducer);
-  const { items, error, loading } = itemstate;
-   useEffect(() => {
-    if (localStorage.getItem("currentUser") === null) {
-    
-      swal.fire({
-        title: "Please Create account",
-              text: "Thank You",
-              icon: "warning",
-        confirmButtonText: "OK",
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          window.location.href='/register'
-        }
-        else{
-          window.location.href='/register'
-        }
-      })
-    }
-  }, []);
+  const { error, loading } = itemstate;
+
   useEffect(() => {
     dispatch(getAllitems());
-  },[]);
-   const section2Ref = useRef(null);
- const filterButtonClick = () => {
+  }, []);
+  const section2Ref = useRef(null);
+
+  const filterButtonClick = () => {
     // Ensure that section2Ref.current is not null before calling scrollIntoView
     if (section2Ref.current) {
       section2Ref.current.scrollIntoView({
@@ -45,18 +29,24 @@ export default function Homescreen() {
       });
     }
   };
+  console.log(Menus)
   return (
     <div>
       <Slidebar />
       <Filters onClick={filterButtonClick}/>
+      
       <div className="democ" ref={section2Ref}>
         {loading ? (
           <Loading />
         ) : error ? (
-          <Error error="Check Internet Connection" />
+          <Error error="We have been working on Testygo app for two days" />
         ) : (
-          items
+          
+          Menus
+            .slice()
             .sort((a, b) => {
+              console.log(a.country);
+            
               // First, sort by availability and country (onlineAvailable)
               if (a.country === 'nilesh' && a.stock && (b.country !== 'nilesh' || !b.stock)) {
                 return -1; // 'a' is available and 'nilesh', 'b' is not 'nilesh' or not available, so 'a' comes first
@@ -73,7 +63,7 @@ export default function Homescreen() {
             })
             .map((menu) => (
               <div key={menu._id} style={{ margin: "-4px" }}>
-                <Menusa menu={menu} />
+                <Menusa menu={menu} sectionRef={section2Ref}/>
               </div>
             ))
         )}
