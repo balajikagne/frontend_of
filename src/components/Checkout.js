@@ -291,6 +291,7 @@ const Checkout=({subtotal})=> {
       });
       
       }
+      dispatch(resetCart())
     };
   // useEffect(() => {
   //   const prizeOptions = [
