@@ -398,10 +398,10 @@ const Checkout=({subtotal})=> {
 
     <Row className="mb-3">
       <Form.Group as={Col} controlId="formGridStreet">
-        <Form.Label>Street</Form.Label>
+        <Form.Label>Address</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Street"
+          placeholder="Address"
           value={shippingAddress}
           onChange={(e) => setshippingAddress(e.target.value)}
         />
