@@ -407,7 +407,9 @@ const Checkout=({subtotal})=> {
           onChange={(e) => setshippingAddress(e.target.value)}
         />
       </Form.Group>
+    </Row>
 
+            <Row className="mb-3">
       <Form.Group as={Col} controlId="formGridCity">
         <Form.Label>City</Form.Label>
         <Form.Control
@@ -418,7 +420,6 @@ const Checkout=({subtotal})=> {
         />
       </Form.Group>
     </Row>
-
     <Row className="mb-3">
       <Form.Group as={Col} controlId="formGridMobNumber">
         <Form.Label>Mobile Number</Form.Label>
