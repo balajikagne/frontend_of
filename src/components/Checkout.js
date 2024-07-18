@@ -1,5 +1,5 @@
 
-// import StripeCheckout from 'react-stripe-checkout'
+
 import React, { useState ,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
