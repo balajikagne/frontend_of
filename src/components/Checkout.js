@@ -53,7 +53,7 @@ const Checkout=({subtotal})=> {
  
     const submitform = async (e) => {
       e.preventDefault();
-      if (showError==true ||shippingAddress==="" ||subtotal===0){
+      if (showError==true ||shippingAddress==="" ||subtotal===0||name===""||mobNumber===""){
         swal.fire({
         title: "Please enter all information currectly or add items in cart",
               text: "Thank You",
@@ -419,16 +419,6 @@ const Checkout=({subtotal})=> {
     </Row>
 
     <Row className="mb-3">
-      <Form.Group as={Col} controlId="formGridPincode">
-        <Form.Label>Pincode</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Pincode"
-          value={pincode}
-          onChange={(e) => setpincode(e.target.value)}
-        />
-      </Form.Group>
-
       <Form.Group as={Col} controlId="formGridMobNumber">
         <Form.Label>Mobile Number</Form.Label>
         <Form.Control
