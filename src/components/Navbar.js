@@ -104,11 +104,7 @@ export default function Navbar() {
                 <i className="fa-solid fa-home" style={{fontSize:'20px',paddingRight:'10px'}}></i>Home
               </a>
             </li>
-            // <li className="nav-item">
-            //   <a className="nav-link" href="/admin">
-            //     <i className="fa-solid fa-lock" style={{fontSize:'20px',paddingRight:'10px'}}></i>Admin
-            //   </a>
-            // </li>
+            
             <li className="nav-item">
               <a className="nav-link" href="/aboutus">
                 <i className="fa-solid fa-address-card" style={{fontSize:'20px',paddingRight:'10px'}}></i>About us
