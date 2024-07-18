@@ -6,7 +6,7 @@ export const getAllitems=()=>async dispatch=>{
     try {
         const response=Menus;
         
-        dispatch({type:'GET_ITEMS_SUCCESS',payload :response.data})
+        dispatch({type:'GET_ITEMS_SUCCESS',payload :response})
     }catch(error){
         dispatch({type:"GET_ITEMS_FAILED",payload : error})
     }
@@ -15,8 +15,7 @@ export const getPolls=()=>async dispatch=>{
     dispatch({type:'GET_POLLS_REQ'})
     try {
         const response=await axios.get('http://127.0.0.1:5000/api/items/api/polls')
-        console.log(response)
-        dispatch({type:'GET_POLLS_SUCCESS',payload :response.data})
+        dispatch({type:'GET_POLLS_SUCCESS',payload :response})
     }catch(error){
         dispatch({type:"GET_POLLS_FAILED",payload : error})
     }
@@ -29,9 +28,8 @@ export const submitVote = (pollId, option) => async (dispatch) => {
       option,
     });
 
-    console.log(response);
 
-    dispatch({ type: 'SUBMIT_VOTE_SUCCESS', payload: response.data });
+    dispatch({ type: 'SUBMIT_VOTE_SUCCESS', payload: response });
   } catch (error) {
     dispatch({ type: 'SUBMIT_VOTE_FAILED', payload: error });
   }
@@ -42,8 +40,7 @@ export const getAllitems_new=()=>async (dispatch, getState) => {
     try {
         // const response=await axios.get('/api/items/getallitems')
         const res=await axios.get("http://127.0.0.1:5000/api/items/Notificationlist")////
-        console.log(res.data)
-        dispatch({type:'GET_ITEMS_SUCCESS_NEW',payload :res.data})
+        dispatch({type:'GET_ITEMS_SUCCESS_NEW',payload :res})
     }catch(error){
         dispatch({type:"GET_ITEMS_FAILED_NEW",payload : error})
     }
@@ -54,7 +51,7 @@ export const addItems=(item)=>async (dispatch)=>{
     try {
         const response=await axios.post('http://127.0.0.1:5000/api/items/additem',item)
     
-        dispatch({type:'ADD_ITEMS_SUCCESS',payload :response.data})
+        dispatch({type:'ADD_ITEMS_SUCCESS',payload :response})
     }catch(error){
         dispatch({type:"ADD_ITEMS_FAILED",payload : error})
         console.log("error side")
@@ -63,20 +60,17 @@ export const addItems=(item)=>async (dispatch)=>{
 
 export const getItemById=(item)=>async (dispatch)=>{
     dispatch({type:'GET_ITEMBYID_REQ'})
-    console.log(item);
     try {
         const response=await axios.post('http://127.0.0.1:5000/items/getitembyid',item)
       
-        dispatch({type:'GET_ITEMBYID_SUCCESS',payload :response.data})
+        dispatch({type:'GET_ITEMBYID_SUCCESS',payload :response})
     }catch(error){
         dispatch({type:"GET_ITEMBYID_FAILED",payload : error})
-        console.log("error side")
     }
 }
 
 
 export const deleteItem=(itemId)=>async (dispatch)=>{
-    console.log({itemId})
     try {
         const response=await axios.post('http://127.0.0.1:5000/api/items/deleteitem',{itemId})
         swal("Item deleted successfully")
@@ -94,9 +88,9 @@ export const filterItem=(searchkey,category)=>async dispatch=>{
     dispatch({type:'GET_ITEMS_REQ'})
     try{
         const res=Menus;
-        filterdItem=res.data.filter(item => item.name.toLowerCase().includes(searchkey))
+        filterdItem=res.filter(item => item.name.toLowerCase().includes(searchkey))
         // if (category!=='all'){
-        //     filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
+        //     filterdItem1=res.filter(item=>item.category.toLowerCase()===category);
         // }
         dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem})
        
@@ -113,11 +107,10 @@ export const filterI=(category)=>async dispatch=>{
     try{
         // console.log(category)
         const res=Menus;
-        console.log(Menus.data)
-            filterdItem1=res.data.filter(item=>item.category.toLowerCase()===category);
+            filterdItem1=res.filter(item=>item.category.toLowerCase()===category);
            if (category==='all')
            {
-            filterdItem1=res.data
+            filterdItem1=res
             dispatch({type:'GET_ITEMS_SUCCESS',payload:filterdItem1})
             return
            }
