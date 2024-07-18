@@ -7,10 +7,10 @@ import 'react-bootstrap';
 export default function Navbar() {
   const cartstate = useSelector((state) => state.addtoCartReducer);
   const userstate = useSelector((state) => state.loginUserReducer);
-    const [cartAn,setcartAn]=useState(false)
+  const [cartAn,setcartAn]=useState(false)
   const { currentUser } = userstate;
   const dispatch = useDispatch();
-    useEffect(()=>{
+  useEffect(()=>{
     if (cartstate.cartItems.length===0){
       setcartAn(false)
       console.log(cartAn)
@@ -29,7 +29,7 @@ export default function Navbar() {
           <b className="testygoicon">TestyGo</b>
         </a>
      <div className="cartsitems1 iconame">
-      <div className="cartbox">
+     <div className="cartbox">
      <li className="cartsitems" >
               <a className="nav-link" href="/cart" style={{fontSize:'20px'}}>
               {cartAn? (<><i className="fa-solid fa-cart-shopping animation-cart" style={{marginRight:'7px'}}></i><span className="animation-cart">{cartstate.cartItems.length}</span></> ):(<><i className="fa-solid fa-cart-shopping" style={{fontSize:'20px'}}></i>{cartstate.cartItems.length}</>)}
@@ -37,6 +37,7 @@ export default function Navbar() {
               
         </li>
      </div>
+        
      </div>
         <button
           className="navbar-toggler"
@@ -51,7 +52,7 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            {currentUser ? (
+            {/* {currentUser ? (
               <div className="dropdown show mt-1">
                 <a
                   style={{ color: "black" }}
@@ -76,6 +77,9 @@ export default function Navbar() {
                   <a className="dropdown-item" href="/orders">
                     <i className="fa-solid fa-bag-shopping"></i>My Orders
                   </a>
+                  <a className="dropdown-item" href="/thali">
+                    <i className="fa-solid fa-bag-shopping"></i>My Orders
+                  </a>
                   <a
                     className="dropdown-item"
                     href="/login"
@@ -93,25 +97,25 @@ export default function Navbar() {
                   <i className="fas fa-sign-in"></i>Login <span className="sr-only">(current)</span>
                 </a>
               </li>
-            )}
+            )} */}
             <div className="navbar1">
             <li className="nav-item">
               <a className="nav-link" href="/">
                 <i className="fa-solid fa-home" style={{fontSize:'20px',paddingRight:'10px'}}></i>Home
               </a>
             </li>
-           {currentUser?.isAdmin?(<><li className="nav-item">
+            <li className="nav-item">
               <a className="nav-link" href="/admin">
                 <i className="fa-solid fa-lock" style={{fontSize:'20px',paddingRight:'10px'}}></i>Admin
               </a>
-            </li></>):(null)}
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="/aboutus">
                 <i className="fa-solid fa-address-card" style={{fontSize:'20px',paddingRight:'10px'}}></i>About us
               </a>
             </li>
                <li className="nav-item">
-              <a className="nav-link" href="https://forms.gle/RmJtbGjadz1yfzUQ8">
+              <a className="nav-link" href="/feedback">
                 <i className="fa-solid fa-comment" style={{fontSize:'20px',paddingRight:'10px'}}></i>Feedback
               </a>
             </li>
