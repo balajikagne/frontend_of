@@ -138,7 +138,7 @@ const Menus = [{
   "prices": [
     {
       "half": 120,
-      "full": 120
+      "full": 150
     }
   ],
   "varients": [
@@ -163,8 +163,8 @@ const Menus = [{
   "dsc": "Veg manchow soup is a healthy and nutritious dish that is packed with vitamins and minerals.",
   "prices": [
     {
-      "half": 69,
-      "full": 69
+      "half": 89,
+      "full": 89
     }
   ],
   "varients": [
@@ -189,8 +189,8 @@ const Menus = [{
   "dsc": "Veg paneer rice is a popular Indian dish made with cooked rice, paneer (Indian cottage cheese), and a variety of vegetables and spices.",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -216,8 +216,8 @@ const Menus = [{
   "dsc": "Veg fried rice is a healthy and nutritious dish that is packed with vitamins and minerals. It is also a good source of dietary fiber.",
   "prices": [
     {
-      "half": 89,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -243,8 +243,8 @@ const Menus = [{
   "dsc": "Chicken Angara Rice is a healthy and nutritious dish that is packed with protein, vitamins, and minerals",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -270,8 +270,8 @@ const Menus = [{
   "dsc": "Chicken angara noodles is a healthy and nutritious dish that is packed with protein, vitamins, minerals, and dietary fiber",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -297,8 +297,8 @@ const Menus = [{
   "dsc": "Chicken chilly gravy is a popular Indo-Chinese dish made with boneless chicken pieces",
   "prices": [
     {
-      "half": 139,
-      "full": 139
+      "half": 159,
+      "full": 159
     }
   ],
   "varients": [
@@ -323,8 +323,8 @@ const Menus = [{
   "dsc": "Chicken 65 is a delicious and flavorful dish that is sure to please everyone",
   "prices": [
     {
-      "half": 139,
-      "full": 139
+      "half": 159,
+      "full": 159
     }
   ],
   "varients": [
@@ -346,8 +346,8 @@ const Menus = [{
   "dsc": "Veg Schezwan soup can be enjoyed on its own or with a variety of different accompaniments",
   "prices": [
     {
-      "half": 69,
-      "full": 69
+      "half": 99,
+      "full": 99
     }
   ],
   "varients": [
@@ -369,8 +369,8 @@ const Menus = [{
   "dsc": "Veg fried rice can be enjoyed on its own or with a variety of different accompaniments, such as chutney, yogurt, or raita. ",
   "prices": [
     {
-      "half": 79,
-      "full": 120
+      "half": 119,
+      "full": 140
     }
   ],
   "varients": [
@@ -393,8 +393,8 @@ const Menus = [{
   "dsc": "Veg chilly garlic rice is a healthy and nutritious dish that is packed with vitamins and minerals",
   "prices": [
     {
-      "half": 89,
-      "full": 130
+      "half": 119,
+      "full": 150
     }
   ],
   "varients": [
@@ -417,8 +417,8 @@ const Menus = [{
   "dsc": "Veg angara rice can also be made with other vegetables, such as mushrooms, green beans, or bell peppers. ",
   "prices": [
     {
-      "half": 89,
-      "full": 130
+      "half": 119,
+      "full": 150
     }
   ],
   "varients": [
@@ -441,8 +441,8 @@ const Menus = [{
   "dsc": "The Manchurian balls are typically made with a mixture of vegetables, such as cabbage, carrots, and onions, that are ground together and then deep-fried.",
   "prices": [
     {
-      "half": 89,
-      "full": 130
+      "half": 119,
+      "full": 150
     }
   ],
   "varients": [
@@ -465,8 +465,8 @@ const Menus = [{
   "dsc": "Chicken combination rice is a healthy and nutritious dish that is packed with protein, vitamins, and minerals.",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -489,8 +489,8 @@ const Menus = [{
   "dsc": "Chicken Manchurian rice is a popular Indo-Chinese dish made with cooked rice, chicken Manchurian, and a variety of vegetables and spices.",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -513,8 +513,8 @@ const Menus = [{
   "dsc": "Veg Hakka Noodles is a healthy and nutritious dish that is packed with vitamins, minerals, and dietary fiber.",
   "prices": [
     {
-      "half": 79,
-      "full": 119
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -537,8 +537,8 @@ const Menus = [{
   "dsc": "Veg Schezwan Noodles is a healthy and nutritious dish that is packed with vitamins, minerals, and dietary fiber.",
   "prices": [
     {
-      "half": 89,
-      "full": 129
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -561,8 +561,8 @@ const Menus = [{
   "dsc": "Veg angara noodles is a popular Indo-Chinese dish made with stir-fried noodles and vegetables in a spicy and flavorful angara sauce.",
   "prices": [
     {
-      "half": 89,
-      "full": 129
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -585,8 +585,8 @@ const Menus = [{
   "dsc": "Veg Hong Kong noodles is a healthy and nutritious dish that is packed with vitamins, minerals, and dietary fiber. ",
   "prices": [
     {
-      "half": 89,
-      "full": 129
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -655,8 +655,8 @@ const Menus = [{
   "dsc": "Veg Hong Kong rice can be enjoyed on its own or with a variety of different accompaniments, such as chutney, yogurt, or raita.",
   "prices": [
     {
-      "half": 89,
-      "full": 130
+      "half": 119,
+      "full": 150
     }
   ],
   "varients": [
@@ -679,8 +679,8 @@ const Menus = [{
   "dsc": "Veg triple rice is a healthy and nutritious dish that is packed with vitamins, minerals, and carbohydrates. It is also a good source of dietary fiber.",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -703,8 +703,8 @@ const Menus = [{
   "dsc": "Chicken Schezwan Rice is a healthy and nutritious dish that is packed with vitamins, minerals, and protein. ",
   "prices": [
     {
-      "half": 89,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -727,8 +727,8 @@ const Menus = [{
   "dsc": "Chicken Hong Kong Rice is a healthy and nutritious dish that is packed with vitamins, minerals, and protein. It is also a good source of dietary fiber. ",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -751,8 +751,8 @@ const Menus = [{
   "dsc": "Chicken triple rice is a popular Indo-Chinese dish made with fried rice, noodles, and a spicy and flavorful Schezwan sauce.",
   "prices": [
     {
-      "half": 110,
-      "full": 160
+      "half": 120,
+      "full": 180
     }
   ],
   "varients": [
@@ -775,8 +775,8 @@ const Menus = [{
   "dsc": "Veg chilly garlic noodles is a popular Indo-Chinese dish made with stir-fried noodles and vegetables in a spicy and flavorful chili garlic sauce.",
   "prices": [
     {
-      "half": 89,
-      "full": 129
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -799,8 +799,8 @@ const Menus = [{
   "dsc": "Veg triple noodles is a healthy and nutritious dish that is packed with vitamins, minerals, and dietary fiber. ",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -823,8 +823,8 @@ const Menus = [{
   "dsc": "Chicken Hakka Noodles is a healthy and nutritious dish that is packed with protein, vitamins, minerals, and dietary fiber",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -847,8 +847,8 @@ const Menus = [{
   "dsc": "The chicken and vegetables are typically stir-fried with oil, garlic, ginger, and spices until cooked through.",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
@@ -871,8 +871,8 @@ const Menus = [{
   "dsc": "Chicken Hong Kong noodles is a healthy and nutritious dish that is packed with protein, vitamins, minerals, and dietary fiber.",
   "prices": [
     {
-      "half": 99,
-      "full": 139
+      "half": 119,
+      "full": 159
     }
   ],
   "varients": [
