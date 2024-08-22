@@ -1775,8 +1775,8 @@ const Menus = [{
   "dsc": "Veg Rolls, also known as Vegetable Rolls or Veggie Rolls, are a popular and versatile snack or appetizer in various cuisines. ",
   "prices": [
     {
-      "full": "55",
-      "half": "55"
+      "full": "65",
+      "half": "65"
     }
   ],
   "varients": [
@@ -1798,8 +1798,8 @@ const Menus = [{
   "dsc": "A Veg Paneer Roll is a delectable and satisfying dish that combines marinated and sautéed paneer",
   "prices": [
     {
-      "full": "60",
-      "half": "60"
+      "full": "80",
+      "half": "80"
     }
   ],
   "varients": [
